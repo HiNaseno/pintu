@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电商视觉生成工作台 - 品图 AI</title>
+    <link rel="stylesheet" href="./china-workflow.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./china-full.html">
+        <span>P</span>
+        品图 AI
+      </a>
+      <nav aria-label="页面操作">
+        <a href="./china-full.html">返回首页</a>
+        <a href="./china-examples.html">案例展示</a>
+      </nav>
+    </header>
+
+    <main class="generator-page">
+      <section class="generator-hero">
+        <p class="badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Zm-7 13 1.2 3.3L9.5 20l-3.3 1.2L5 24l-1.2-2.8L.5 20l3.3-1.7L5 15Z" /></svg>
+          AI 电商视觉生成
+        </p>
+        <h1>生成电商主图</h1>
+        <p>上传产品图，填写商品信息，快速生成适合国内电商平台上架使用的主图。</p>
+      </section>
+
+      <section class="progress" aria-label="生成流程">
+        <div class="progress-step active"><span>1</span>输入</div>
+        <i></i>
+        <div class="progress-step"><span>2</span>分析中</div>
+        <i></i>
+        <div class="progress-step"><span>3</span>确认方案</div>
+        <i></i>
+        <div class="progress-step"><span>4</span>生成中</div>
+        <i></i>
+        <div class="progress-step"><span>5</span>完成</div>
+      </section>
+
+      <section class="generator-layout">
+        <aside class="control-column">
+          <article class="upload-card">
+            <div class="card-title">
+              <div>
+                <span class="round-icon">
+                  <svg viewBox="0 0 24 24"><path d="M5 4a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H5Zm0 2h14a1 1 0 0 1 1 1v7.7l-3.3-3.3a1 1 0 0 0-1.4 0L12 14.7l-1.8-1.8a1 1 0 0 0-1.4 0L4 17.7V7a1 1 0 0 1 1-1Z" /></svg>
+                </span>
+                <div>
+                  <strong>商品图</strong>
+                  <small>上传清晰的产品图片</small>
+                </div>
+              </div>
+              <em>0/6</em>
+            </div>
+            <button class="dropzone" type="button">
+              <span class="upload-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 3a1 1 0 0 1 .7.29l4 4a1 1 0 1 1-1.4 1.42L13 6.41V16a1 1 0 1 1-2 0V6.41L8.7 8.7a1 1 0 1 1-1.4-1.42l4-4A1 1 0 0 1 12 3ZM5 15a1 1 0 0 1 1 1v2h12v-2a1 1 0 1 1 2 0v2.5A1.5 1.5 0 0 1 18.5 20h-13A1.5 1.5 0 0 1 4 18.5V16a1 1 0 0 1 1-1Z" /></svg>
+              </span>
+              <strong>上传正面、侧面、细节、SKU图或品牌素材</strong>
+              <small>建议选择清晰、真实、角度完整的图片</small>
+            </button>
+          </article>
+
+          <article class="settings-card">
+            <div class="segmented" role="tablist" aria-label="生成类型">
+              <button class="active" type="button" data-mode="main">主图</button>
+              <button type="button" data-mode="detail">详情图</button>
+              <button type="button" data-mode="sku">SKU图</button>
+              <button type="button" data-mode="logo">Logo</button>
+            </div>
+
+            <label>
+              目标平台
+              <select>
+                <option>智能匹配</option>
+                <option>淘宝 / 天猫</option>
+                <option>拼多多</option>
+                <option>京东</option>
+                <option>抖音小店</option>
+                <option>快手小店</option>
+                <option>唯品会</option>
+                <option>小红书店铺</option>
+                <option>微信小店 / 视频号小店</option>
+                <option>1688</option>
+                <option>得物</option>
+                <option>苏宁易购</option>
+                <option>美团闪购</option>
+                <option>饿了么零售</option>
+                <option>小程序商城 / 有赞 / 微盟</option>
+                <option>其他国内平台</option>
+              </select>
+              <small class="field-note">选择实际上架平台，系统会适配图片尺寸和内容结构。</small>
+            </label>
+
+            <label id="prompt-field">
+              主图要求
+              <textarea placeholder="建议输入：产品名称、核心卖点、买家人群、上架平台、图片风格等"></textarea>
+            </label>
+
+            <button class="prompt-helper" type="button">
+              <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
+              AI帮写
+              <span>?</span>
+            </button>
+
+            <label>
+              目标语言
+              <select>
+                <option>无文字（纯视觉）</option>
+                <option>中文（简体）</option>
+                <option>中文（繁体）</option>
+                <option>英语</option>
+                <option>中英结合</option>
+              </select>
+            </label>
+
+            <div class="two-col">
+              <label>
+                生成模式
+                <select>
+                  <option>标准生成</option>
+                  <option>真实修图</option>
+                </select>
+              </label>
+              <label>
+                尺寸比例
+                <select>
+                  <option>1:1 正方形</option>
+                  <option>2:3 竖版</option>
+                  <option>3:2 横版</option>
+                  <option>3:4 竖版</option>
+                  <option>4:3 横版</option>
+                  <option>4:5 竖版</option>
+                  <option>5:4 横版</option>
+                  <option>9:16 手机竖屏</option>
+                  <option>16:9 宽屏</option>
+                  <option>21:9 超宽屏</option>
+                  <option>750px 详情页长图</option>
+                  <option>Logo 1:1 透明底</option>
+                  <option>店招横版</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                画质
+                <select>
+                  <option>自动</option>
+                  <option>高清</option>
+                </select>
+              </label>
+              <label>
+                生成数量
+                <select>
+                  <option>单张预览</option>
+                  <option>5张主图</option>
+                  <option>主图+详情页+SKU</option>
+                  <option>4款Logo方案</option>
+                </select>
+              </label>
+            </div>
+          </article>
+
+          <button class="analyze-button" type="button">
+            <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
+            分析产品
+          </button>
+        </aside>
+
+        <section class="result-panel" aria-label="生成结果">
+          <div class="result-head">
+            <div>
+              <span class="round-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
+              </span>
+              <div>
+                <strong>生成结果</strong>
+                <small>完成商品信息后开始生成</small>
+              </div>
+            </div>
+            <a href="./china-examples.html">查看案例</a>
+          </div>
+          <div class="empty-result">
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
+            </span>
+            <p>上传产品图并填写要求后<br />点击“分析产品”开始生成</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./china-workflow.js"></script>
+  </body>
+</html>

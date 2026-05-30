@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 860" role="img" aria-label="Bottle specification image">
+  <rect width="820" height="860" fill="#ffffff"/>
+  <rect x="108" y="98" width="604" height="664" rx="32" fill="#f0f1f3"/>
+  <rect x="178" y="184" width="180" height="450" rx="60" fill="#18181b"/>
+  <rect x="422" y="180" width="220" height="80" rx="18" fill="#d9f99d"/>
+  <path d="M422 330 H642" stroke="#18181b" stroke-width="14" stroke-linecap="round"/>
+  <path d="M422 402 H608" stroke="#71717a" stroke-width="10" stroke-linecap="round"/>
+  <path d="M422 474 H642" stroke="#71717a" stroke-width="10" stroke-linecap="round"/>
+  <path d="M422 546 H572" stroke="#71717a" stroke-width="10" stroke-linecap="round"/>
+</svg>
+

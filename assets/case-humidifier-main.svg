@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 1100" role="img" aria-label="Desktop humidifier main image">
+  <rect width="820" height="1100" fill="#fbfbfc"/>
+  <rect x="160" y="280" width="500" height="520" rx="120" fill="#fff" stroke="#18181b" stroke-width="12"/>
+  <ellipse cx="410" cy="800" rx="250" ry="58" fill="#e1e2e5"/>
+  <circle cx="410" cy="500" r="108" fill="#d9f99d" stroke="#18181b" stroke-width="12"/>
+  <path d="M332 278 C330 204 490 204 488 278" fill="none" stroke="#18181b" stroke-width="14" stroke-linecap="round"/>
+  <path d="M466 198 C520 130 592 172 576 240" fill="none" stroke="#d9f99d" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="410" cy="648" r="18" fill="#18181b"/>
+</svg>
+

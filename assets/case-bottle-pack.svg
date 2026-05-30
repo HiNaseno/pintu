@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 860" role="img" aria-label="Bottle packing image">
+  <rect width="820" height="860" fill="#f8f8f9"/>
+  <rect x="150" y="190" width="520" height="420" rx="28" fill="#fff" stroke="#18181b" stroke-width="10"/>
+  <path d="M150 320 H670" stroke="#18181b" stroke-width="10"/>
+  <path d="M270 190 V610" stroke="#e1e2e5" stroke-width="8"/>
+  <path d="M410 190 V610" stroke="#e1e2e5" stroke-width="8"/>
+  <rect x="244" y="668" width="332" height="54" rx="27" fill="#d9f99d" stroke="#18181b" stroke-width="8"/>
+  <circle cx="604" cy="154" r="32" fill="#d9f99d" stroke="#18181b" stroke-width="8"/>
+</svg>
+

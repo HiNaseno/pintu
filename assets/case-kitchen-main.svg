@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 1100" role="img" aria-label="Kitchen rack main image">
+  <rect width="820" height="1100" fill="#f5f6f7"/>
+  <rect x="90" y="148" width="640" height="742" rx="34" fill="#fff"/>
+  <path d="M190 290 H630 M190 450 H630 M190 610 H630" stroke="#18181b" stroke-width="16" stroke-linecap="round"/>
+  <path d="M210 240 V700 M610 240 V700" stroke="#18181b" stroke-width="16" stroke-linecap="round"/>
+  <rect x="270" y="322" width="110" height="92" rx="18" fill="#d9f99d" stroke="#18181b" stroke-width="8"/>
+  <rect x="440" y="482" width="116" height="88" rx="18" fill="#f0f1f3" stroke="#18181b" stroke-width="8"/>
+  <circle cx="312" cy="656" r="38" fill="#d9f99d" stroke="#18181b" stroke-width="8"/>
+  <circle cx="500" cy="656" r="38" fill="#fff" stroke="#18181b" stroke-width="8"/>
+</svg>
+

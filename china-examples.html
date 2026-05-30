@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品图案例 - 品图 AI</title>
+    <link rel="stylesheet" href="./china-examples.css" />
+    <script src="./china-examples.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./china-full.html">
+        <span>P</span>
+        品图 AI
+      </a>
+      <nav aria-label="页面操作">
+        <a href="./china-full.html">返回首页</a>
+        <a class="start-link" href="./china-workflow.html">免费生成一套</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="examples-hero">
+        <svg class="sketch-flow" viewBox="0 0 1280 620" role="img" aria-labelledby="flow-title flow-desc">
+          <title id="flow-title">平台商品图生成流程图</title>
+          <desc id="flow-desc">上传商品图，经过 AI 分析后，生成适配淘宝、天猫、1688、拼多多等平台的主图、详情页、SKU图和Logo。</desc>
+          <defs>
+            <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+              <path d="M2 2 L11 7 L2 12" fill="none" stroke="#18181b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+            </marker>
+            <filter id="paper-shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#18181b" flood-opacity="0.08" />
+            </filter>
+          </defs>
+
+          <rect class="paper-bg" x="0" y="0" width="1280" height="620" rx="18" />
+          <path class="sketch-cloud cloud-a" d="M72 124 C104 86,151 84,180 114 C205 82,268 90,284 132 C330 138,349 190,315 220 C288 252,229 244,210 218 C178 244,122 242,100 206 C62 206,41 158,72 124 Z" />
+          <path class="sketch-cloud cloud-b" d="M1000 82 C1024 50,1076 52,1098 82 C1128 58,1177 82,1177 122 C1214 132,1217 184,1182 201 C1152 219,1108 209,1090 184 C1066 211,1012 205,998 170 C956 164,954 112,1000 82 Z" />
+
+          <text class="sketch-kicker" x="70" y="72">品图 AI</text>
+          <text class="sketch-title" x="70" y="124">平台生成流程</text>
+          <text class="sketch-subtitle" x="72" y="160">从一张商品图，到各平台可上架的完整视觉素材</text>
+
+          <g class="node node-upload" transform="translate(90 252) rotate(-2)">
+            <rect class="node-card" x="0" y="0" width="205" height="132" rx="18" />
+            <path class="photo-icon" d="M32 88 L70 48 L99 78 L120 60 L162 96" />
+            <circle class="photo-sun" cx="142" cy="42" r="13" />
+            <text class="node-title" x="26" y="34">上传素材</text>
+            <text class="node-note" x="26" y="116">实拍图 / SKU / 包装</text>
+          </g>
+
+          <path class="flow-arrow arrow-a" d="M318 318 C370 292,418 294,462 318" />
+
+          <g class="node node-ai" transform="translate(486 220) rotate(1)">
+            <rect class="node-card lime-card" x="0" y="0" width="238" height="190" rx="26" />
+            <circle class="ai-orbit" cx="119" cy="82" r="44" />
+            <path class="spark" d="M119 42 L127 73 L158 82 L127 91 L119 124 L110 91 L80 82 L110 73 Z" />
+            <text class="node-title center" x="119" y="154">AI 分析商品</text>
+            <text class="node-note center" x="119" y="176">主体 / 卖点 / 风格</text>
+          </g>
+
+          <path class="flow-arrow arrow-b" d="M742 314 C790 290,833 287,880 310" />
+
+          <g class="platforms" transform="translate(884 212)">
+            <path class="platform-loop" d="M18 88 C54 18,170 4,246 54 C318 101,306 202,224 236 C148 268,49 232,18 166 C4 136,4 113,18 88 Z" />
+            <text class="platform-title" x="40" y="52">适配平台</text>
+            <g class="platform-chip" transform="translate(38 78) rotate(-3)">
+              <rect x="0" y="0" width="76" height="38" rx="19" />
+              <text x="38" y="25">淘宝</text>
+            </g>
+            <g class="platform-chip dark-chip" transform="translate(130 74) rotate(2)">
+              <rect x="0" y="0" width="76" height="38" rx="19" />
+              <text x="38" y="25">天猫</text>
+            </g>
+            <g class="platform-chip" transform="translate(204 130) rotate(4)">
+              <rect x="0" y="0" width="76" height="38" rx="19" />
+              <text x="38" y="25">1688</text>
+            </g>
+            <g class="platform-chip" transform="translate(44 150) rotate(3)">
+              <rect x="0" y="0" width="86" height="38" rx="19" />
+              <text x="43" y="25">拼多多</text>
+            </g>
+            <g class="platform-chip" transform="translate(142 178) rotate(-2)">
+              <rect x="0" y="0" width="86" height="38" rx="19" />
+              <text x="43" y="25">抖音</text>
+            </g>
+          </g>
+
+          <path class="flow-arrow arrow-c" d="M1004 448 C870 512,659 530,462 486 C342 459,240 426,160 462" />
+
+          <g class="output output-main" transform="translate(104 438) rotate(2)">
+            <rect class="output-card" x="0" y="0" width="156" height="94" rx="16" />
+            <text class="output-title" x="24" y="38">主图 5 张</text>
+            <path class="mini-line" d="M24 58 L132 58" />
+            <path class="mini-line short" d="M24 74 L92 74" />
+          </g>
+          <g class="output output-detail" transform="translate(306 456) rotate(-2)">
+            <rect class="output-card" x="0" y="0" width="178" height="104" rx="16" />
+            <text class="output-title" x="24" y="38">详情页</text>
+            <text class="output-note" x="24" y="66">8-12屏长图</text>
+          </g>
+          <g class="output output-sku" transform="translate(542 456) rotate(2)">
+            <rect class="output-card" x="0" y="0" width="164" height="94" rx="16" />
+            <text class="output-title" x="24" y="38">SKU 图</text>
+            <circle class="dot lime-dot" cx="36" cy="66" r="8" />
+            <circle class="dot" cx="64" cy="66" r="8" />
+            <circle class="dot" cx="92" cy="66" r="8" />
+          </g>
+          <g class="output output-logo" transform="translate(762 438) rotate(-2)">
+            <rect class="output-card" x="0" y="0" width="184" height="108" rx="16" />
+            <rect class="logo-mark" x="22" y="24" width="48" height="48" rx="12" />
+            <text class="logo-text" x="46" y="58">P</text>
+            <text class="output-title" x="86" y="42">Logo</text>
+            <text class="output-note" x="86" y="68">头像 / 店招</text>
+          </g>
+
+          <path class="doodle doodle-star" d="M1154 398 L1164 424 L1190 432 L1164 440 L1154 466 L1144 440 L1118 432 L1144 424 Z" />
+          <path class="doodle doodle-smile" d="M104 540 C132 573,184 572,212 540" />
+          <path class="doodle doodle-squiggle" d="M1080 548 C1112 526,1128 570,1160 548 C1188 530,1205 566,1230 550" />
+        </svg>
+      </section>
+
+      <section class="case-scene">
+        <aside class="case-copy">
+          <div class="platform-lockup" aria-label="淘宝和天猫平台">
+            <span class="platform-pill">淘宝 / 天猫</span>
+            <div class="platform-icons" aria-hidden="true">
+              <span class="platform-icon taobao">淘</span>
+              <span class="platform-icon tmall">猫</span>
+            </div>
+          </div>
+          <h2>桌面收纳盒</h2>
+          <p>适合搜索点击、详情页首屏和颜色SKU展示，画面干净、有质感、可信赖。</p>
+        </aside>
+        <div class="product-page">
+          <div class="detail-stream" aria-label="淘宝天猫详情页上下浏览">
+            <figure class="detail-panel tall" data-note="详情页首屏：建立质感和购买欲">
+              <img src="./assets/case-storage-main.svg" alt="桌面收纳盒详情页首屏" />
+              <figcaption>详情页首屏</figcaption>
+            </figure>
+            <figure class="detail-panel" data-note="卖点分屏：分区、透明、可叠放">
+              <img src="./assets/case-storage-detail.svg" alt="桌面收纳盒卖点详情页" />
+              <figcaption>卖点分屏</figcaption>
+            </figure>
+            <figure class="detail-panel" data-note="参数规格：尺寸、材质、包装">
+              <img src="./assets/case-storage-spec.svg" alt="桌面收纳盒参数详情页" />
+              <figcaption>参数规格</figcaption>
+            </figure>
+          </div>
+          <div class="gallery-side">
+            <section class="main-gallery" aria-label="淘宝天猫主图横滑">
+              <div class="gallery-title"><strong>主图</strong></div>
+              <div class="main-strip">
+                <figure data-note="点击主图：主体清楚，背景干净">
+                  <img src="./assets/case-storage-main.svg" alt="桌面收纳盒点击主图" />
+                  <figcaption>点击主图</figcaption>
+                </figure>
+                <figure data-note="场景主图：办公桌和居家场景">
+                  <img src="./assets/case-storage-detail.svg" alt="桌面收纳盒场景主图" />
+                  <figcaption>场景主图</figcaption>
+                </figure>
+                <figure data-note="细节主图：抽屉、分区、边角">
+                  <img src="./assets/case-storage-spec.svg" alt="桌面收纳盒细节主图" />
+                  <figcaption>细节主图</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section class="sku-gallery" aria-label="淘宝天猫SKU横滑">
+              <div class="gallery-title"><strong>SKU</strong></div>
+              <div class="sku-strip">
+                <figure data-note="透明款"><img src="./assets/case-storage-spec.svg" alt="透明款SKU" /><figcaption>透明款</figcaption></figure>
+                <figure data-note="白色款"><img src="./assets/case-storage-main.svg" alt="白色款SKU" /><figcaption>白色款</figcaption></figure>
+                <figure data-note="组合款"><img src="./assets/case-storage-detail.svg" alt="组合款SKU" /><figcaption>组合款</figcaption></figure>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-scene">
+        <aside class="case-copy">
+          <span>1688</span>
+          <h2>不锈钢保温杯</h2>
+          <p>突出规格、起订量、包装、批发组合和稳定供货能力，方便采购方快速判断。</p>
+        </aside>
+        <div class="product-page">
+          <div class="detail-stream" aria-label="1688详情页上下浏览">
+            <figure class="detail-panel tall" data-note="产品总览：规格型号一屏看清">
+              <img src="./assets/case-bottle-main.svg" alt="保温杯产品总览详情页" />
+              <figcaption>产品总览</figcaption>
+            </figure>
+            <figure class="detail-panel" data-note="批发规格：容量、颜色、装箱数">
+              <img src="./assets/case-bottle-spec.svg" alt="保温杯批发规格详情页" />
+              <figcaption>批发规格</figcaption>
+            </figure>
+            <figure class="detail-panel" data-note="包装发货：适合工厂和档口采购">
+              <img src="./assets/case-bottle-pack.svg" alt="保温杯包装发货详情页" />
+              <figcaption>包装发货</figcaption>
+            </figure>
+          </div>
+          <div class="gallery-side">
+            <section class="main-gallery">
+              <div class="gallery-title"><strong>主图</strong></div>
+              <div class="main-strip">
+                <figure data-note="产品主图：突出实物和规格"><img src="./assets/case-bottle-main.svg" alt="保温杯主图" /><figcaption>产品主图</figcaption></figure>
+                <figure data-note="规格主图：容量和材质"><img src="./assets/case-bottle-spec.svg" alt="保温杯规格主图" /><figcaption>规格主图</figcaption></figure>
+              </div>
+            </section>
+            <section class="sku-gallery">
+              <div class="gallery-title"><strong>SKU</strong></div>
+              <div class="sku-strip">
+                <figure data-note="500ml"><img src="./assets/case-bottle-main.svg" alt="500ml SKU" /><figcaption>500ml</figcaption></figure>
+                <figure data-note="750ml"><img src="./assets/case-bottle-spec.svg" alt="750ml SKU" /><figcaption>750ml</figcaption></figure>
+                <figure data-note="礼盒装"><img src="./assets/case-bottle-pack.svg" alt="礼盒装SKU" /><figcaption>礼盒装</figcaption></figure>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-scene">
+        <aside class="case-copy">
+          <span>拼多多</span>
+          <h2>厨房置物架</h2>
+          <p>一眼看懂用途、规格和套装组合，降低买家理解成本。</p>
+        </aside>
+        <div class="product-page">
+          <div class="detail-stream" aria-label="拼多多详情页上下浏览">
+            <figure class="detail-panel tall" data-note="场景首屏：厨房台面收纳">
+              <img src="./assets/case-kitchen-main.svg" alt="厨房置物架场景详情页" />
+              <figcaption>场景首屏</figcaption>
+            </figure>
+            <figure class="detail-panel" data-note="卖点图：节省空间、承重、易清洁">
+              <img src="./assets/case-kitchen-detail.svg" alt="厨房置物架卖点详情页" />
+              <figcaption>卖点图</figcaption>
+            </figure>
+            <figure class="detail-panel" data-note="套装组合：单层、双层、加宽款">
+              <img src="./assets/case-kitchen-set.svg" alt="厨房置物架套装详情页" />
+              <figcaption>套装组合</figcaption>
+            </figure>
+          </div>
+          <div class="gallery-side">
+            <section class="main-gallery">
+              <div class="gallery-title"><strong>主图</strong></div>
+              <div class="main-strip">
+                <figure data-note="用途主图：厨房收纳"><img src="./assets/case-kitchen-main.svg" alt="厨房置物架主图" /><figcaption>用途主图</figcaption></figure>
+                <figure data-note="卖点主图：空间利用"><img src="./assets/case-kitchen-detail.svg" alt="厨房置物架卖点主图" /><figcaption>卖点主图</figcaption></figure>
+              </div>
+            </section>
+            <section class="sku-gallery">
+              <div class="gallery-title"><strong>SKU</strong></div>
+              <div class="sku-strip">
+                <figure data-note="单层款"><img src="./assets/case-kitchen-set.svg" alt="单层款SKU" /><figcaption>单层款</figcaption></figure>
+                <figure data-note="双层款"><img src="./assets/case-kitchen-detail.svg" alt="双层款SKU" /><figcaption>双层款</figcaption></figure>
+                <figure data-note="加宽款"><img src="./assets/case-kitchen-main.svg" alt="加宽款SKU" /><figcaption>加宽款</figcaption></figure>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-scene">
+        <aside class="case-copy">
+          <span>抖音 / 小红书</span>
+          <h2>桌面加湿器</h2>
+          <p>适合内容封面、笔记配图和商品橱窗，画面强调场景感、光影和生活气。</p>
+        </aside>
+        <div class="product-page">
+          <div class="detail-stream" aria-label="内容电商详情页上下浏览">
+            <figure class="detail-panel tall" data-note="种草首屏：桌面生活方式">
+              <img src="./assets/case-humidifier-main.svg" alt="桌面加湿器种草详情页" />
+              <figcaption>种草首屏</figcaption>
+            </figure>
+            <figure class="detail-panel" data-note="使用场景：办公室、卧室、学习桌">
+              <img src="./assets/case-humidifier-detail.svg" alt="桌面加湿器场景详情页" />
+              <figcaption>使用场景</figcaption>
+            </figure>
+          </div>
+          <div class="gallery-side">
+            <section class="main-gallery">
+              <div class="gallery-title"><strong>封面</strong></div>
+              <div class="main-strip">
+                <figure data-note="内容封面：适合笔记和商品橱窗"><img src="./assets/case-humidifier-main.svg" alt="桌面加湿器封面图" /><figcaption>内容封面</figcaption></figure>
+                <figure data-note="场景图：光影和桌面环境"><img src="./assets/case-humidifier-detail.svg" alt="桌面加湿器场景图" /><figcaption>场景图</figcaption></figure>
+              </div>
+            </section>
+            <section class="sku-gallery">
+              <div class="gallery-title"><strong>SKU</strong></div>
+              <div class="sku-strip">
+                <figure data-note="白色款"><img src="./assets/case-humidifier-main.svg" alt="白色加湿器SKU" /><figcaption>白色款</figcaption></figure>
+                <figure data-note="木纹款"><img src="./assets/case-humidifier-detail.svg" alt="木纹加湿器SKU" /><figcaption>木纹款</figcaption></figure>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <h2>选择适合你的平台风格，生成自己的商品图</h2>
+        <a href="./china-workflow.html">免费生成一套</a>
+      </section>
+    </main>
+  </body>
+</html>

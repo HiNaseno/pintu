@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 860" role="img" aria-label="Home storage detail image">
+  <rect width="820" height="860" fill="#fbfbfc"/>
+  <rect x="96" y="104" width="628" height="332" rx="28" fill="#f0f1f3"/>
+  <rect x="142" y="162" width="244" height="220" rx="30" fill="#fff" stroke="#18181b" stroke-width="10"/>
+  <rect x="432" y="162" width="244" height="220" rx="30" fill="#d9f99d" stroke="#18181b" stroke-width="10"/>
+  <path d="M154 530 H666" stroke="#18181b" stroke-width="16" stroke-linecap="round"/>
+  <path d="M154 590 H540" stroke="#71717a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M154 648 H610" stroke="#71717a" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="638" cy="612" r="48" fill="#d9f99d" stroke="#18181b" stroke-width="8"/>
+</svg>
+

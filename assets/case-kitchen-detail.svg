@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 860" role="img" aria-label="Kitchen rack detail image">
+  <rect width="820" height="860" fill="#fff"/>
+  <rect x="104" y="96" width="612" height="360" rx="30" fill="#d9f99d"/>
+  <path d="M180 226 H640 M180 334 H640" stroke="#18181b" stroke-width="14" stroke-linecap="round"/>
+  <path d="M216 188 V380 M604 188 V380" stroke="#18181b" stroke-width="14" stroke-linecap="round"/>
+  <path d="M156 554 H666" stroke="#18181b" stroke-width="16" stroke-linecap="round"/>
+  <path d="M156 616 H576" stroke="#71717a" stroke-width="10" stroke-linecap="round"/>
+  <path d="M156 672 H636" stroke="#71717a" stroke-width="10" stroke-linecap="round"/>
+</svg>
+

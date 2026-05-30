@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 860" role="img" aria-label="Kitchen rack set image">
+  <rect width="820" height="860" fill="#f7f8fa"/>
+  <rect x="124" y="126" width="572" height="568" rx="34" fill="#fff" stroke="#e1e2e5" stroke-width="4"/>
+  <rect x="180" y="204" width="190" height="360" rx="24" fill="#d9f99d" stroke="#18181b" stroke-width="10"/>
+  <rect x="450" y="250" width="180" height="306" rx="24" fill="#f0f1f3" stroke="#18181b" stroke-width="10"/>
+  <path d="M210 658 H610" stroke="#18181b" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="638" cy="180" r="26" fill="#d9f99d" stroke="#18181b" stroke-width="8"/>
+</svg>
+

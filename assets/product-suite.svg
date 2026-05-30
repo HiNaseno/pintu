@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" role="img" aria-label="Product image suite placeholder">
+  <rect width="720" height="900" fill="#f7f8fa"/>
+  <path d="M0 660 C160 600 232 716 388 642 C516 582 610 624 720 572 L720 900 L0 900 Z" fill="#d9f99d"/>
+  <rect x="250" y="236" width="220" height="420" rx="42" fill="#18181b"/>
+  <rect x="292" y="170" width="136" height="94" rx="24" fill="#2f3034"/>
+  <rect x="286" y="318" width="148" height="172" rx="22" fill="#fff"/>
+  <rect x="310" y="346" width="100" height="22" rx="11" fill="#18181b"/>
+  <rect x="322" y="392" width="76" height="12" rx="6" fill="#71717a"/>
+  <rect x="332" y="420" width="56" height="12" rx="6" fill="#d9f99d"/>
+  <circle cx="210" cy="660" r="52" fill="#fff" stroke="#18181b" stroke-width="10"/>
+  <circle cx="512" cy="670" r="36" fill="#fff" stroke="#18181b" stroke-width="10"/>
+  <path d="M80 166 C156 92 288 102 340 198" fill="none" stroke="#18181b" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 18"/>
+</svg>
+

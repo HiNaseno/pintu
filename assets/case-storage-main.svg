@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 1100" role="img" aria-label="Home storage product main image">
+  <rect width="820" height="1100" fill="#f6f4ef"/>
+  <rect x="94" y="120" width="632" height="820" rx="28" fill="#fff" stroke="#e1e2e5" stroke-width="4"/>
+  <rect x="170" y="310" width="480" height="420" rx="44" fill="#e9ecef" stroke="#18181b" stroke-width="12"/>
+  <rect x="210" y="260" width="400" height="98" rx="44" fill="#d9f99d" stroke="#18181b" stroke-width="12"/>
+  <rect x="230" y="386" width="140" height="250" rx="18" fill="#fff"/>
+  <rect x="410" y="386" width="180" height="250" rx="18" fill="#fff"/>
+  <path d="M170 770 H650" stroke="#18181b" stroke-width="12" stroke-linecap="round"/>
+  <path d="M230 828 H590" stroke="#71717a" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="214" cy="200" r="28" fill="#18181b"/>
+  <circle cx="606" cy="210" r="20" fill="#d9f99d" stroke="#18181b" stroke-width="8"/>
+</svg>
+
