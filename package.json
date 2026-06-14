@@ -1,0 +1,21 @@
+{
+  "name": "pintu-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "service:install": "bash service/install-macos-service.sh",
+    "service:uninstall": "bash service/uninstall-macos-service.sh",
+    "service:status": "launchctl print gui/$(id -u)/com.pintu-ai.local"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.0",
+    "openai": "^5.8.2",
+    "sharp": "^0.34.2"
+  }
+}

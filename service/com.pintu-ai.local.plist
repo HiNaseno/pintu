@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.pintu-ai.local</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/xiaoyan/Documents/Codex/devtools/node/bin/node</string>
+    <string>/Users/xiaoyan/Documents/Three-dimensional square/server.js</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>/Users/xiaoyan/Documents/Three-dimensional square</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>NODE_ENV</key>
+    <string>development</string>
+  </dict>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>5</integer>
+  <key>StandardOutPath</key>
+  <string>/Users/xiaoyan/Documents/Three-dimensional square/runtime/logs/server.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/xiaoyan/Documents/Three-dimensional square/runtime/logs/server.error.log</string>
+</dict>
+</plist>

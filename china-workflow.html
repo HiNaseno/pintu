@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>电商视觉生成工作台 - 品图 AI</title>
-    <link rel="stylesheet" href="./china-workflow.css" />
+    <script>
+      if (window.location.protocol === "file:") {
+        window.location.replace(
+          `http://localhost:5176/china-workflow.html${window.location.search}${window.location.hash}`
+        );
+      }
+    </script>
+    <link rel="stylesheet" href="./china-workflow.css?v=20260613-visual-refresh" />
   </head>
   <body>
     <header class="topbar">
@@ -24,20 +31,16 @@
           <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Zm-7 13 1.2 3.3L9.5 20l-3.3 1.2L5 24l-1.2-2.8L.5 20l3.3-1.7L5 15Z" /></svg>
           AI 电商视觉生成
         </p>
-        <h1>生成电商主图</h1>
-        <p>上传产品图，填写商品信息，快速生成适合国内电商平台上架使用的主图。</p>
+        <h1>AI 电商主图生成</h1>
+        <p>上传商品图，自动分析卖点，一键生成可上架主图</p>
       </section>
 
       <section class="progress" aria-label="生成流程">
-        <div class="progress-step active"><span>1</span>输入</div>
+        <div class="progress-step active"><span>1</span>上传商品图</div>
         <i></i>
-        <div class="progress-step"><span>2</span>分析中</div>
+        <div class="progress-step"><span>2</span>确认生成方案</div>
         <i></i>
-        <div class="progress-step"><span>3</span>确认方案</div>
-        <i></i>
-        <div class="progress-step"><span>4</span>生成中</div>
-        <i></i>
-        <div class="progress-step"><span>5</span>完成</div>
+        <div class="progress-step"><span>3</span>生成结果</div>
       </section>
 
       <section class="generator-layout">
@@ -49,19 +52,27 @@
                   <svg viewBox="0 0 24 24"><path d="M5 4a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H5Zm0 2h14a1 1 0 0 1 1 1v7.7l-3.3-3.3a1 1 0 0 0-1.4 0L12 14.7l-1.8-1.8a1 1 0 0 0-1.4 0L4 17.7V7a1 1 0 0 1 1-1Z" /></svg>
                 </span>
                 <div>
-                  <strong>商品图</strong>
-                  <small>上传清晰的产品图片</small>
+                  <strong>上传商品图片</strong>
+                  <small>支持正面、侧面、细节、SKU 图</small>
                 </div>
               </div>
               <em>0/6</em>
             </div>
+            <input
+              class="upload-input"
+              type="file"
+              accept="image/png,image/jpeg,image/webp"
+              multiple
+              hidden
+            />
             <button class="dropzone" type="button">
               <span class="upload-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 3a1 1 0 0 1 .7.29l4 4a1 1 0 1 1-1.4 1.42L13 6.41V16a1 1 0 1 1-2 0V6.41L8.7 8.7a1 1 0 1 1-1.4-1.42l4-4A1 1 0 0 1 12 3ZM5 15a1 1 0 0 1 1 1v2h12v-2a1 1 0 1 1 2 0v2.5A1.5 1.5 0 0 1 18.5 20h-13A1.5 1.5 0 0 1 4 18.5V16a1 1 0 0 1 1-1Z" /></svg>
               </span>
-              <strong>上传正面、侧面、细节、SKU图或品牌素材</strong>
-              <small>建议选择清晰、真实、角度完整的图片</small>
+              <strong>上传商品图片</strong>
+              <small>支持正面、侧面、细节、SKU 图</small>
             </button>
+            <div class="upload-previews" aria-live="polite"></div>
           </article>
 
           <article class="settings-card">
@@ -69,12 +80,33 @@
               <button class="active" type="button" data-mode="main">主图</button>
               <button type="button" data-mode="detail">详情图</button>
               <button type="button" data-mode="sku">SKU图</button>
-              <button type="button" data-mode="logo">Logo</button>
             </div>
+
+            <details class="more-modes">
+              <summary>更多功能</summary>
+              <div class="more-mode-buttons" aria-label="更多生成类型">
+                <button type="button" data-mode="logo">Logo</button>
+                <button type="button" data-mode="style">风格复刻</button>
+                <button type="button" data-mode="retouch">批量精修</button>
+              </div>
+            </details>
+
+            <label id="prompt-field">
+              <span class="field-label-row">
+                <span>主图要求</span>
+                <button class="prompt-helper" type="button" aria-describedby="prompt-helper-status">
+                  <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
+                  <b>AI帮写</b>
+                  <span>?</span>
+                </button>
+              </span>
+              <textarea class="requirements-input" placeholder="请输入商品名称、核心卖点、风格要求、平台用途等"></textarea>
+            </label>
+            <small class="prompt-helper-status" id="prompt-helper-status" aria-live="polite"></small>
 
             <label>
               目标平台
-              <select>
+              <select class="platform-select">
                 <option>智能匹配</option>
                 <option>淘宝 / 天猫</option>
                 <option>拼多多</option>
@@ -95,39 +127,22 @@
               <small class="field-note">选择实际上架平台，系统会适配图片尺寸和内容结构。</small>
             </label>
 
-            <label id="prompt-field">
-              主图要求
-              <textarea placeholder="建议输入：产品名称、核心卖点、买家人群、上架平台、图片风格等"></textarea>
-            </label>
-
-            <button class="prompt-helper" type="button">
-              <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
-              AI帮写
-              <span>?</span>
-            </button>
-
-            <label>
+            <label class="language-field">
               目标语言
-              <select>
+              <select class="language-select">
+                <option selected>中文（简体）</option>
                 <option>无文字（纯视觉）</option>
-                <option>中文（简体）</option>
                 <option>中文（繁体）</option>
                 <option>英语</option>
                 <option>中英结合</option>
               </select>
+              <small class="field-note">国内平台默认生成中文卖点，可切换为纯视觉。</small>
             </label>
 
-            <div class="two-col">
-              <label>
-                生成模式
-                <select>
-                  <option>标准生成</option>
-                  <option>真实修图</option>
-                </select>
-              </label>
+            <div class="ratio-row">
               <label>
                 尺寸比例
-                <select>
+                <select class="ratio-select">
                   <option>1:1 正方形</option>
                   <option>2:3 竖版</option>
                   <option>3:2 横版</option>
@@ -145,29 +160,11 @@
               </label>
             </div>
 
-            <div class="two-col">
-              <label>
-                画质
-                <select>
-                  <option>自动</option>
-                  <option>高清</option>
-                </select>
-              </label>
-              <label>
-                生成数量
-                <select>
-                  <option>单张预览</option>
-                  <option>5张主图</option>
-                  <option>主图+详情页+SKU</option>
-                  <option>4款Logo方案</option>
-                </select>
-              </label>
-            </div>
           </article>
 
           <button class="analyze-button" type="button">
             <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
-            分析产品
+            生成方案
           </button>
         </aside>
 
@@ -178,22 +175,284 @@
                 <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
               </span>
               <div>
-                <strong>生成结果</strong>
-                <small>完成商品信息后开始生成</small>
+                <strong>创作画布</strong>
+                <small>上传商品图后生成推荐方案</small>
               </div>
             </div>
-            <a href="./china-examples.html">查看案例</a>
+            <div class="result-actions">
+              <button class="back-results" type="button" hidden>返回结果</button>
+              <a href="./china-examples.html">查看案例</a>
+            </div>
           </div>
-          <div class="empty-result">
-            <span>
+
+          <div class="empty-result result-view active" data-result-view="empty">
+            <div class="empty-canvas">
+              <span>
+                <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
+              </span>
+              <h2>开始创建你的电商主图</h2>
+              <p>上传商品图后，AI 会自动分析商品结构、材质、颜色、适合平台与主图方向。</p>
+              <div class="empty-guide-grid">
+                <article>
+                  <strong>可生成内容</strong>
+                  <small>主图 / 详情页 / SKU图</small>
+                </article>
+                <article>
+                  <strong>适合平台</strong>
+                  <small>淘宝 / 拼多多 / 抖音 / 小红书</small>
+                </article>
+                <article>
+                  <strong>支持能力</strong>
+                  <small>卖点提炼 / 风格统一 / 批量出图</small>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="processing-result result-view" data-result-view="processing">
+            <span class="processing-mark">
               <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
             </span>
-            <p>上传产品图并填写要求后<br />点击“分析产品”开始生成</p>
+            <strong>正在分析商品</strong>
+            <p>识别主体、卖点与平台图片结构</p>
+            <div class="processing-bar"><i></i></div>
+          </div>
+
+          <div class="confirm-result result-view" data-result-view="confirm">
+            <div class="confirm-card">
+              <div class="confirm-heading">
+                <div>
+                  <span>AI 分析完成</span>
+                  <strong class="analysis-product">等待分析结果</strong>
+                  <small>确认方案后再开始图片生成</small>
+                </div>
+                <em><i></i> 尚未产生图片费用</em>
+              </div>
+
+              <div class="analysis-brief">
+                <section class="analysis-selling">
+                  <div class="analysis-section-title">
+                    <h2>核心卖点</h2>
+                    <button class="add-selling-point" type="button">新增卖点</button>
+                  </div>
+                  <ul class="analysis-selling-points"></ul>
+                </section>
+                <section class="analysis-visual">
+                  <h2>视觉方向</h2>
+                  <p class="analysis-direction"></p>
+                </section>
+              </div>
+
+              <section class="analysis-style-plan">
+                <div class="analysis-section-title">
+                  <div>
+                    <h2>风格方向</h2>
+                    <p>根据商品品类推荐，可选择一个方向或自定义。</p>
+                  </div>
+                  <span>单选</span>
+                </div>
+                <div class="style-suggestions" role="radiogroup" aria-label="风格方向"></div>
+                <label class="custom-style-field">
+                  自定义风格
+                  <input class="custom-style-input" type="text" maxlength="80" placeholder="例如：浅色高级感、干净白底、强对比促销风" />
+                </label>
+              </section>
+
+              <section class="analysis-output-plan">
+                <div class="analysis-section-title">
+                  <div>
+                    <h2>AI 推荐生成方案</h2>
+                    <p>先按平台推荐一套，可在这里调整数量和方向。</p>
+                  </div>
+                  <span class="analysis-output-count">1 项</span>
+                </div>
+                <div class="analysis-plan-list" aria-label="推荐素材结构"></div>
+                <div class="analysis-output-subhead">
+                  <strong>生成清单</strong>
+                  <small>每张 / 每屏都可以改标题、角色和方向，完整指令按需展开。</small>
+                </div>
+                <div class="analysis-outputs"></div>
+              </section>
+
+              <details class="analysis-advanced">
+                <summary>
+                  <span>
+                    <strong>高级确认</strong>
+                    <small>主体保护与风险提醒</small>
+                  </span>
+                  <i aria-hidden="true"></i>
+                </summary>
+                <div class="analysis-advanced-content">
+                  <section>
+                    <h2>主体保护</h2>
+                    <ul class="analysis-protection"></ul>
+                  </section>
+                  <div class="analysis-warnings" hidden></div>
+                </div>
+              </details>
+
+              <div class="confirm-actions">
+                <button class="reanalyze-button" type="button">重新分析</button>
+                <div>
+                  <small>确认后将调用图片模型</small>
+                  <button class="confirm-generate-button" type="button">确认生成</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="results-gallery result-view" data-result-view="gallery">
+            <div class="gallery-summary">
+              <div>
+                <span>本次生成</span>
+                <strong class="gallery-count">已生成可编辑素材</strong>
+              </div>
+              <p>选择任意图片继续对话修改，原图和历史版本都会保留。</p>
+              <button class="open-studio-button" type="button">进入修图工作室</button>
+            </div>
+            <p class="gallery-warning" hidden></p>
+            <div class="result-grid" aria-live="polite"></div>
+          </div>
+
+          <div class="error-result result-view" data-result-view="error">
+            <div class="error-card">
+              <span>生成未完成</span>
+              <strong class="error-title">AI 服务暂时不可用</strong>
+              <p class="error-message">请检查网络或稍后重试。</p>
+              <small class="error-request-id"></small>
+              <div class="error-actions">
+                <button class="retry-button" type="button">重试</button>
+                <button class="reset-button" type="button">重新开始</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="refine-workspace result-view" data-result-view="editor">
+            <div class="refine-shell">
+              <div class="refine-toolbar">
+                <div class="refine-identity">
+                  <button class="editor-back-results" type="button" aria-label="返回生成结果" title="返回生成结果">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+                  </button>
+                  <button
+                    class="lock-state"
+                    type="button"
+                    aria-pressed="false"
+                    title="显示商品主体保护范围"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Z" /></svg>
+                    商品主体已锁定
+                  </button>
+                  <div>
+                    <strong class="editing-title">点击主图 · AI 精修</strong>
+                    <span class="selection-status">可直接描述修改，也可圈选局部</span>
+                  </div>
+                </div>
+                <div class="editor-tools" aria-label="圈选工具">
+                  <label title="调整画笔大小">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 4.5 5 5L9 20H4v-5L14.5 4.5Z"/><path d="m12 7 5 5"/></svg>
+                    <span class="sr-only">画笔大小</span>
+                    <input class="brush-size" type="range" min="12" max="54" value="28" aria-label="画笔大小" />
+                  </label>
+                  <button class="undo-mask" type="button" aria-label="撤销圈选" title="撤销圈选">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7 4 12l5 5"/><path d="M5 12h8a6 6 0 1 1 0 12"/></svg>
+                  </button>
+                  <button class="clear-mask" type="button" aria-label="清除选区" title="清除选区">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>
+                  </button>
+                  <button class="compare-original" type="button" aria-pressed="false" aria-label="对比原图" title="对比原图">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c5.2 0 8.5 5 8.5 7s-3.3 7-8.5 7-8.5-5-8.5-7S6.8 5 12 5Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="refine-layout">
+                <aside class="studio-queue" aria-label="生成图片队列">
+                  <div class="studio-queue-head">
+                    <div>
+                      <span>全部作品</span>
+                      <strong>修图队列</strong>
+                    </div>
+                    <em class="studio-queue-count">0 张</em>
+                  </div>
+                  <div class="studio-target-toggle" role="group" aria-label="修改范围">
+                    <button class="active" type="button" data-edit-target="current">当前图</button>
+                    <button type="button" data-edit-target="selected">选中图片</button>
+                  </div>
+                  <div class="studio-queue-list"></div>
+                  <p class="studio-batch-note">多选后可批量应用文字修改；圈选局部时只修改当前图。</p>
+                </aside>
+                <div class="image-editor">
+                  <div class="edit-stage">
+                    <img class="editing-image" alt="待精修图片" />
+                    <span class="product-lock-zone">主体保护区</span>
+                    <canvas class="mask-canvas" aria-label="图片圈选画布"></canvas>
+                    <span class="selection-tip">需要局部修改时，可在图上涂抹位置</span>
+                  </div>
+                  <div class="version-panel">
+                    <div class="version-head">
+                      <strong>版本</strong>
+                      <span>每次修改都会保留原图</span>
+                    </div>
+                    <div class="version-list" aria-label="图片版本"></div>
+                    <button class="set-final-version" type="button">设为最终成品</button>
+                  </div>
+                </div>
+
+                <aside class="chat-panel" aria-label="AI对话精修">
+                  <div class="chat-head">
+                    <div>
+                      <span class="ai-avatar">AI</span>
+                      <div>
+                        <strong>AI 精修</strong>
+                        <small>直接描述即可修改，圈选用于局部精修</small>
+                      </div>
+                    </div>
+                    <span class="protection-state">保护开启</span>
+                  </div>
+                  <div class="chat-messages" aria-live="polite"></div>
+                  <div class="chat-composer">
+                    <div class="quick-prompts" aria-label="快捷修改建议">
+                      <button type="button" data-quick-prompt="把标题改得更简洁，卖点更清楚">修改文字</button>
+                      <button type="button" data-quick-prompt="调整画面排版和留白，让主体更突出">调整排版</button>
+                      <button type="button" data-quick-prompt="重新组织卖点说明，让表达更适合电商主图">优化卖点</button>
+                      <button type="button" data-quick-prompt="更换为更干净高级的背景，保留商品真实主体">更换背景</button>
+                    </div>
+                    <textarea class="chat-input" placeholder="直接说想怎么改；需要局部修改时可在图上圈选"></textarea>
+                    <div>
+                      <span class="composer-note">未圈选时，AI 会按整张图理解修改。</span>
+                      <button class="send-edit" type="button" disabled>发送修改</button>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
           </div>
         </section>
       </section>
     </main>
 
-    <script src="./china-workflow.js"></script>
+    <div class="image-lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close-lightbox></div>
+      <section class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+        <button class="lightbox-close" type="button" data-close-lightbox aria-label="关闭大图预览">×</button>
+        <div class="lightbox-visual">
+          <img class="lightbox-image" alt="生成结果大图" />
+        </div>
+        <div class="lightbox-info">
+          <div>
+            <span class="lightbox-type">生成图片</span>
+            <h2 id="lightbox-title">生成结果</h2>
+            <p class="lightbox-meta"></p>
+          </div>
+          <div class="lightbox-actions">
+            <button class="lightbox-refine" type="button">对话修改</button>
+            <a class="lightbox-download" href="#">下载图片</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="./china-workflow.js?v=20260612-timeout-recovery"></script>
   </body>
 </html>

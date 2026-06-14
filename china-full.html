@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>品图 AI - 电商商品图与Logo生成</title>
-    <link rel="stylesheet" href="./china-full.css" />
+    <title>品图 AI - 国内电商商品图生成工作台</title>
+    <link rel="stylesheet" href="./china-full.css?v=20260613-visual-refresh" />
   </head>
   <body>
     <header class="site-header">
@@ -13,21 +13,94 @@
         <span>品图 AI</span>
       </a>
       <nav class="site-nav" aria-label="页面导航">
-        <a href="#studio">生成能力</a>
-        <a href="#workflow">流程</a>
+        <a href="#studio">功能</a>
+        <a href="#workflow">工作流</a>
         <a href="#cases">案例</a>
+        <a href="#faq">FAQ</a>
       </nav>
-      <a class="nav-button" href="./china-workflow.html">免费试用</a>
+      <a class="nav-button" href="./china-workflow.html">开始试用</a>
     </header>
 
     <main>
       <section class="hero-panel">
         <div class="hero-copy">
-          <h1>一张图，生成全平台上新视觉</h1>
+          <p class="eyebrow">AI 电商生图 · 多平台适配</p>
+          <h1>上传一张图<br />生成整套上新素材</h1>
+          <p>主图、详情页、SKU 图、店铺视觉与平台尺寸一次生成，适配淘宝、天猫、1688、拼多多等常用场景。</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="./china-workflow.html">开始免费试用</a>
+            <a class="secondary-button" href="./china-examples.html">查看生成案例</a>
+          </div>
+          <p class="hero-assurance">无需设计基础，上传商品图即可开始。</p>
+          <div class="hero-stats" aria-label="产品能力概览">
+            <span><strong>5 类素材</strong>主图 / 详情页 / SKU / Logo / 平台图</span>
+            <span><strong>多平台适配</strong>淘宝 / 天猫 / 1688 / 拼多多</span>
+            <span><strong>统一导出</strong>尺寸、风格、命名一次整理</span>
+          </div>
         </div>
 
-        <div class="hero-flow" aria-label="平台生成流程图">
-          <img src="./platform-flow.svg" alt="平台生成流程图：上传素材，AI分析商品，适配平台，输出主图、详情页、SKU图和Logo" />
+        <div class="hero-visual" aria-label="AI生成工作台预览">
+          <div class="hero-workbench flow-demo">
+            <div class="workbench-top">
+              <span><i aria-hidden="true"></i>AI 生成工作台</span>
+              <strong>商品图套装</strong>
+            </div>
+            <div class="workbench-body">
+              <div class="upload-card">
+                <div class="upload-photo" aria-hidden="true">
+                  <img src="./assets/photos/bottle-main.jpg" alt="" />
+                  <span class="scan-beam"></span>
+                  <span class="scan-grid"></span>
+                </div>
+                <span>上传商品图</span>
+                <small>实拍图 / SKU / 包装</small>
+              </div>
+
+              <div class="analysis-step" aria-label="AI 分析商品">
+                <span class="analysis-line" aria-hidden="true"></span>
+                <span class="analysis-icon" aria-hidden="true">✦</span>
+                <strong>AI 分析中</strong>
+                <small>主体 · 卖点 · 风格</small>
+              </div>
+
+              <div class="generated-results" aria-label="生成结果预览">
+                <div class="results-heading">
+                  <span>生成结果</span>
+                  <small><i class="result-dot" aria-hidden="true"></i><b class="count-done">3</b> 项已完成</small>
+                </div>
+                <div class="result-preview-grid">
+                  <figure class="result-preview main-preview" style="--pop-delay: 0ms">
+                    <img src="./assets/photos/bottle-main.jpg" alt="电商主图生成结果" />
+                    <figcaption>主图</figcaption>
+                  </figure>
+                  <figure class="result-preview detail-preview" style="--pop-delay: 360ms">
+                    <img src="./assets/photos/bottle-pack.jpg" alt="电商详情页生成结果" />
+                    <figcaption>详情页</figcaption>
+                  </figure>
+                  <figure class="result-preview sku-preview" style="--pop-delay: 720ms">
+                    <img src="./assets/photos/bottle-spec.jpg" alt="电商SKU图生成结果" />
+                    <figcaption>SKU 图</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="result-list" aria-label="生成结果类型">
+                <span class="active">主图</span>
+                <span>详情页</span>
+                <span>SKU 图</span>
+                <span>Logo</span>
+              </div>
+            </div>
+            <div class="workbench-footer">
+              <small>平台适配</small>
+              <div>
+                <span>淘宝</span>
+                <span>天猫</span>
+                <span>1688</span>
+                <span>拼多多</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -58,79 +131,235 @@
 
       <section class="studio-section" id="studio">
         <div class="section-heading compact">
-          <p class="section-label">生成能力</p>
-          <h2>把商品、平台和品牌放进同一套视觉系统</h2>
-          <p>少做零散图片，直接生成能上架、能复用、能保持风格一致的电商视觉素材。</p>
+          <p class="section-label">AI 能力演示台</p>
+          <h2>一套素材覆盖上新全流程</h2>
+          <p>六项能力按上新流程自动演示，也可以随时选择你最关心的环节。</p>
         </div>
 
-        <div class="studio-board">
-          <aside class="studio-tabs" aria-label="生成类型">
-            <button class="active" type="button" data-home-tab="product">
-              <span>01</span>
-              <strong>商品图套装</strong>
-              <small>主图、详情页、SKU图</small>
-            </button>
-            <button type="button" data-home-tab="logo">
-              <span>02</span>
-              <strong>店铺Logo设计</strong>
-              <small>字标、图标、组合标</small>
-            </button>
-            <button type="button" data-home-tab="export">
-              <span>03</span>
-              <strong>平台导出包</strong>
-              <small>尺寸、命名、图片组</small>
-            </button>
-          </aside>
-
-          <div class="studio-preview">
-            <article class="preview-panel active" data-home-panel="product">
-              <div class="preview-copy">
-                <span>商品图套装</span>
-                <h3>从一张实拍图，延展成一套上新素材</h3>
-                <p>保护商品主体，优化光线、背景、构图和卖点表达，适合常见实物商品快速上架。</p>
+        <div class="capability-console">
+          <div class="capability-nav" role="tablist" aria-label="AI 能力阶段">
+            <div class="capability-group active" data-capability-stage="create">
+              <div class="capability-group-heading">
+                <span>01</span>
+                <div>
+                  <strong>生成素材</strong>
+                  <small>从输入到基础视觉</small>
+                </div>
               </div>
-              <div class="preview-product">
-                <img src="./assets/product-suite.svg" alt="商品图套装预览" />
-                <div class="preview-stack">
-                  <span>主图</span>
-                  <span>卖点图</span>
-                  <span>详情页</span>
-                  <span>SKU</span>
+              <div class="capability-chips">
+                <button class="active" type="button" role="tab" aria-selected="true" data-home-tab="product">
+                  商品图套装<i class="tab-progress" aria-hidden="true"></i>
+                </button>
+                <button type="button" role="tab" aria-selected="false" data-home-tab="logo">
+                  店铺 Logo 设计<i class="tab-progress" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="capability-group" data-capability-stage="polish">
+              <div class="capability-group-heading">
+                <span>02</span>
+                <div>
+                  <strong>统一质感</strong>
+                  <small>建立一致视觉系统</small>
+                </div>
+              </div>
+              <div class="capability-chips">
+                <button type="button" role="tab" aria-selected="false" data-home-tab="style">
+                  视觉风格复刻<i class="tab-progress" aria-hidden="true"></i>
+                </button>
+                <button type="button" role="tab" aria-selected="false" data-home-tab="retouch">
+                  批量商品精修<i class="tab-progress" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="capability-group" data-capability-stage="deliver">
+              <div class="capability-group-heading">
+                <span>03</span>
+                <div>
+                  <strong>修改导出</strong>
+                  <small>微调并适配平台</small>
+                </div>
+              </div>
+              <div class="capability-chips">
+                <button type="button" role="tab" aria-selected="false" data-home-tab="export">
+                  平台导出包<i class="tab-progress" aria-hidden="true"></i>
+                </button>
+                <button type="button" role="tab" aria-selected="false" data-home-tab="refine">
+                  对话精修<i class="tab-progress" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="capability-stage">
+            <article class="capability-panel active" role="tabpanel" data-home-panel="product">
+              <div class="capability-copy">
+                <span class="capability-kicker">商品图套装</span>
+                <h3>一张图，生成一组可上架素材</h3>
+                <p>自动延展主图、卖点图、详情页和 SKU 图，统一光影、比例和电商表达。</p>
+                <div class="capability-tags" aria-label="商品图套装能力">
+                  <span>主图</span><span>卖点图</span><span>详情页</span><span>SKU 图</span>
+                </div>
+              </div>
+              <div class="product-ui suite-ui" aria-label="商品图套装演示">
+                <div class="ui-toolbar"><span><i></i>AI 生成工作台</span><small>商品图套装</small></div>
+                <div class="suite-flow">
+                  <div class="suite-input">
+                    <small>上传商品图</small>
+                    <div class="suite-input-media">
+                      <img src="./assets/photos/storage-main.jpg" alt="上传的商品图" />
+                      <span class="scan-beam"></span>
+                    </div>
+                    <span>商品主体已识别</span>
+                  </div>
+                  <div class="suite-arrow"><b>AI</b><span>分析生成</span></div>
+                  <div class="suite-outputs">
+                    <figure class="output-main" style="--pop-delay: 0ms"><img src="./assets/photos/storage-main.jpg" alt="主图结果" /><figcaption>主图</figcaption></figure>
+                    <figure style="--pop-delay: 200ms"><img src="./assets/photos/storage-detail.jpg" alt="卖点图结果" /><figcaption>卖点图</figcaption></figure>
+                    <figure style="--pop-delay: 400ms"><img src="./assets/photos/storage-scene.jpg" alt="详情页结果" /><figcaption>详情页</figcaption></figure>
+                    <figure style="--pop-delay: 600ms"><img src="./assets/photos/bottle-spec.jpg" alt="SKU图结果" /><figcaption>SKU 图</figcaption></figure>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <article class="preview-panel" data-home-panel="logo">
-              <div class="preview-copy">
-                <span>店铺Logo设计</span>
-                <h3>让小店也有统一的品牌识别</h3>
-                <p>输入店铺名、主营品类和风格关键词，生成适合头像、店招、包装贴纸和详情页使用的Logo方案。</p>
+            <article class="capability-panel" role="tabpanel" data-home-panel="logo">
+              <div class="capability-copy">
+                <span class="capability-kicker">店铺 Logo 设计</span>
+                <h3>让小店也有统一品牌识别</h3>
+                <p>输入店铺名、主营类目和风格关键词，生成适合头像、店招、包装贴纸和详情页使用的 Logo 方向。</p>
+                <div class="capability-tags" aria-label="Logo设计能力">
+                  <span>字标</span><span>图标</span><span>组合标</span><span>店招</span>
+                </div>
               </div>
-              <div class="logo-board">
-                <div class="brand-logo big">木</div>
-                <div class="logo-row">
-                  <span>木作良品</span>
-                  <span>MUZUO</span>
-                  <span>家居百货</span>
+              <div class="product-ui logo-ui" aria-label="Logo 生成面板">
+                <div class="ui-toolbar"><span><i></i>Logo 生成器</span><small>3 个方向</small></div>
+                <div class="logo-control">
+                  <label>店铺名称<strong>木作良品</strong></label>
+                  <label>主营类目<strong>家居百货</strong></label>
+                  <div class="style-options"><span class="active">简约</span><span>自然</span><span>现代</span></div>
+                </div>
+                <div class="logo-options">
+                  <div><b>木</b><span>木作良品</span></div>
+                  <div><b>M</b><span>MUZUO</span></div>
+                  <div><b>木+</b><span>木作生活</span></div>
                 </div>
               </div>
             </article>
 
-            <article class="preview-panel" data-home-panel="export">
-              <div class="preview-copy">
-                <span>平台导出包</span>
+            <article class="capability-panel" role="tabpanel" data-home-panel="style">
+              <div class="capability-copy">
+                <span class="capability-kicker">视觉风格复刻</span>
+                <h3>参考喜欢的风格，不照搬别人的素材</h3>
+                <p>提取参考图的光影、配色、构图和版式节奏，生成适合自己商品的统一风格图。</p>
+                <div class="capability-tags" aria-label="风格复刻能力">
+                  <span>光影</span><span>构图</span><span>色彩</span><span>版式</span>
+                </div>
+              </div>
+              <div class="product-ui compare-ui" aria-label="风格复刻前后对比">
+                <div class="ui-toolbar"><span><i></i>风格提取</span><small>主体保持一致</small></div>
+                <div class="ba-slider" data-ba-slider style="--reveal: 52%">
+                  <img class="ba-img ba-after" src="./assets/photos/style-ref.jpg" alt="AI 风格复刻后的商品图" />
+                  <div class="ba-before">
+                    <img class="ba-img" src="./assets/photos/style-ref.jpg" alt="原始拍摄的商品图" />
+                  </div>
+                  <span class="ba-tag ba-tag-before">原图</span>
+                  <span class="ba-tag ba-tag-after">风格复刻</span>
+                  <div class="ba-handle" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" /></svg>
+                  </div>
+                  <input class="ba-range" type="range" min="2" max="98" value="52" aria-label="拖动对比原图与 AI 风格复刻效果" />
+                </div>
+                <div class="extract-tags"><span>提取光影</span><span>提取配色</span><span>重建版式</span></div>
+              </div>
+            </article>
+
+            <article class="capability-panel" role="tabpanel" data-home-panel="retouch">
+              <div class="capability-copy">
+                <span class="capability-kicker">批量商品精修</span>
+                <h3>让一批 SKU 看起来更整齐</h3>
+                <p>统一白底、阴影、色温、清晰度和尺寸，让商品库图片更整齐，也更适合多平台铺货。</p>
+                <div class="capability-tags" aria-label="批量精修能力">
+                  <span>去背景</span><span>校色</span><span>补光</span><span>批量导出</span>
+                </div>
+              </div>
+              <div class="product-ui batch-ui" aria-label="批量商品精修列表">
+                <div class="ui-toolbar"><span><i></i>批量精修</span><small>6 / 6 已完成</small></div>
+                <div class="batch-grid">
+                  <figure style="--pop-delay: 0ms"><img src="./assets/photos/storage-main.jpg" alt="去背景结果" /><figcaption>去背景</figcaption></figure>
+                  <figure style="--pop-delay: 90ms"><img src="./assets/photos/bottle-main.jpg" alt="校色结果" /><figcaption>校色</figcaption></figure>
+                  <figure style="--pop-delay: 180ms"><img src="./assets/photos/humidifier-main.jpg" alt="补光结果" /><figcaption>补光</figcaption></figure>
+                  <figure style="--pop-delay: 270ms"><img src="./assets/photos/kitchen-main.jpg" alt="统一阴影结果" /><figcaption>统一阴影</figcaption></figure>
+                  <figure style="--pop-delay: 360ms"><img src="./assets/photos/storage-detail.jpg" alt="细节锐化结果" /><figcaption>细节锐化</figcaption></figure>
+                  <figure style="--pop-delay: 450ms"><img src="./assets/photos/kitchen-set.jpg" alt="批量导出结果" /><figcaption>批量导出</figcaption></figure>
+                </div>
+              </div>
+            </article>
+
+            <article class="capability-panel" role="tabpanel" data-home-panel="export">
+              <div class="capability-copy">
+                <span class="capability-kicker">平台导出包</span>
                 <h3>一套素材，适配多个上架场景</h3>
-                <p>按平台常见比例和内容结构整理图片，减少重复改尺寸、改命名、改版式的工作。</p>
+                <p>按平台常用比例和内容结构整理图片，减少重复改尺寸、改命名、改版式的工作。</p>
+                <div class="capability-tags" aria-label="平台导出能力">
+                  <span>淘宝</span><span>天猫</span><span>1688</span><span>拼多多</span><span>小红书</span>
+                </div>
               </div>
-              <div class="export-grid">
-                <span>淘宝 800 × 800</span>
-                <span>1688 750长图</span>
-                <span>拼多多卖点图</span>
-                <span>小红书封面图</span>
-                <span>SKU规格图</span>
-                <span>Logo透明底</span>
+              <div class="product-ui export-ui" aria-label="平台导出包">
+                <div class="ui-toolbar"><span><i></i>上新素材包</span><small>整理完成</small></div>
+                <div class="export-folder">
+                  <div class="folder-tab">桌面收纳盒_上新素材</div>
+                  <div class="export-files">
+                    <span><b>淘宝</b><small>800 × 800</small></span>
+                    <span><b>1688</b><small>750 长图</small></span>
+                    <span><b>拼多多</b><small>卖点图</small></span>
+                    <span><b>小红书</b><small>封面图</small></span>
+                    <span><b>SKU</b><small>规格图</small></span>
+                    <span><b>Logo</b><small>透明底</small></span>
+                  </div>
+                </div>
               </div>
             </article>
+
+            <article class="capability-panel" role="tabpanel" data-home-panel="refine">
+              <div class="capability-copy">
+                <span class="capability-kicker">对话精修</span>
+                <h3>哪里不满意，就圈哪里改</h3>
+                <p>生成后选中图片，圈选文字、卖点、排版或背景，通过对话生成新版本，同时保留真实商品主体。</p>
+                <div class="capability-tags" aria-label="对话精修能力">
+                  <span>圈选</span><span>对话</span><span>版本对比</span><span>保留原图</span>
+                </div>
+                <a class="preview-link" href="./china-workflow.html">进入对话精修</a>
+              </div>
+              <div class="product-ui refine-ui" aria-label="对话精修功能演示">
+                <div class="ui-toolbar"><span><i></i>AI 对话精修</span><small>商品主体已锁定</small></div>
+                <div class="refine-workspace-demo">
+                  <div class="refine-image-demo">
+                    <img src="./assets/photos/storage-main.jpg" alt="圈选商品图进行对话修改" />
+                    <span class="selection-box">修改这里</span>
+                  </div>
+                  <div class="refine-chat-demo">
+                    <p>把圈选位置的标题缩小，卖点改得更清楚。</p>
+                    <p class="assistant">已生成版本 2，原图仍然保留。</p>
+                    <div><span>原图</span><span>版本 1</span><span class="active">版本 2</span></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="capability-flow" aria-label="AI 视觉工作流">
+            <span data-flow-stage="create" class="active">上传素材</span>
+            <i>→</i>
+            <span data-flow-stage="create">AI 分析</span>
+            <i>→</i>
+            <span data-flow-stage="polish">生成成套素材</span>
+            <i>→</i>
+            <span data-flow-stage="deliver">对话精修</span>
+            <i>→</i>
+            <span data-flow-stage="deliver">平台导出</span>
           </div>
         </div>
       </section>
@@ -138,65 +367,163 @@
       <section class="workflow-section" id="workflow">
         <div class="section-heading">
           <p class="section-label">工作流</p>
-          <h2>三步完成一套上新视觉</h2>
+          <h2>三步完成上新视觉</h2>
+          <p>上传素材，确认商品信息，生成可直接使用的图片包。</p>
         </div>
         <div class="workflow-line">
           <article>
             <span>01</span>
             <h3>上传素材</h3>
-            <p>商品实拍图、三维图、包装图、SKU图、店铺名或Logo参考都可以作为输入。</p>
+            <p>商品图、包装图、SKU 图都能作为输入。</p>
           </article>
           <article>
             <span>02</span>
             <h3>确认信息</h3>
-            <p>补充产品名、规格、卖点、平台、目标人群和品牌调性，减少生成偏差。</p>
+            <p>补充规格、卖点、平台和风格要求。</p>
           </article>
           <article>
             <span>03</span>
             <h3>生成导出</h3>
-            <p>输出主图、详情页、SKU图、Logo和平台图片包，保持整体风格统一。</p>
+            <p>输出主图、详情页、SKU 图和平台图片包。</p>
           </article>
         </div>
-        <div class="scene-grid" aria-label="适合场景">
-          <article><h3>新品测款</h3><p>快速生成一套可上架图片，先看点击和转化反馈。</p></article>
-          <article><h3>旧图翻新</h3><p>保留真实商品，统一背景、光线、清晰度和页面风格。</p></article>
-          <article><h3>多平台铺货</h3><p>同一商品适配淘宝、1688、拼多多和内容电商场景。</p></article>
-          <article><h3>店铺形象统一</h3><p>Logo、主图、详情页和SKU图保持同一视觉调性。</p></article>
+        <div class="scene-tags" aria-label="适合场景">
+          <span>新品测款</span>
+          <span>旧图翻新</span>
+          <span>多平台铺货</span>
+          <span>店铺形象统一</span>
+        </div>
+      </section>
+
+      <section class="tech-section" id="tech">
+        <div class="section-heading">
+          <p class="section-label">技术亮点</p>
+          <h2>把上新经验沉淀成生成规则</h2>
+          <p>不只是生成图片，而是把主体保护、卖点提炼、版式组织和平台导出变成稳定流程。</p>
+        </div>
+        <div class="tech-core-grid">
+          <article>
+            <span aria-hidden="true">01</span>
+            <div class="tech-icon subject-icon" aria-hidden="true"></div>
+            <h3>主体不变形</h3>
+            <p>优先锁定商品轮廓、材质、颜色和品牌识别。</p>
+          </article>
+          <article>
+            <span aria-hidden="true">02</span>
+            <div class="tech-icon copy-icon" aria-hidden="true"></div>
+            <h3>卖点会表达</h3>
+            <p>从商品信息中提炼主图文案和详情页结构。</p>
+          </article>
+          <article>
+            <span aria-hidden="true">03</span>
+            <div class="tech-icon style-icon" aria-hidden="true"></div>
+            <h3>风格可复用</h3>
+            <p>统一光影、背景、构图和色彩节奏。</p>
+          </article>
+        </div>
+        <div class="tech-tags" aria-label="辅助能力">
+          <span>版式引擎</span>
+          <span>批量精修</span>
+          <span>平台预设</span>
+          <span>高清导出</span>
+          <span>人工确认</span>
+        </div>
+      </section>
+
+      <section class="why-section">
+        <div class="section-heading">
+          <p class="section-label">为什么选择品图</p>
+          <h2>整套素材直接上架</h2>
+        </div>
+        <div class="why-grid">
+          <article>
+            <span>01</span>
+            <h3>替代反复外包沟通</h3>
+            <p>把“想要的风格、平台尺寸、卖点重点”变成可点选的工作流，减少来回改稿。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>降低上新试错成本</h3>
+            <p>新品可以先生成多套主图和详情页方向，用点击反馈决定后续投入。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>统一店铺视觉资产</h3>
+            <p>主图、详情页、SKU 图、Logo 和店招共享同一套视觉规则，店铺不会越做越散。</p>
+          </article>
         </div>
       </section>
 
       <section class="case-section" id="cases">
         <div class="section-heading">
           <p class="section-label">案例展示</p>
-          <h2>常见品类的生成效果</h2>
+          <h2>常见品类生成效果</h2>
         </div>
         <div class="case-grid">
           <a class="case-card large" href="./china-examples.html">
-            <img src="./assets/case-storage-main.svg" alt="百货商品图案例" />
-            <span>淘宝 / 天猫</span>
-            <strong>百货商品 · 主图与详情页</strong>
+            <div class="case-media">
+              <img src="./assets/photos/storage-main.jpg" alt="百货商品图案例" loading="lazy" />
+            </div>
+            <div class="case-info">
+              <span>淘宝 / 天猫</span>
+              <strong>百货商品 · 主图与详情页</strong>
+            </div>
           </a>
           <a class="case-card" href="./china-examples.html">
-            <img src="./assets/case-bottle-main.svg" alt="1688商品图案例" />
-            <span>1688</span>
-            <strong>工厂货 · 规格与批发图</strong>
+            <div class="case-media">
+              <img src="./assets/photos/bottle-main.jpg" alt="1688商品图案例" loading="lazy" />
+            </div>
+            <div class="case-info">
+              <span>1688</span>
+              <strong>工厂货 · 规格与批发图</strong>
+            </div>
           </a>
           <a class="case-card logo-card" href="./china-workflow.html?mode=logo">
-            <div class="brand-logo">光</div>
-            <span>Logo</span>
-            <strong>店铺Logo · 头像与店招</strong>
+            <div class="case-media logo-preview">
+              <div class="brand-logo">光</div>
+              <small>头像 / 店招 / 包装贴纸</small>
+            </div>
+            <div class="case-info">
+              <span>Logo</span>
+              <strong>店铺 Logo · 头像与店招</strong>
+            </div>
           </a>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <div class="section-heading">
+          <p class="section-label">FAQ</p>
+          <h2>上线前需要确认的问题</h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>生成图能直接商用吗？</summary>
+            <p>自有商品、自有素材生成的图片原则上可用于店铺经营；涉及商标、品牌授权、名人肖像、医疗功效等内容时，需要人工确认和平台规则审核。</p>
+          </details>
+          <details>
+            <summary>AI 会不会把商品本身改掉？</summary>
+            <p>产品方向是优先锁定主体，再重建背景、光影和版式。正式接入 AI 前，还需要加入前后对比、人工确认和失败重试机制。</p>
+          </details>
+          <details>
+            <summary>现在可以真实生成图片吗？</summary>
+            <p>当前还是静态前端原型，已经具备首页、工作台和案例页结构；下一阶段会接入上传、任务队列、AI 生图和导出。</p>
+          </details>
+          <details>
+            <summary>和通用海外工具的区别是什么？</summary>
+            <p>品图 AI 的定位更偏国内电商平台：淘宝、天猫、1688、拼多多、京东、抖音、小红书和微信小店。</p>
+          </details>
         </div>
       </section>
 
       <section class="final-cta">
-        <h2>让每一次上新，都有一套能直接使用的视觉素材</h2>
-        <p>从商品图到店铺Logo，统一生成，统一导出。</p>
-        <a class="light-button" href="./china-workflow.html">开始免费试用</a>
-        <small>Logo正式商用前，建议进行商标与版权检索。</small>
+        <h2>让每次上新都有现成素材</h2>
+        <p>从商品图到店铺 Logo，统一生成，统一导出。</p>
+        <a class="primary-button cta-button" href="./china-workflow.html">开始免费试用</a>
+        <small>无需设计基础，上传素材即可开始。Logo 正式商用前，建议进行商标与版权检索。</small>
       </section>
     </main>
 
-    <script src="./china-full.js"></script>
+    <script src="./china-full.js?v=20260613-visual-refresh"></script>
   </body>
 </html>

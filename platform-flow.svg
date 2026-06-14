@@ -1,102 +1,117 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" role="img" aria-labelledby="flow-title flow-desc">
-  <title id="flow-title">平台商品图生成流程图</title>
-  <desc id="flow-desc">上传商品图，经过 AI 分析后，生成适配淘宝、天猫、1688、拼多多等平台的主图、详情页、SKU图和Logo。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 500" role="img" aria-labelledby="flow-title flow-desc">
+  <title id="flow-title">电商素材生成流程图</title>
+  <desc id="flow-desc">上传商品素材，AI 分析主体、卖点和风格，生成商品主图、卖点详情、规格展示和店铺视觉，并适配淘宝、天猫、拼多多、抖音、1688等平台。</desc>
   <defs>
+    <linearGradient id="paper-gradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="0.56" stop-color="#f2fdff" />
+      <stop offset="1" stop-color="#ffffff" />
+    </linearGradient>
     <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
-      <path d="M2 2 L11 7 L2 12" fill="none" stroke="#18181b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M2 2 L11 7 L2 12" fill="none" stroke="#2d3035" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
     </marker>
-    <filter id="paper-shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#18181b" flood-opacity="0.08" />
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#18181b" flood-opacity="0.10" />
     </filter>
     <style>
-      .paper-bg{fill:#fff}
-      .cloud,.loop{fill:none;stroke:rgba(24,24,27,.12);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:8 12}
-      .card,.out{fill:#fff;stroke:#18181b;stroke-width:3.2;filter:url(#paper-shadow)}
-      .lime{fill:#d9f99d}
-      .line,.arrow,.spark,.orbit,.doodle{fill:none;stroke:#18181b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
-      .arrow{marker-end:url(#arrow);stroke-width:3.4;stroke-dasharray:1 9;animation:dashFlow 2.8s linear infinite}
-      .sun,.dot-lime{fill:#d9f99d;stroke:#18181b;stroke-width:3}
-      .dot{fill:#fff;stroke:#18181b;stroke-width:3}
-      .node-title,.platform-title,.output-title{fill:#18181b;font:950 25px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
-      .note{fill:#71717a;font:760 18px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
-      .center{text-anchor:middle}
-      .platform-icon rect,.platform-icon circle{stroke:#18181b;stroke-width:3;filter:url(#paper-shadow)}
-      .platform-icon text{fill:#18181b;text-anchor:middle;font:950 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
-      .platform-icon .mini{font-size:14px;font-weight:900}
-      .taobao-icon rect,.pdd-icon rect,.douyin-icon rect,.e1688-icon rect{fill:#d9f99d}
-      .tmall-icon rect{fill:#18181b}.tmall-icon text{fill:#fff}
-      .cat-ear{fill:#18181b;stroke:#18181b;stroke-width:2.4;stroke-linejoin:round}
-      .douyin-note{fill:none;stroke:#18181b;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
-      .logo-mark{fill:#18181b}.logo-text{fill:#fff;font:950 30px system-ui;text-anchor:middle}
-      .doodle{stroke:#365314;stroke-width:3.2;stroke-dasharray:1 9}
-      .spark,.doodle{animation:softPulse 2.6s ease-in-out infinite}
-      .loop,.cloud{animation:dashFlow 7s linear infinite}
+      .paper-bg{fill:url(#paper-gradient)}
+      .ambient{fill:none;stroke:#18181b;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2 10;opacity:.055}
+      .card{fill:#fff;stroke:#24262b;stroke-width:3;filter:url(#soft-shadow)}
+      .ai-card{fill:#d9f99d;stroke:#18181b;stroke-width:3.6;filter:url(#soft-shadow)}
+      .output-card{fill:#fff;stroke:#2e3035;stroke-width:2.4;filter:url(#soft-shadow)}
+      .title{fill:#18181b;font:700 26px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+      .ai-title{fill:#18181b;font:800 31px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;text-anchor:middle}
+      .note{fill:#71717a;font:650 18px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+      .output-title{fill:#18181b;font:700 19px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;text-anchor:middle}
+      .output-note{fill:#71717a;font:600 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;text-anchor:middle}
+      .section-label{fill:#71717a;font:700 14px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;text-anchor:middle}
+      .line,.spark,.orbit,.image-line{fill:none;stroke:#18181b;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+      .flow-arrow{fill:none;stroke:#2d3035;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2 10;marker-end:url(#arrow);opacity:.62;animation:dashFlow 2.8s linear infinite}
+      .branch{fill:none;stroke:#2d3035;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2 9;opacity:.42}
+      .dot-lime{fill:#d9f99d;stroke:#18181b;stroke-width:3}
+      .platform-wrap{fill:rgba(255,255,255,.86);stroke:#d8edf1;stroke-width:2.2;filter:url(#soft-shadow)}
+      .platform-title{fill:#18181b;font:700 24px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+      .chip rect{fill:#d9f99d;stroke:#18181b;stroke-width:2.8}
+      .chip text{fill:#18181b;text-anchor:middle;font:800 22px system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+      .chip-dark rect{fill:#18181b}
+      .chip-dark text{fill:#fff}
+      .mini text{font-size:16px}
       @keyframes dashFlow{to{stroke-dashoffset:-72}}
-      @keyframes softPulse{50%{opacity:.42}}
-      @media (prefers-reduced-motion: reduce){
-        .arrow,.spark,.doodle,.loop,.cloud{animation:none}
-      }
+      @media (prefers-reduced-motion: reduce){.flow-arrow{animation:none}}
     </style>
   </defs>
-  <rect class="paper-bg" width="1280" height="620" rx="18" />
-  <path class="cloud" d="M72 124 C104 86,151 84,180 114 C205 82,268 90,284 132 C330 138,349 190,315 220 C288 252,229 244,210 218 C178 244,122 242,100 206 C62 206,41 158,72 124 Z" />
-  <path class="cloud" d="M1000 82 C1024 50,1076 52,1098 82 C1128 58,1177 82,1177 122 C1214 132,1217 184,1182 201 C1152 219,1108 209,1090 184 C1066 211,1012 205,998 170 C956 164,954 112,1000 82 Z" />
-  <g transform="translate(90 252) rotate(-2)">
-    <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="4.4s" repeatCount="indefinite" additive="sum" />
-    <rect class="card" width="205" height="132" rx="18" />
-    <path class="line" d="M32 88 L70 48 L99 78 L120 60 L162 96" />
-    <circle class="sun" cx="142" cy="42" r="13" />
-    <text class="node-title" x="26" y="34">上传素材</text>
-    <text class="note" x="26" y="116">实拍图 / SKU / 包装</text>
+
+  <rect class="paper-bg" width="1280" height="500" rx="18" />
+  <path class="ambient" d="M108 418 C152 445,210 444,254 415" />
+  <path class="ambient" d="M1088 78 C1118 54,1158 60,1174 92 C1198 88,1216 104,1218 128" />
+
+  <g transform="translate(84 124) rotate(-1)">
+    <rect class="card" width="230" height="142" rx="18" />
+    <path class="image-line" d="M36 94 L78 50 L108 82 L132 62 L180 102" />
+    <circle class="dot-lime" cx="178" cy="48" r="16" />
+    <text class="title" x="30" y="42">上传素材</text>
+    <text class="note" x="30" y="120">实拍图 / SKU / 包装</text>
   </g>
-  <path class="arrow" d="M318 318 C370 292,418 294,462 318" />
-  <g transform="translate(486 220) rotate(1)">
-    <animateTransform attributeName="transform" type="translate" values="0 0;0 7;0 0" dur="5.2s" repeatCount="indefinite" additive="sum" />
-    <rect class="card lime" width="238" height="190" rx="26" />
-    <circle class="orbit" cx="119" cy="82" r="44" />
-    <path class="spark" d="M119 42 L127 73 L158 82 L127 91 L119 124 L110 91 L80 82 L110 73 Z" />
-    <text class="node-title center" x="119" y="154">AI 分析商品</text>
-    <text class="note center" x="119" y="176">主体 / 卖点 / 风格</text>
+
+  <path class="flow-arrow" d="M330 196 C382 170,420 170,462 196" />
+
+  <g transform="translate(480 70)">
+    <rect class="ai-card" width="300" height="230" rx="30" />
+    <circle class="orbit" cx="150" cy="90" r="54" />
+    <path class="spark" d="M150 39 L160 78 L200 90 L160 102 L150 145 L139 102 L99 90 L139 78 Z" />
+    <text class="ai-title" x="150" y="172">AI 分析商品</text>
+    <text class="note" x="150" y="202" text-anchor="middle">主体 / 卖点 / 风格</text>
   </g>
-  <path class="arrow" d="M742 314 C790 290,833 287,880 310" />
-  <g transform="translate(884 212)">
-    <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="4.8s" repeatCount="indefinite" additive="sum" />
-    <path class="loop" d="M18 88 C54 18,170 4,246 54 C318 101,306 202,224 236 C148 268,49 232,18 166 C4 136,4 113,18 88 Z" />
-    <text class="platform-title" x="40" y="52">适配平台</text>
-    <g class="platform-icon taobao-icon" transform="translate(40 76) rotate(-5)">
-      <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="3.4s" begin=".1s" repeatCount="indefinite" additive="sum" />
-      <rect width="58" height="58" rx="18" />
-      <text x="29" y="39">淘</text>
+
+  <path class="flow-arrow" d="M800 196 C850 170,884 171,926 196" />
+
+  <g transform="translate(936 88)">
+    <rect class="platform-wrap" width="224" height="214" rx="24" />
+    <text class="platform-title" x="28" y="44">适配平台</text>
+    <g class="chip" transform="translate(28 68) rotate(-2)">
+      <rect width="58" height="54" rx="16" />
+      <text x="29" y="36">淘</text>
     </g>
-    <g class="platform-icon tmall-icon" transform="translate(128 70) rotate(4)">
-      <animateTransform attributeName="transform" type="translate" values="0 0;0 5;0 0" dur="3.8s" begin=".35s" repeatCount="indefinite" additive="sum" />
-      <path class="cat-ear" d="M13 7 L23 -4 L31 8" />
-      <path class="cat-ear" d="M33 8 L43 -4 L51 7" />
-      <rect width="64" height="58" rx="18" />
-      <text x="32" y="39">猫</text>
+    <g class="chip chip-dark" transform="translate(100 68) rotate(2)">
+      <rect width="58" height="54" rx="16" />
+      <text x="29" y="36">猫</text>
     </g>
-    <g class="platform-icon e1688-icon" transform="translate(210 126) rotate(4)">
-      <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3.6s" begin=".65s" repeatCount="indefinite" additive="sum" />
-      <rect width="76" height="48" rx="18" />
-      <text class="mini" x="38" y="30">1688</text>
+    <g class="chip" transform="translate(28 136) rotate(2)">
+      <rect width="58" height="54" rx="16" />
+      <text x="29" y="36">拼</text>
     </g>
-    <g class="platform-icon pdd-icon" transform="translate(46 154) rotate(3)">
-      <animateTransform attributeName="transform" type="translate" values="0 0;0 5;0 0" dur="4s" begin=".9s" repeatCount="indefinite" additive="sum" />
-      <rect width="58" height="58" rx="18" />
-      <text x="29" y="39">拼</text>
+    <g class="chip" transform="translate(100 136) rotate(-2)">
+      <rect width="58" height="54" rx="16" />
+      <text x="29" y="36">抖</text>
     </g>
-    <g class="platform-icon douyin-icon" transform="translate(142 178) rotate(-3)">
-      <animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="3.7s" begin="1.15s" repeatCount="indefinite" additive="sum" />
-      <rect width="58" height="58" rx="18" />
-      <path class="douyin-note" d="M34 16 L34 36 C34 46,25 49,20 44 C16 40,17 34,22 31 C26 29,30 30,34 32 L34 14 C41 22,46 24,52 24" />
+    <g class="chip mini" transform="translate(168 104) rotate(2)">
+      <rect width="72" height="54" rx="16" />
+      <text x="36" y="34">1688</text>
     </g>
   </g>
-  <path class="arrow" d="M1004 448 C870 512,659 530,462 486 C342 459,240 426,160 462" />
-  <g transform="translate(104 438) rotate(2)"><animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="4.2s" begin=".2s" repeatCount="indefinite" additive="sum" /><rect class="out" width="156" height="94" rx="16" /><text class="output-title" x="24" y="38">主图 5 张</text><path class="line" d="M24 58 L132 58" /><path class="line" d="M24 74 L92 74" /></g>
-  <g transform="translate(306 456) rotate(-2)"><animateTransform attributeName="transform" type="translate" values="0 0;0 5;0 0" dur="4.6s" begin=".5s" repeatCount="indefinite" additive="sum" /><rect class="out" width="178" height="104" rx="16" /><text class="output-title" x="24" y="38">详情页</text><text class="note" x="24" y="66">8-12屏长图</text></g>
-  <g transform="translate(542 456) rotate(2)"><animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="4.4s" begin=".8s" repeatCount="indefinite" additive="sum" /><rect class="out" width="164" height="94" rx="16" /><text class="output-title" x="24" y="38">SKU 图</text><circle class="dot-lime" cx="36" cy="66" r="8" /><circle class="dot" cx="64" cy="66" r="8" /><circle class="dot" cx="92" cy="66" r="8" /></g>
-  <g transform="translate(762 438) rotate(-2)"><animateTransform attributeName="transform" type="translate" values="0 0;0 5;0 0" dur="4.8s" begin="1.1s" repeatCount="indefinite" additive="sum" /><rect class="out" width="184" height="108" rx="16" /><rect class="logo-mark" x="22" y="24" width="48" height="48" rx="12" /><text class="logo-text" x="46" y="58">P</text><text class="output-title" x="86" y="42">Logo</text><text class="note" x="86" y="68">头像 / 店招</text></g>
-  <path class="doodle" d="M1154 398 L1164 424 L1190 432 L1164 440 L1154 466 L1144 440 L1118 432 L1144 424 Z" />
-  <path class="doodle" d="M104 540 C132 573,184 572,212 540" />
-  <path class="doodle" d="M1080 548 C1112 526,1128 570,1160 548 C1188 530,1205 566,1230 550" />
+
+  <path class="branch" d="M630 304 V338" />
+  <path class="branch" d="M310 338 H960" />
+  <text class="section-label" x="630" y="330">生成电商素材</text>
+
+  <g transform="translate(250 358)">
+    <rect class="output-card" width="154" height="92" rx="16" />
+    <text class="output-title" x="77" y="38">商品主图</text>
+    <text class="output-note" x="77" y="64">平台尺寸适配</text>
+  </g>
+  <g transform="translate(430 358)">
+    <rect class="output-card" width="154" height="92" rx="16" />
+    <text class="output-title" x="77" y="38">卖点详情</text>
+    <text class="output-note" x="77" y="64">长图排版生成</text>
+  </g>
+  <g transform="translate(610 358)">
+    <rect class="output-card" width="154" height="92" rx="16" />
+    <text class="output-title" x="77" y="38">规格展示</text>
+    <text class="output-note" x="77" y="64">颜色规格展示</text>
+  </g>
+  <g transform="translate(790 358)">
+    <rect class="output-card" width="154" height="92" rx="16" />
+    <text class="output-title" x="77" y="38">店铺视觉</text>
+    <text class="output-note" x="77" y="64">Logo / 店招素材</text>
+  </g>
 </svg>

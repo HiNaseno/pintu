@@ -655,3 +655,95 @@ figure:hover::after {
     height: 132px;
   }
 }
+
+/* =====================================================================
+   2026-06-13 视觉升级：真实照片 · 悬停放大 · 滚动进场 · 流程图动效
+   ===================================================================== */
+
+/* 照片填充与悬停放大 */
+.detail-panel img,
+.main-strip figure img,
+.sku-strip figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.detail-panel:hover img,
+.main-strip figure:hover img,
+.sku-strip figure:hover img {
+  transform: scale(1.06);
+}
+
+/* 角标可读性渐变 */
+.detail-panel::after,
+.main-strip figure::after,
+.sku-strip figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 58%, rgba(15, 23, 42, 0.28) 100%);
+}
+
+/* 滚动进场（JS 控制，reduce-motion 不添加 .reveal） */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 760ms cubic-bezier(0.22, 1, 0.36, 1), transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* 流程图：箭头虚线流动 + 火花呼吸 */
+.sketch-flow .flow-arrow {
+  animation: dashFlow 1s linear infinite;
+}
+
+.sketch-flow .spark {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sparkBeat 2.2s ease-in-out infinite;
+}
+
+.sketch-flow .ai-orbit {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orbitBreath 3.2s ease-in-out infinite;
+}
+
+@keyframes dashFlow {
+  to { stroke-dashoffset: -20; }
+}
+
+@keyframes sparkBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.14); }
+}
+
+@keyframes orbitBreath {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-panel img,
+  .main-strip figure img,
+  .sku-strip figure img {
+    transition: none;
+  }
+
+  .sketch-flow .flow-arrow,
+  .sketch-flow .spark,
+  .sketch-flow .ai-orbit {
+    animation: none;
+  }
+}
