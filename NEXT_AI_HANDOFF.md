@@ -24,6 +24,7 @@ npm start
 ```text
 http://localhost:5176/china-full.html
 http://localhost:5176/china-workflow.html
+http://localhost:5176/api/docs
 ```
 
 如果 `npm run dev` 出现 `EMFILE`，优先用：
@@ -77,6 +78,8 @@ assets/                  首页与案例素材
 service/                 macOS launchctl 服务脚本
 test/api-flow.test.js    本地模拟网关测试，不消耗真实 API
 .env.example             环境变量模板
+api-docs.js              API 发现、OpenAPI JSON 和 HTML 文档
+docs/API.md              开源接口说明文档
 ```
 
 运行时目录：

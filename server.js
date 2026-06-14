@@ -7,6 +7,7 @@ import express from "express";
 import multer from "multer";
 import OpenAI, { toFile } from "openai";
 import sharp from "sharp";
+import { createApiOverview, createOpenApiSpec, renderApiDocsHtml } from "./api-docs.js";
 
 dotenv.config();
 
@@ -399,6 +400,47 @@ await fs.mkdir(LOG_ROOT, { recursive: true });
 app.use(express.json({ limit: "1mb" }));
 app.use("/generated", express.static(GENERATED_ROOT, { maxAge: "1h", fallthrough: false }));
 app.use("/assets", express.static(path.join(ROOT, "assets"), { maxAge: "1h", fallthrough: false }));
+app.get("/api", (_request, response) => {
+  response.json(
+    createApiOverview({
+      port: PORT,
+      provider: new URL(BASE_URL).host,
+      models: {
+        text: TEXT_MODEL,
+        image: IMAGE_MODEL,
+        previewImage: PREVIEW_IMAGE_MODEL,
+      },
+    })
+  );
+});
+app.get("/api/openapi.json", (_request, response) => {
+  response.json(
+    createOpenApiSpec({
+      port: PORT,
+      provider: new URL(BASE_URL).host,
+      models: {
+        text: TEXT_MODEL,
+        image: IMAGE_MODEL,
+        previewImage: PREVIEW_IMAGE_MODEL,
+      },
+    })
+  );
+});
+app.get("/api/docs", (_request, response) => {
+  response
+    .type("html")
+    .send(
+      renderApiDocsHtml({
+        port: PORT,
+        provider: new URL(BASE_URL).host,
+        models: {
+          text: TEXT_MODEL,
+          image: IMAGE_MODEL,
+          previewImage: PREVIEW_IMAGE_MODEL,
+        },
+      })
+    );
+});
 app.get("/api/download/:jobId/:filename", async (request, response) => {
   const { jobId, filename } = request.params;
   const validJobId = /^[a-f0-9-]{36}$/i.test(jobId);
