@@ -1,6 +1,6 @@
 # 品图 AI API
 
-品图 AI 通过同源 Node 服务提供本地 API。前端页面和 API 共用同一个服务端，真实模型密钥只放在服务端 `.env` 中，不能写进浏览器代码或公开仓库。
+品图 AI 通过同源 Node 服务提供本地 API。前端页面和 API 共用同一个服务端，真实模型密钥只放在服务端 `.env` 或本机 `runtime/api-config.json` 中，不能写进浏览器代码或公开仓库。
 
 启动后访问：
 
@@ -11,6 +11,9 @@ http://localhost:5176/api/openapi.json
 ```
 
 ## 调用流程
+
+0. `GET /api/config` / `POST /api/config/models` / `POST /api/config`
+   本地配置 API URL、Key、文字模型和图片模型。接口不会返回真实 Key。
 
 1. `POST /api/jobs/analyze`
    上传商品图并生成 AI 推荐方案。
@@ -53,6 +56,30 @@ const job = await fetch("/api/jobs/analyze", {
   method: "POST",
   body: form,
 }).then((response) => response.json());
+```
+
+## 示例：配置 API 与模型
+
+```js
+const models = await fetch("/api/config/models", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    baseUrl: "https://api.openai.com/v1",
+    apiKey: "sk-...",
+  }),
+}).then((response) => response.json());
+
+await fetch("/api/config", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    baseUrl: "https://api.openai.com/v1",
+    apiKey: "sk-...",
+    textModel: models.suggestedTextModels[0],
+    imageModel: models.suggestedImageModels[0],
+  }),
+});
 ```
 
 ## 示例：确认并生成
@@ -111,4 +138,5 @@ const refined = await fetch(`/api/jobs/${job.id}/refine`, {
 
 - `.env`、`AI API.rtf`、`runtime/`、`node_modules/` 不要提交。
 - 提交 `.env.example`，不要提交真实 API Key。
+- 右上角“API 配置”会把本机配置保存到 `runtime/api-config.json`，该目录必须保持在 `.gitignore` 中。
 - 如需给外部开发者看接口，优先让他们读 `/api/openapi.json` 或本文件。

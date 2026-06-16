@@ -1,0 +1,24 @@
+.DS_Store
+.git/
+.agents/
+.codex/
+.env
+.env.*
+!.env.example
+AI API.rtf
+node_modules/
+venv/
+.venv/
+__pycache__/
+dist/
+build/
+runtime/
+*.log
+*.tmp
+._*
+.idea/
+.vscode/
+.claude/
+*.zip
+HANDOFF*.md
+NEXT_AI_HANDOFF.md

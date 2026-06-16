@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
+import fs from "node:fs/promises";
 import http from "node:http";
+import os from "node:os";
+import path from "node:path";
 import { after, before, test } from "node:test";
 import sharp from "sharp";
 
@@ -8,6 +11,7 @@ const APP_PORT = 5191;
 const MOCK_PORT = 5192;
 const APP_URL = `http://127.0.0.1:${APP_PORT}`;
 const MOCK_URL = `http://127.0.0.1:${MOCK_PORT}/v1`;
+const TEST_RUNTIME_ROOT = path.join(os.tmpdir(), `pintu-ai-test-runtime-${process.pid}`);
 const PNG_BUFFER = await sharp({
   create: {
     width: 32,
@@ -150,6 +154,7 @@ before(async () => {
       OPENAI_IMAGE_MODEL: "gpt-image-2",
       OPENAI_PREVIEW_IMAGE_MODEL: "gpt-image-1-mini",
       GENERATED_FILE_TTL_HOURS: "1",
+      PINTU_RUNTIME_ROOT: TEST_RUNTIME_ROOT,
     },
     stdio: ["ignore", "pipe", "pipe"],
   });
@@ -173,6 +178,7 @@ after(async () => {
   }
   mockServer?.closeAllConnections?.();
   await new Promise((resolve) => mockServer?.close(resolve));
+  await fs.rm(TEST_RUNTIME_ROOT, { recursive: true, force: true });
 });
 
 const analyze = async (

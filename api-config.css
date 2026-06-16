@@ -1,0 +1,322 @@
+.site-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.api-config-backdrop,
+.api-config-backdrop * {
+  box-sizing: border-box;
+}
+
+.api-config-backdrop button,
+.api-config-backdrop input,
+.api-config-backdrop select {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+.api-config-backdrop button {
+  cursor: pointer;
+}
+
+.api-config-button {
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid rgba(8, 145, 178, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 750;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.api-config-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(8, 145, 178, 0.44);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.1);
+}
+
+.api-config-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: auto;
+  padding: 42px 24px 24px;
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(10px);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.5;
+}
+
+.api-config-backdrop.open {
+  display: flex !important;
+}
+
+.api-config-modal {
+  position: relative;
+  display: block;
+  width: min(760px, 100%);
+  max-height: min(calc(100vh - 66px), 820px);
+  overflow: auto;
+  border: 1px solid rgba(8, 145, 178, 0.18);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 82% 0%, rgba(118, 231, 245, 0.18), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 253, 255, 0.96));
+  box-shadow: 0 32px 90px rgba(15, 23, 42, 0.2);
+  color: #0f172a;
+}
+
+.api-config-model-section[hidden],
+.api-config-footer[hidden] {
+  display: none !important;
+}
+
+.api-config-modal h2,
+.api-config-modal h3,
+.api-config-modal p {
+  letter-spacing: 0;
+}
+
+.api-config-head,
+.api-config-section,
+.api-config-footer {
+  padding: 24px 28px;
+}
+
+.api-config-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid rgba(8, 145, 178, 0.14);
+}
+
+.api-config-head p,
+.api-config-field small,
+.api-config-security,
+.api-config-status {
+  color: #64748b;
+}
+
+.api-config-title {
+  margin: 0 0 8px;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.api-config-close {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background: #fff;
+  color: #334155;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.api-config-section {
+  display: grid;
+  gap: 18px;
+}
+
+.api-config-section + .api-config-section {
+  border-top: 1px solid rgba(8, 145, 178, 0.12);
+}
+
+.api-config-section h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.api-config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.api-config-field {
+  display: grid;
+  gap: 8px;
+}
+
+.api-config-field.wide {
+  grid-column: 1 / -1;
+}
+
+.api-config-field span {
+  font-size: 14px;
+  font-weight: 750;
+  color: #334155;
+}
+
+.api-config-field input,
+.api-config-field select {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  height: auto;
+  border: 1px solid rgba(8, 145, 178, 0.2);
+  border-radius: 14px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #0f172a;
+  outline: none;
+  box-shadow: none;
+}
+
+.api-config-field select {
+  appearance: auto;
+  -webkit-appearance: menulist;
+}
+
+.api-config-field input:focus,
+.api-config-field select:focus {
+  border-color: rgba(8, 145, 178, 0.55);
+  box-shadow: 0 0 0 4px rgba(118, 231, 245, 0.14);
+}
+
+.api-config-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.api-config-primary,
+.api-config-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  width: auto;
+  border-radius: 999px;
+  padding: 0 18px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.api-config-primary {
+  border: 0;
+  background: #0f172a;
+  color: #fff;
+}
+
+.api-config-secondary {
+  border: 1px solid rgba(8, 145, 178, 0.24);
+  background: #fff;
+  color: #0f172a;
+}
+
+.api-config-primary:disabled,
+.api-config-secondary:disabled {
+  cursor: not-allowed;
+  opacity: 0.56;
+}
+
+.api-config-status {
+  min-height: 22px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.api-config-status.good {
+  color: #047857;
+}
+
+.api-config-status.bad {
+  color: #b91c1c;
+}
+
+.api-config-model-summary {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(217, 249, 157, 0.55);
+  color: #365314;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.api-config-model-summary.visible {
+  display: inline-flex;
+}
+
+.api-config-security {
+  margin: 0;
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: rgba(232, 251, 255, 0.65);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.api-config-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid rgba(8, 145, 178, 0.14);
+}
+
+.api-config-footer small {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .site-actions {
+    gap: 8px;
+  }
+
+  .api-config-button {
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .api-config-backdrop {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .api-config-modal {
+    border-radius: 22px;
+    max-height: calc(100vh - 24px);
+  }
+
+  .api-config-head,
+  .api-config-section,
+  .api-config-footer {
+    padding: 20px;
+  }
+
+  .api-config-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .api-config-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .api-config-footer .api-config-primary {
+    width: 100%;
+  }
+}

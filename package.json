@@ -1,8 +1,13 @@
 {
   "name": "pintu-ai",
   "version": "0.1.0",
-  "private": true,
+  "description": "AI ecommerce visual generation workspace for product images, listing assets and conversational refinement.",
+  "license": "MIT",
+  "private": false,
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",

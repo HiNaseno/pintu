@@ -12,19 +12,23 @@ import { createApiOverview, createOpenApiSpec, renderApiDocsHtml } from "./api-d
 dotenv.config();
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
-const RUNTIME_ROOT = path.join(ROOT, "runtime");
+const RUNTIME_ROOT = process.env.PINTU_RUNTIME_ROOT
+  ? path.resolve(process.env.PINTU_RUNTIME_ROOT)
+  : path.join(ROOT, "runtime");
 const JOB_ROOT = path.join(RUNTIME_ROOT, "jobs");
 const GENERATED_ROOT = path.join(RUNTIME_ROOT, "generated");
 const LOG_ROOT = path.join(RUNTIME_ROOT, "logs");
 const JOB_EVENT_LOG = path.join(LOG_ROOT, "jobs.log");
+const API_CONFIG_FILE = path.join(RUNTIME_ROOT, "api-config.json");
 const JOB_SNAPSHOT_FILE = "job.json";
 const PORT = Number(process.env.PORT || 5176);
-const BASE_URL = String(process.env.OPENAI_BASE_URL || "https://api.openai.com/v1").replace(/\/$/, "");
-const TEXT_MODEL = process.env.OPENAI_TEXT_MODEL || "gpt-5.5";
-const IMAGE_MODEL = process.env.OPENAI_IMAGE_MODEL || "gpt-image-2";
-const PREVIEW_IMAGE_MODEL = process.env.OPENAI_PREVIEW_IMAGE_MODEL || "gpt-image-1-mini";
+const DEFAULT_BASE_URL = safeNormalizeBaseUrl(process.env.OPENAI_BASE_URL, "https://api.openai.com/v1");
+const DEFAULT_TEXT_MODEL = process.env.OPENAI_TEXT_MODEL || "";
+const DEFAULT_IMAGE_MODEL = process.env.OPENAI_IMAGE_MODEL || "";
+const DEFAULT_PREVIEW_IMAGE_MODEL = process.env.OPENAI_PREVIEW_IMAGE_MODEL || "";
 const FILE_TTL_MS = Number(process.env.GENERATED_FILE_TTL_HOURS || 24) * 60 * 60 * 1000;
 const AI_REQUEST_TIMEOUT_MS = Number(process.env.AI_REQUEST_TIMEOUT_MS || 360_000);
+const CONFIG_REQUEST_TIMEOUT_MS = Number(process.env.CONFIG_REQUEST_TIMEOUT_MS || 30_000);
 const IMAGE_REQUEST_TIMEOUT_MS = Number(process.env.IMAGE_REQUEST_TIMEOUT_MS || 120_000);
 const MAX_RECOMMENDED_SYNC_OUTPUTS = Number(process.env.MAX_RECOMMENDED_SYNC_OUTPUTS || 12);
 const IMAGE_GENERATION_MAX_ATTEMPTS = Number(process.env.IMAGE_GENERATION_MAX_ATTEMPTS || 2);
@@ -40,6 +44,8 @@ const PUBLIC_FILES = new Set([
   "china-full.html",
   "china-full.css",
   "china-full.js",
+  "api-config.css",
+  "api-config.js",
   "china-workflow.html",
   "china-workflow.css",
   "china-workflow.js",
@@ -58,6 +64,18 @@ const PUBLIC_FILES = new Set([
 const app = express();
 const jobs = new Map();
 const activeGenerationJobs = new Set();
+let BASE_URL = DEFAULT_BASE_URL;
+let TEXT_MODEL = DEFAULT_TEXT_MODEL;
+let IMAGE_MODEL = DEFAULT_IMAGE_MODEL;
+let PREVIEW_IMAGE_MODEL = DEFAULT_PREVIEW_IMAGE_MODEL;
+let aiConfig = {
+  baseUrl: BASE_URL,
+  apiKey: process.env.OPENAI_API_KEY || "",
+  textModel: TEXT_MODEL,
+  imageModel: IMAGE_MODEL,
+  previewImageModel: PREVIEW_IMAGE_MODEL,
+  source: "env",
+};
 const modelState = {
   checkedAt: null,
   reachable: false,
@@ -67,12 +85,203 @@ const modelState = {
   error: null,
 };
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || "missing-key",
-  baseURL: BASE_URL,
-  timeout: AI_REQUEST_TIMEOUT_MS,
-  maxRetries: 1,
-});
+let openai = createOpenAIClient(aiConfig);
+
+function normalizeBaseUrl(value) {
+  const trimmed = String(value || "").trim();
+  if (!trimmed) throw new Error("API Base URL 不能为空");
+  const url = new URL(trimmed);
+  if (!["http:", "https:"].includes(url.protocol)) {
+    throw new Error("API Base URL 必须以 http:// 或 https:// 开头");
+  }
+  return trimmed.replace(/\/+$/, "");
+}
+
+function safeNormalizeBaseUrl(value, fallback) {
+  try {
+    return normalizeBaseUrl(value || fallback);
+  } catch {
+    return String(fallback || "https://api.openai.com/v1").replace(/\/+$/, "");
+  }
+}
+
+function createOpenAIClient(config, options = {}) {
+  return new OpenAI({
+    apiKey: config.apiKey || "missing-key",
+    baseURL: config.baseUrl,
+    timeout: options.timeout || AI_REQUEST_TIMEOUT_MS,
+    maxRetries: 1,
+  });
+}
+
+function defaultAIConfig() {
+  return {
+    baseUrl: DEFAULT_BASE_URL,
+    apiKey: process.env.OPENAI_API_KEY || "",
+    textModel: DEFAULT_TEXT_MODEL,
+    imageModel: DEFAULT_IMAGE_MODEL,
+    previewImageModel: DEFAULT_PREVIEW_IMAGE_MODEL,
+    source: "env",
+  };
+}
+
+function normalizeAIConfig(input = {}, fallback = defaultAIConfig(), options = {}) {
+  const requireModels = options.requireModels !== false;
+  const baseUrl = normalizeBaseUrl(input.baseUrl || fallback.baseUrl);
+  const apiKey = String(input.apiKey ?? fallback.apiKey ?? "").trim();
+  const textModel = String(input.textModel || fallback.textModel || "").trim();
+  const imageModel = String(input.imageModel || fallback.imageModel || "").trim();
+  const previewImageModel = String(input.previewImageModel || fallback.previewImageModel || imageModel).trim();
+  if (requireModels && !textModel) throw new Error("请选择文字模型");
+  if (requireModels && !imageModel) throw new Error("请选择图片模型");
+  return {
+    baseUrl,
+    apiKey,
+    textModel,
+    imageModel,
+    previewImageModel: previewImageModel || imageModel,
+    source: input.source || fallback.source || "env",
+  };
+}
+
+function applyAIConfig(nextConfig) {
+  aiConfig = normalizeAIConfig(nextConfig, aiConfig, { requireModels: false });
+  BASE_URL = aiConfig.baseUrl;
+  TEXT_MODEL = aiConfig.textModel;
+  IMAGE_MODEL = aiConfig.imageModel;
+  PREVIEW_IMAGE_MODEL = aiConfig.previewImageModel;
+  openai = createOpenAIClient(aiConfig);
+}
+
+function providerHost(baseUrl = BASE_URL) {
+  try {
+    return new URL(baseUrl).host;
+  } catch {
+    return "invalid-url";
+  }
+}
+
+function publicConfigPayload(extra = {}) {
+  return {
+    baseUrl: BASE_URL,
+    textModel: TEXT_MODEL,
+    imageModel: IMAGE_MODEL,
+    previewImageModel: PREVIEW_IMAGE_MODEL,
+    hasApiKey: Boolean(aiConfig.apiKey),
+    source: aiConfig.source,
+    provider: providerHost(),
+    modelState: {
+      checkedAt: modelState.checkedAt,
+      reachable: modelState.reachable,
+      textAvailable: modelState.textAvailable,
+      imageAvailable: modelState.imageAvailable,
+      previewImageAvailable: modelState.previewImageAvailable,
+      error: modelState.error,
+    },
+    ...extra,
+  };
+}
+
+function classifyModels(models) {
+  const ids = models.map((model) => model.id).filter(Boolean);
+  const imagePattern = /(image|gpt-image|dall|dalle|flux|stable|sd-|sdxl|midjourney|mj-|jimeng|wanx|recraft|ideogram)/i;
+  const textPattern = /(gpt|claude|deepseek|qwen|glm|yi-|llama|gemini|moonshot|kimi|doubao|chat|text|reason|mistral|mixtral)/i;
+  const preferredText = [/^gpt-5/i, /^gpt-4/i, /deepseek/i, /qwen/i, /claude/i, /gemini/i];
+  const preferredImage = [/^gpt-image/i, /image/i, /dall/i, /flux/i, /recraft/i, /ideogram/i];
+  const sortByPreference = (values, patterns) =>
+    [...new Set(values)].sort((a, b) => {
+      const rank = (value) => {
+        const index = patterns.findIndex((pattern) => pattern.test(value));
+        return index === -1 ? patterns.length : index;
+      };
+      return rank(a) - rank(b) || a.localeCompare(b);
+    });
+  const imageIds = ids.filter((id) => imagePattern.test(id));
+  const textIds = ids.filter((id) => !imagePattern.test(id) && textPattern.test(id));
+  return {
+    suggestedTextModels: sortByPreference(textIds.length ? textIds : ids.filter((id) => !imagePattern.test(id)), preferredText),
+    suggestedImageModels: sortByPreference(imageIds, preferredImage),
+  };
+}
+
+function updateModelStateFromModels(models) {
+  const ids = new Set(models.map((model) => model.id));
+  modelState.checkedAt = nowIso();
+  modelState.reachable = true;
+  if (!TEXT_MODEL || !IMAGE_MODEL) {
+    modelState.textAvailable = false;
+    modelState.imageAvailable = false;
+    modelState.previewImageAvailable = false;
+    modelState.error = "尚未选择文字模型或图片模型";
+    return ids;
+  }
+  modelState.textAvailable = ids.has(TEXT_MODEL);
+  modelState.imageAvailable = ids.has(IMAGE_MODEL);
+  modelState.previewImageAvailable = ids.has(PREVIEW_IMAGE_MODEL);
+  modelState.error =
+    modelState.textAvailable && modelState.imageAvailable
+      ? null
+      : `模型不可用：${[
+          !modelState.textAvailable ? TEXT_MODEL : null,
+          !modelState.imageAvailable ? IMAGE_MODEL : null,
+        ]
+          .filter(Boolean)
+          .join("、")}`;
+  return ids;
+}
+
+async function fetchModelList(config) {
+  const client = createOpenAIClient(config, { timeout: CONFIG_REQUEST_TIMEOUT_MS });
+  const page = await client.models.list();
+  const models = [];
+  for await (const model of page) {
+    models.push({
+      id: model.id,
+      created: model.created || null,
+      ownedBy: model.owned_by || model.ownedBy || null,
+    });
+  }
+  models.sort((a, b) => a.id.localeCompare(b.id));
+  return { models, ...classifyModels(models) };
+}
+
+async function loadRuntimeApiConfig() {
+  const fallback = defaultAIConfig();
+  try {
+    const raw = await fs.readFile(API_CONFIG_FILE, "utf8");
+    const saved = JSON.parse(raw);
+    applyAIConfig(
+      normalizeAIConfig(
+        {
+          ...fallback,
+          ...saved,
+          apiKey: saved.apiKey || fallback.apiKey,
+          source: "runtime",
+        },
+        fallback,
+        { requireModels: false }
+      )
+    );
+  } catch (error) {
+    if (error?.code !== "ENOENT") {
+      console.warn(`读取 runtime/api-config.json 失败，已回退 .env：${error.message}`);
+    }
+    applyAIConfig(fallback);
+  }
+}
+
+async function saveRuntimeApiConfig(config) {
+  await fs.mkdir(RUNTIME_ROOT, { recursive: true });
+  const saved = {
+    baseUrl: config.baseUrl,
+    apiKey: config.apiKey,
+    textModel: config.textModel,
+    imageModel: config.imageModel,
+    previewImageModel: config.previewImageModel,
+    updatedAt: nowIso(),
+  };
+  await fs.writeFile(API_CONFIG_FILE, `${JSON.stringify(saved, null, 2)}\n`, "utf8");
+}
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -404,7 +613,7 @@ app.get("/api", (_request, response) => {
   response.json(
     createApiOverview({
       port: PORT,
-      provider: new URL(BASE_URL).host,
+      provider: providerHost(),
       models: {
         text: TEXT_MODEL,
         image: IMAGE_MODEL,
@@ -417,7 +626,7 @@ app.get("/api/openapi.json", (_request, response) => {
   response.json(
     createOpenApiSpec({
       port: PORT,
-      provider: new URL(BASE_URL).host,
+      provider: providerHost(),
       models: {
         text: TEXT_MODEL,
         image: IMAGE_MODEL,
@@ -432,7 +641,7 @@ app.get("/api/docs", (_request, response) => {
     .send(
       renderApiDocsHtml({
         port: PORT,
-        provider: new URL(BASE_URL).host,
+        provider: providerHost(),
         models: {
           text: TEXT_MODEL,
           image: IMAGE_MODEL,
@@ -440,6 +649,102 @@ app.get("/api/docs", (_request, response) => {
         },
       })
     );
+});
+app.get("/api/config", (_request, response) => {
+  response.json(publicConfigPayload());
+});
+app.post("/api/config/models", async (request, response) => {
+  try {
+    const body = request.body || {};
+    const baseUrl = normalizeBaseUrl(body.baseUrl || DEFAULT_BASE_URL);
+    const apiKey = String(body.apiKey || "").trim();
+    if (!apiKey) {
+      return response.status(400).json({ error: { message: "请先填写 API Key 后再获取模型列表" } });
+    }
+    const probeConfig = normalizeAIConfig(
+      {
+        baseUrl,
+        apiKey,
+        textModel: TEXT_MODEL,
+        imageModel: IMAGE_MODEL,
+        previewImageModel: PREVIEW_IMAGE_MODEL,
+        source: "probe",
+      },
+      aiConfig,
+      { requireModels: false }
+    );
+    const { models, suggestedTextModels, suggestedImageModels } = await fetchModelList(probeConfig);
+    response.json({
+      provider: providerHost(baseUrl),
+      count: models.length,
+      models,
+      suggestedTextModels,
+      suggestedImageModels,
+    });
+  } catch (error) {
+    response.status(error?.status || 400).json({ error: cleanError(error, "无法读取模型列表") });
+  }
+});
+app.post("/api/config", async (request, response) => {
+  try {
+    const body = request.body || {};
+    const apiKey = String(body.apiKey || "").trim() || aiConfig.apiKey;
+    if (!apiKey) {
+      return response.status(400).json({ error: { message: "首次配置必须填写 API Key" } });
+    }
+    const nextConfig = normalizeAIConfig(
+      {
+        baseUrl: body.baseUrl,
+        apiKey,
+        textModel: body.textModel,
+        imageModel: body.imageModel,
+        previewImageModel: body.previewImageModel || body.imageModel,
+        source: "runtime",
+      },
+      aiConfig,
+      { requireModels: true }
+    );
+    const { models } = await fetchModelList(nextConfig);
+    const ids = new Set(models.map((model) => model.id));
+    if (!ids.has(nextConfig.textModel)) {
+      return response.status(400).json({ error: { message: `文字模型不可用：${nextConfig.textModel}` } });
+    }
+    if (!ids.has(nextConfig.imageModel)) {
+      return response.status(400).json({ error: { message: `图片模型不可用：${nextConfig.imageModel}` } });
+    }
+    applyAIConfig(nextConfig);
+    updateModelStateFromModels(models);
+    await saveRuntimeApiConfig(aiConfig);
+    response.json(publicConfigPayload({ saved: true }));
+  } catch (error) {
+    response.status(error?.status || 400).json({ error: cleanError(error, "API 配置保存失败") });
+  }
+});
+app.post("/api/config/test", async (_request, response) => {
+  try {
+    if (!aiConfig.apiKey) {
+      return response.status(400).json({ error: { message: "尚未配置 API Key" } });
+    }
+    const { models, suggestedTextModels, suggestedImageModels } = await fetchModelList(aiConfig);
+    updateModelStateFromModels(models);
+    response.json(
+      publicConfigPayload({
+        tested: true,
+        count: models.length,
+        models,
+        suggestedTextModels,
+        suggestedImageModels,
+      })
+    );
+  } catch (error) {
+    modelState.checkedAt = nowIso();
+    modelState.reachable = false;
+    modelState.textAvailable = false;
+    modelState.imageAvailable = false;
+    modelState.previewImageAvailable = false;
+    modelState.error = cleanError(error, "API 配置测试失败").message;
+    response.status(error?.status || 400).json({ error: cleanError(error, "API 配置测试失败") });
+  }
 });
 app.get("/api/download/:jobId/:filename", async (request, response) => {
   const { jobId, filename } = request.params;
@@ -672,8 +977,11 @@ const cleanError = (error, fallback = "AI 服务暂时不可用") => {
 };
 
 const requireModels = (_request, response, next) => {
-  if (!process.env.OPENAI_API_KEY) {
-    return response.status(503).json({ error: { message: "服务端尚未配置 API 密钥" } });
+  if (!aiConfig.apiKey) {
+    return response.status(503).json({ error: { message: "未配置 API Key，请先在右上角打开 API 配置" } });
+  }
+  if (!TEXT_MODEL || !IMAGE_MODEL) {
+    return response.status(503).json({ error: { message: "文字模型或图片模型尚未选择，请先完成 API 配置" } });
   }
   if (
     !modelState.reachable ||
@@ -691,8 +999,11 @@ const requireModels = (_request, response, next) => {
 };
 
 const requireTextModel = (_request, response, next) => {
-  if (!process.env.OPENAI_API_KEY) {
-    return response.status(503).json({ error: { message: "服务端尚未配置 API 密钥" } });
+  if (!aiConfig.apiKey) {
+    return response.status(503).json({ error: { message: "未配置 API Key，请先在右上角打开 API 配置" } });
+  }
+  if (!TEXT_MODEL) {
+    return response.status(503).json({ error: { message: "文字模型尚未选择，请先完成 API 配置" } });
   }
   if (!modelState.reachable || !modelState.textAvailable) {
     return response.status(503).json({
@@ -1677,7 +1988,7 @@ app.get("/api/health", (_request, response) => {
       modelState.reachable &&
       modelState.textAvailable &&
       modelState.imageAvailable,
-    provider: new URL(BASE_URL).host,
+    provider: providerHost(),
     models: {
       text: { id: TEXT_MODEL, available: modelState.textAvailable },
       image: { id: IMAGE_MODEL, available: modelState.imageAvailable },
@@ -1735,7 +2046,7 @@ app.get("/api/diagnostics", async (_request, response) => {
   response.json({
     ok: modelState.reachable && modelState.textAvailable && modelState.imageAvailable,
     uptimeSeconds: Math.round(process.uptime()),
-    provider: new URL(BASE_URL).host,
+    provider: providerHost(),
     models: {
       text: { id: TEXT_MODEL, available: modelState.textAvailable },
       image: { id: IMAGE_MODEL, available: modelState.imageAvailable },
@@ -2063,6 +2374,22 @@ app.use((error, _request, response, _next) => {
 
 const checkModels = async () => {
   modelState.checkedAt = nowIso();
+  if (!aiConfig.apiKey) {
+    modelState.reachable = false;
+    modelState.textAvailable = false;
+    modelState.imageAvailable = false;
+    modelState.previewImageAvailable = false;
+    modelState.error = "未配置 API Key";
+    return;
+  }
+  if (!TEXT_MODEL || !IMAGE_MODEL) {
+    modelState.reachable = false;
+    modelState.textAvailable = false;
+    modelState.imageAvailable = false;
+    modelState.previewImageAvailable = false;
+    modelState.error = "尚未选择文字模型或图片模型";
+    return;
+  }
   try {
     const page = await openai.models.list();
     const ids = new Set();
@@ -2108,10 +2435,11 @@ const cleanupExpiredFiles = async () => {
   }
 };
 
+await loadRuntimeApiConfig();
 const restoredJobs = await loadPersistedJobs();
 await checkModels();
-setInterval(() => void checkModels(), 10 * 60 * 1000).unref();
-setInterval(() => void cleanupExpiredFiles(), 60 * 60 * 1000).unref();
+const modelCheckTimer = setInterval(() => void checkModels(), 10 * 60 * 1000);
+const cleanupTimer = setInterval(() => void cleanupExpiredFiles(), 60 * 60 * 1000);
 
 const server = app.listen(PORT, "127.0.0.1", () => {
   console.log(`品图 AI 服务已启动：http://localhost:${PORT}/china-full.html`);
@@ -2127,6 +2455,8 @@ const server = app.listen(PORT, "127.0.0.1", () => {
 
 const shutdown = (signal) => {
   console.log(`收到 ${signal}，正在关闭品图 AI 服务`);
+  clearInterval(modelCheckTimer);
+  clearInterval(cleanupTimer);
   server.close(() => process.exit(0));
   setTimeout(() => process.exit(1), 5_000).unref();
 };

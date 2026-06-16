@@ -14,6 +14,6 @@ chmod 600 "$TARGET_PLIST"
 plutil -lint "$TARGET_PLIST"
 launchctl bootstrap "$DOMAIN" "$TARGET_PLIST"
 launchctl enable "$DOMAIN/$LABEL"
-launchctl kickstart -k "$DOMAIN/$LABEL"
+launchctl kickstart "$DOMAIN/$LABEL"
 
 echo "品图 AI 本地服务已安装并启动：http://localhost:5176/china-full.html"

@@ -143,6 +143,10 @@ export const createApiOverview = ({ port, models, provider }) => ({
   openapi: "/api/openapi.json",
   endpoints: [
     "GET /api/health",
+    "GET /api/config",
+    "POST /api/config/models",
+    "POST /api/config",
+    "POST /api/config/test",
     "POST /api/jobs/analyze",
     "POST /api/jobs/{jobId}/generate",
     "GET /api/jobs/{jobId}",
@@ -160,11 +164,12 @@ export const createOpenApiSpec = ({ port, models, provider }) => ({
     title: "品图 AI API",
     version: "0.1.0",
     description:
-      "面向国内电商生图工作台的本地 API。密钥只保存在服务端 .env 中，浏览器和客户端不应直接持有模型密钥。",
+      "面向国内电商生图工作台的本地 API。密钥只保存在服务端环境变量或 runtime 配置中，浏览器和客户端不应直接持有模型密钥。",
   },
   servers: [{ url: `http://localhost:${port}`, description: "Local development server" }],
   tags: [
     { name: "System", description: "健康检查、诊断与 API 发现" },
+    { name: "Config", description: "本地 API 网关与模型选择配置" },
     { name: "Generation", description: "商品分析、生成队列、轮询和单张重试" },
     { name: "Refine", description: "对话式图片精修与下载" },
     { name: "Writing", description: "AI 帮写生成要求" },
@@ -187,6 +192,53 @@ export const createOpenApiSpec = ({ port, models, provider }) => ({
         tags: ["System"],
         summary: "检查服务和模型配置",
         responses: { 200: jsonResponse("健康状态", { type: "object", additionalProperties: true }) },
+      },
+    },
+    "/api/config": {
+      get: {
+        tags: ["Config"],
+        summary: "读取当前运行时 API 配置",
+        description: "不会返回真实 API Key，只返回 URL、所选模型和 Key 是否已配置。",
+        responses: { 200: jsonResponse("当前配置", { type: "object", additionalProperties: true }) },
+      },
+      post: {
+        tags: ["Config"],
+        summary: "保存运行时 API 配置",
+        description: "保存到本机 runtime/api-config.json。apiKey 为空时会保留已保存 Key。",
+        requestBody: jsonBody({
+          type: "object",
+          required: ["baseUrl", "textModel", "imageModel"],
+          properties: {
+            baseUrl: { type: "string", example: "https://api.openai.com/v1" },
+            apiKey: { type: "string", description: "首次配置必填；后续可留空保留旧 Key" },
+            textModel: { type: "string", example: "your-text-model" },
+            imageModel: { type: "string", example: "your-image-model" },
+            previewImageModel: { type: "string", example: "your-preview-image-model" },
+          },
+        }),
+        responses: { 200: jsonResponse("保存后的配置状态", { type: "object", additionalProperties: true }), ...errorResponses },
+      },
+    },
+    "/api/config/models": {
+      post: {
+        tags: ["Config"],
+        summary: "验证 URL/Key 并读取模型列表",
+        requestBody: jsonBody({
+          type: "object",
+          required: ["baseUrl", "apiKey"],
+          properties: {
+            baseUrl: { type: "string", example: "https://api.openai.com/v1" },
+            apiKey: { type: "string" },
+          },
+        }),
+        responses: { 200: jsonResponse("模型列表和推荐模型", { type: "object", additionalProperties: true }), ...errorResponses },
+      },
+    },
+    "/api/config/test": {
+      post: {
+        tags: ["Config"],
+        summary: "重新测试当前保存配置",
+        responses: { 200: jsonResponse("测试后的配置状态", { type: "object", additionalProperties: true }), ...errorResponses },
       },
     },
     "/api/diagnostics": {

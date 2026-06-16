@@ -17,3 +17,5 @@ runtime/
 .vscode/
 .claude/
 *.zip
+HANDOFF*.md
+NEXT_AI_HANDOFF.md
