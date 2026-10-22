@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>电商视觉生成工作台 - 品图 AI</title>
+    <title>电商视觉生成工作台 - 品图</title>
     <script>
       if (window.location.protocol === "file:") {
         window.location.replace(
@@ -11,17 +11,46 @@
         );
       }
     </script>
-    <link rel="stylesheet" href="./china-workflow.css?v=20260613-visual-refresh" />
-    <link rel="stylesheet" href="./api-config.css?v=20260615-api-config-manual" />
-  </head>
+    <link rel="stylesheet" href="./china-workflow.css?v=detail-3" />
+    <link rel="stylesheet" href="./brand.css?v=0.3.0" />
+    <link rel="stylesheet" href="./local-session.css?v=0.3.0" />
+    <link rel="icon" type="image/svg+xml" href="./assets/brand/pintu-icon.svg" />
+    <link rel="stylesheet" href="./assets/brand/pintu-logo.css?v=logo-7" />
+    <script src="./assets/brand/pintu-logo.js?v=logo-7" defer></script>
+    <link rel="stylesheet" href="./assets/feedback/feedback.css?v=detail-3">
+</head>
   <body>
     <header class="topbar">
-      <a class="brand" href="./china-full.html">
-        <span>P</span>
-        品图 AI
-      </a>
+      <a class="brand" href="./china-full.html" aria-label="品图"><svg xmlns="http://www.w3.org/2000/svg" width="178" height="48" viewBox="0 0 178 48" role="img" aria-label="品图" class="brand-logo-img pt-logo">
+  <defs>
+    <linearGradient id="pt-bg" x1="2" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#061d4f" /><stop offset="0.58" stop-color="#0a3b82" /><stop offset="1" stop-color="#0aa7df" /></linearGradient>
+    <linearGradient id="pt-photo" x1="10" y1="34" x2="38" y2="15" gradientUnits="userSpaceOnUse"><stop stop-color="#11b5e9" /><stop offset="1" stop-color="#7de7f2" /></linearGradient>
+    <linearGradient id="pt-spark-fill" x1="36" y1="2" x2="48" y2="18" gradientUnits="userSpaceOnUse"><stop stop-color="#f0ff72" /><stop offset="1" stop-color="#8ee600" /></linearGradient>
+    <linearGradient id="pt-scan-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7de7f2" stop-opacity="0" /><stop offset="0.55" stop-color="#7de7f2" stop-opacity="0.9" /><stop offset="0.62" stop-color="#ffffff" stop-opacity="1" /><stop offset="1" stop-color="#7de7f2" stop-opacity="0" /></linearGradient>
+    <linearGradient id="pt-sheen-fill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0" /><stop offset="0.5" stop-color="#fff" stop-opacity="0.7" /><stop offset="1" stop-color="#fff" stop-opacity="0" /></linearGradient>
+    <clipPath id="pt-clip-card"><rect x="10" y="13" width="22" height="25" rx="6" /></clipPath>
+    <clipPath id="pt-clip-tile"><rect x="2" y="6" width="38" height="38" rx="12" /></clipPath>
+  </defs>
+  <g class="pt-mark">
+    <rect class="pt-tile" x="2" y="6" width="38" height="38" rx="12" fill="url(#pt-bg)" />
+    <g clip-path="url(#pt-clip-tile)"><g transform="skewX(-18)"><rect class="pt-sheen" x="8" y="2" width="12" height="46" fill="url(#pt-sheen-fill)" /></g></g>
+    <g class="pt-photo">
+      <rect class="pt-card" x="10" y="13" width="22" height="25" rx="6" fill="#fff" opacity="0.92" />
+      <circle class="pt-sun" cx="16" cy="19" r="3" fill="#0a2b68" />
+      <g clip-path="url(#pt-clip-card)"><path class="pt-mtn" d="M10 34 18 25l6 5 8-10v12a6 6 0 0 1-6 6H10v-4Z" fill="url(#pt-photo)" /></g>
+      <g clip-path="url(#pt-clip-card)"><rect class="pt-scan" x="9" y="10" width="24" height="7" fill="url(#pt-scan-fill)" /></g>
+    </g>
+    <g class="pt-spark-wrap">
+      <circle class="pt-flash" cx="40" cy="13.75" r="7" fill="none" stroke="#c6f94a" stroke-width="1.6" />
+      <path class="pt-spark" d="M40 1.5 43.2 10.5l8.8 3.2-8.8 3.3L40 26l-3.3-9-8.7-3.3 8.7-3.2L40 1.5Z" fill="url(#pt-spark-fill)" stroke="#fff" stroke-width="1.7" stroke-linejoin="round" />
+    </g>
+    <path class="pt-mini" d="M54.5 2.2 55.6 5.4l3.1 1.1-3.1 1.1-1.1 3.2-1.1-3.2-3.1-1.1 3.1-1.1 1.1-3.2Z" fill="#f0ff72" stroke="#fff" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <text class="pt-word" x="62" y="34" fill="#061d4f" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="850" letter-spacing="0">品图</text>
+</svg></a>
       <nav aria-label="页面操作">
-        <button class="api-config-button" type="button">API 配置</button>
+        <button class="generation-status" type="button" data-generation-status>生成服务</button>
+        <button class="local-session-button" type="button" data-local-session>本机访问</button>
         <a href="./china-full.html">返回首页</a>
         <a href="./china-examples.html">案例展示</a>
       </nav>
@@ -29,12 +58,8 @@
 
     <main class="generator-page">
       <section class="generator-hero">
-        <p class="badge">
-          <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Zm-7 13 1.2 3.3L9.5 20l-3.3 1.2L5 24l-1.2-2.8L.5 20l3.3-1.7L5 15Z" /></svg>
-          AI 电商视觉生成
-        </p>
-        <h1>AI 电商主图生成</h1>
-        <p>上传商品图，自动分析卖点，一键生成可上架主图</p>
+        <h1>电商主图生成</h1>
+        <p>上传真实商品图，先确认主体保护和卖点方案，再生成可上架素材。</p>
       </section>
 
       <section class="progress" aria-label="生成流程">
@@ -46,7 +71,8 @@
       </section>
 
       <section class="generator-layout">
-        <aside class="control-column">
+        <aside class="control-column" aria-label="素材草稿">
+          <p class="draft-hint">草稿区 · 修改这里不会影响右侧已提交的任务。生成期间可准备下一份，完成后再提交。</p>
           <article class="upload-card">
             <div class="card-title">
               <div>
@@ -54,8 +80,8 @@
                   <svg viewBox="0 0 24 24"><path d="M5 4a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H5Zm0 2h14a1 1 0 0 1 1 1v7.7l-3.3-3.3a1 1 0 0 0-1.4 0L12 14.7l-1.8-1.8a1 1 0 0 0-1.4 0L4 17.7V7a1 1 0 0 1 1-1Z" /></svg>
                 </span>
                 <div>
-                  <strong>上传商品图片</strong>
-                  <small>支持正面、侧面、细节、SKU 图</small>
+                  <strong>上传商品素材</strong>
+                  <small>支持商品图片、PDF、Word 和文本资料</small>
                 </div>
               </div>
               <em>0/6</em>
@@ -63,7 +89,7 @@
             <input
               class="upload-input"
               type="file"
-              accept="image/png,image/jpeg,image/webp"
+              accept=".png,.jpg,.jpeg,.webp,.pdf,.doc,.docx,.txt,.md,.csv,.json"
               multiple
               hidden
             />
@@ -71,10 +97,12 @@
               <span class="upload-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 3a1 1 0 0 1 .7.29l4 4a1 1 0 1 1-1.4 1.42L13 6.41V16a1 1 0 1 1-2 0V6.41L8.7 8.7a1 1 0 1 1-1.4-1.42l4-4A1 1 0 0 1 12 3ZM5 15a1 1 0 0 1 1 1v2h12v-2a1 1 0 1 1 2 0v2.5A1.5 1.5 0 0 1 18.5 20h-13A1.5 1.5 0 0 1 4 18.5V16a1 1 0 0 1 1-1Z" /></svg>
               </span>
-              <strong>上传商品图片</strong>
-              <small>支持正面、侧面、细节、SKU 图</small>
+              <strong>上传商品素材</strong>
+              <small>支持商品图片、PDF、Word 和文本资料</small>
             </button>
+            <p class="material-support">可上传图片、PDF、Word（DOC / DOCX）、TXT、MD、CSV、JSON。最多 6 个文件，每个不超过 10MB。PDF 最多 20 页，页面图像识别前 4 页；Word 识别文字和前 4 张内嵌图片（DOC 仅读文字）。</p>
             <div class="upload-previews" aria-live="polite"></div>
+            <button class="upload-add" type="button" aria-label="添加商品素材" title="添加素材" hidden>＋</button>
           </article>
 
           <article class="settings-card">
@@ -84,14 +112,13 @@
               <button type="button" data-mode="sku">SKU图</button>
             </div>
 
-            <details class="more-modes">
-              <summary>更多功能</summary>
+            <div class="more-modes" aria-label="更多功能">
               <div class="more-mode-buttons" aria-label="更多生成类型">
                 <button type="button" data-mode="logo">Logo</button>
                 <button type="button" data-mode="style">风格复刻</button>
                 <button type="button" data-mode="retouch">批量精修</button>
               </div>
-            </details>
+            </div>
 
             <label id="prompt-field">
               <span class="field-label-row">
@@ -211,6 +238,20 @@
             </div>
           </div>
 
+          <div class="brief-result result-view" data-result-view="brief">
+            <section class="brief-panel" aria-label="商品识别与需求问答">
+              <div class="brief-heading"><h2>识别商品，再聊需求</h2><p>本次使用提交时的素材，左侧草稿可继续修改。</p></div>
+              <section class="brief-product-profile" hidden aria-label="已识别的商品"></section>
+              <p class="brief-status" role="status" aria-live="polite"></p>
+              <div class="brief-loading" hidden><span></span><strong>正在识别商品</strong></div>
+              <div class="brief-messages" aria-live="polite"></div>
+              <div class="brief-questions"></div>
+              <div class="brief-compose"><label>补充回答<textarea class="brief-answer" maxlength="4000" rows="3" placeholder="回答问题，或补充你的想法"></textarea></label><button type="button" class="brief-send">发送回答</button></div>
+              <label class="brief-summary-field">已确认需求（可编辑）<textarea class="brief-summary" maxlength="6000" rows="5"></textarea></label>
+              <div class="brief-actions"><button type="button" class="brief-generate">生成方案</button><button type="button" class="brief-skip">跳过问答，生成方案</button><button type="button" class="brief-retry" hidden>重试识别与提问</button><button type="button" class="brief-restart">使用当前草稿重新问答</button><button type="button" class="brief-back-task" hidden>返回原任务</button></div>
+            </section>
+          </div>
+
           <div class="processing-result result-view" data-result-view="processing">
             <span class="processing-mark">
               <svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.2 4 10.4l5.8 2.2L12 19l2.2-6.4L20 10.4l-5.8-2.2L12 2Z" /></svg>
@@ -230,6 +271,15 @@
                 </div>
                 <em><i></i> 尚未产生图片费用</em>
               </div>
+
+              <section class="prompt-rewrite" aria-label="调整画面提示词">
+                <h2>调整整套画面</h2>
+                <p>说出背景、风格或构图上的调整，会先改写每张图的生图提示词。确认满意后再出图。</p>
+                <label>调整要求<textarea class="prompt-rewrite-input" maxlength="3000" rows="3" placeholder="例如：减少重复棚拍，材质页采用微距特写，其他页面使用不同生活场景"></textarea></label>
+                <div class="prompt-rewrite-actions"><button type="button" class="prompt-rewrite-submit">改写提示词</button><button type="button" class="prompt-rewrite-retry" hidden>重试改写</button></div>
+                <p class="prompt-rewrite-status" role="status" aria-live="polite"></p>
+                <div class="prompt-rewrite-results"></div>
+              </section>
 
               <div class="analysis-brief">
                 <section class="analysis-selling">
@@ -260,6 +310,13 @@
                 </label>
               </section>
 
+              <section class="detail-proposal" hidden aria-label="整套创意提案">
+                <div class="analysis-section-title"><h2>整套创意提案</h2><span>先确定怎么表达</span></div>
+                <p>围绕买家的购买疑问组织内容，统一品牌气质，让每屏各有重点。</p>
+                <div class="detail-strategy-fields"></div>
+                <details class="detail-material-library"><summary>查看与校正素材用途</summary><p>每屏可以选择相关素材。图片用于确认实物，参考风格不会覆盖商品外观。</p><div class="detail-materials"></div></details>
+              </section>
+
               <section class="analysis-output-plan">
                 <div class="analysis-section-title">
                   <div>
@@ -273,6 +330,8 @@
                   <strong>生成清单</strong>
                   <small>每张 / 每屏都可以改标题、角色和方向，完整指令按需展开。</small>
                 </div>
+                <div class="detail-page-toolbar" hidden><p>按阅读顺序查看，每屏可选择最多 6 张参考图；第一张为主参考。</p><button type="button" class="detail-add-page">新增一屏</button></div>
+                <p class="detail-plan-notice" role="status" hidden></p>
                 <div class="analysis-outputs"></div>
               </section>
 
@@ -296,7 +355,7 @@
               <div class="confirm-actions">
                 <button class="reanalyze-button" type="button">重新分析</button>
                 <div>
-                  <small>确认后将调用图片模型</small>
+                  <small>确认后开始生成图片</small>
                   <button class="confirm-generate-button" type="button">确认生成</button>
                 </div>
               </div>
@@ -455,7 +514,10 @@
       </section>
     </div>
 
-    <script src="./api-config.js?v=20260615-api-config-manual"></script>
-    <script src="./china-workflow.js?v=20260612-timeout-recovery"></script>
-  </body>
+    <script src="./local-session.js?v=0.3.0"></script>
+    <script src="./codex-status.js?v=0.3.0"></script>
+    <script src="./assets/feedback/detail-crop.js?v=detail-3"></script>
+    <script src="./china-workflow.js?v=0.3.0"></script>
+    <script src="./assets/feedback/feedback.js?v=detail-3"></script>
+</body>
 </html>

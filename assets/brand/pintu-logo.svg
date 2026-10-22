@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="178" height="48" viewBox="0 0 178 48" role="img" aria-label="品图" class="brand-logo-img pt-logo pt-opening">
+  <style>
+/* Shared animation for the inline 品图 logo. */
+.pt-logo.pt-opening { animation: pt-logo-arrive 1s ease-out both; }
+.pt-logo .pt-tile, .pt-logo .pt-card, .pt-logo .pt-mtn, .pt-logo .pt-sun,
+.pt-logo .pt-spark, .pt-logo .pt-flash, .pt-logo .pt-mini, .pt-logo .pt-word,
+.pt-logo .pt-scan, .pt-logo .pt-sheen, .pt-logo .pt-photo, .pt-logo .pt-spark-wrap {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.pt-logo .pt-mtn { transform-origin: 50% 100%; }
+.pt-logo .pt-scan, .pt-logo .pt-sheen, .pt-logo .pt-flash, .pt-logo .pt-mini { opacity: 0; }
+.pt-logo.pt-opening .pt-tile { animation: pt-tile .56s cubic-bezier(.2,.9,.3,1.25) both; }
+.pt-logo.pt-opening .pt-card { animation: pt-card .44s .18s cubic-bezier(.2,.8,.3,1) both; }
+.pt-logo.pt-opening .pt-scan { animation: pt-scan .62s .30s cubic-bezier(.45,0,.4,1) both; }
+.pt-logo.pt-opening .pt-mtn { animation: pt-mtn .46s .44s cubic-bezier(.2,.9,.3,1.3) both; }
+.pt-logo.pt-opening .pt-sun { animation: pt-pop .34s .72s cubic-bezier(.2,.9,.3,1.6) both; }
+.pt-logo .pt-spark { animation: pt-twinkle 6s 2.4s ease-in-out infinite; }
+.pt-logo.pt-opening .pt-spark { animation: pt-spark-in .56s .78s cubic-bezier(.2,.9,.25,1.2) both, pt-twinkle 6s 2.4s ease-in-out infinite; }
+.pt-logo.pt-opening .pt-flash { animation: pt-flash .55s 1s ease-out both, pt-flash-idle 6s 2.4s ease-out infinite; }
+.pt-logo.pt-opening .pt-mini { animation: pt-mini .5s 1.18s ease-in-out both, pt-mini-idle 6s 2.4s ease-in-out infinite; }
+.pt-logo .pt-sheen { animation: pt-sheen 6s 2.4s ease-in-out infinite; }
+.pt-logo.pt-opening .pt-word { animation: pt-word .5s .26s cubic-bezier(.2,.8,.3,1) both; }
+.brand .pt-spark-wrap, .brand .pt-photo { transition: transform .5s cubic-bezier(.2,.9,.3,1.4); }
+.brand:hover .pt-spark-wrap, .brand:focus-visible .pt-spark-wrap { transform: rotate(90deg) scale(1.12); }
+.brand:hover .pt-photo, .brand:focus-visible .pt-photo { transform: translateY(-1px) scale(1.05); }
+.brand:active .pt-spark-wrap { transform: rotate(180deg) scale(.9); transition-duration: .2s; }
+.brand.is-generating .pt-scan { animation: pt-scan-loop 1.3s linear infinite; }
+.brand.is-generating .pt-spark-wrap { animation: pt-spin 2.4s linear infinite; }
+@keyframes pt-tile { 0% { opacity: 0; transform: scale(.55) rotate(-8deg); } 35% { opacity: 1; } 70% { transform: scale(1.06) rotate(1deg); } 100% { opacity: 1; transform: none; } }
+@keyframes pt-card { from { opacity: 0; transform: translateY(3px) scale(.92); } to { opacity: .92; transform: none; } }
+@keyframes pt-scan { 0% { opacity: 0; transform: translateY(-9px); } 20%, 80% { opacity: 1; } 100% { opacity: 0; transform: translateY(23px); } }
+@keyframes pt-mtn { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes pt-pop { from { transform: scale(0); } to { transform: none; } }
+@keyframes pt-spark-in { 0% { opacity: 0; transform: scale(0) rotate(-140deg); } 40% { opacity: 1; } 72% { transform: scale(1.2) rotate(14deg); } 100% { opacity: 1; transform: none; } }
+@keyframes pt-twinkle { 0%, 13%, 100% { transform: none; } 5% { transform: scale(1.18) rotate(22deg); } 9% { transform: scale(.94) rotate(-4deg); } }
+@keyframes pt-flash { 0% { opacity: 0; transform: scale(.35); } 6% { opacity: .95; } 100% { opacity: 0; transform: scale(2.3); } }
+@keyframes pt-flash-idle { 0%, 2% { opacity: 0; transform: scale(.4); } 3% { opacity: .75; } 14%, 100% { opacity: 0; transform: scale(2.1); } }
+@keyframes pt-mini { 0% { opacity: 0; transform: scale(0) rotate(-90deg); } 50% { opacity: 1; transform: scale(1) rotate(0); } 100% { opacity: 0; transform: scale(0) rotate(45deg); } }
+@keyframes pt-mini-idle { 0%, 6% { opacity: 0; transform: scale(0) rotate(-90deg); } 11% { opacity: 1; transform: scale(1) rotate(0); } 17%, 100% { opacity: 0; transform: scale(0) rotate(45deg); } }
+@keyframes pt-sheen { 0%, 15% { opacity: 0; transform: translateX(-34px); } 17%, 29% { opacity: .55; } 31%, 100% { opacity: 0; transform: translateX(46px); } }
+@keyframes pt-word { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+@keyframes pt-scan-loop { 0% { opacity: 0; transform: translateY(-9px); } 15%, 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(23px); } }
+@keyframes pt-spin { to { transform: rotate(360deg); } }
+@keyframes pt-logo-arrive { from { opacity: 0; transform: translateY(4px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes pt-logo-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .pt-logo.pt-opening { animation: pt-logo-fade 1s ease-out both; }
+  .pt-logo * { animation: none !important; }
+  .brand .pt-spark-wrap, .brand .pt-photo { transition: none; transform: none !important; }
+}
+  </style>
+  <defs>
+    <linearGradient id="pt-bg" x1="2" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#061d4f" /><stop offset="0.58" stop-color="#0a3b82" /><stop offset="1" stop-color="#0aa7df" /></linearGradient>
+    <linearGradient id="pt-photo" x1="10" y1="34" x2="38" y2="15" gradientUnits="userSpaceOnUse"><stop stop-color="#11b5e9" /><stop offset="1" stop-color="#7de7f2" /></linearGradient>
+    <linearGradient id="pt-spark-fill" x1="36" y1="2" x2="48" y2="18" gradientUnits="userSpaceOnUse"><stop stop-color="#f0ff72" /><stop offset="1" stop-color="#8ee600" /></linearGradient>
+    <linearGradient id="pt-scan-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7de7f2" stop-opacity="0" /><stop offset="0.55" stop-color="#7de7f2" stop-opacity="0.9" /><stop offset="0.62" stop-color="#ffffff" stop-opacity="1" /><stop offset="1" stop-color="#7de7f2" stop-opacity="0" /></linearGradient>
+    <linearGradient id="pt-sheen-fill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0" /><stop offset="0.5" stop-color="#fff" stop-opacity="0.7" /><stop offset="1" stop-color="#fff" stop-opacity="0" /></linearGradient>
+    <clipPath id="pt-clip-card"><rect x="10" y="13" width="22" height="25" rx="6" /></clipPath>
+    <clipPath id="pt-clip-tile"><rect x="2" y="6" width="38" height="38" rx="12" /></clipPath>
+  </defs>
+  <g class="pt-mark">
+    <rect class="pt-tile" x="2" y="6" width="38" height="38" rx="12" fill="url(#pt-bg)" />
+    <g clip-path="url(#pt-clip-tile)"><g transform="skewX(-18)"><rect class="pt-sheen" x="8" y="2" width="12" height="46" fill="url(#pt-sheen-fill)" /></g></g>
+    <g class="pt-photo">
+      <rect class="pt-card" x="10" y="13" width="22" height="25" rx="6" fill="#fff" opacity="0.92" />
+      <circle class="pt-sun" cx="16" cy="19" r="3" fill="#0a2b68" />
+      <g clip-path="url(#pt-clip-card)"><path class="pt-mtn" d="M10 34 18 25l6 5 8-10v12a6 6 0 0 1-6 6H10v-4Z" fill="url(#pt-photo)" /></g>
+      <g clip-path="url(#pt-clip-card)"><rect class="pt-scan" x="9" y="10" width="24" height="7" fill="url(#pt-scan-fill)" /></g>
+    </g>
+    <g class="pt-spark-wrap">
+      <circle class="pt-flash" cx="40" cy="13.75" r="7" fill="none" stroke="#c6f94a" stroke-width="1.6" />
+      <path class="pt-spark" d="M40 1.5 43.2 10.5l8.8 3.2-8.8 3.3L40 26l-3.3-9-8.7-3.3 8.7-3.2L40 1.5Z" fill="url(#pt-spark-fill)" stroke="#fff" stroke-width="1.7" stroke-linejoin="round" />
+    </g>
+    <path class="pt-mini" d="M54.5 2.2 55.6 5.4l3.1 1.1-3.1 1.1-1.1 3.2-1.1-3.2-3.1-1.1 3.1-1.1 1.1-3.2Z" fill="#f0ff72" stroke="#fff" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <text class="pt-word" x="62" y="34" fill="#061d4f" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="850" letter-spacing="0">品图</text>
+</svg>

@@ -6,15 +6,17 @@
   <string>com.pintu-ai.local</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/xiaoyan/Documents/Codex/devtools/node/bin/node</string>
-    <string>/Users/xiaoyan/Documents/Three-dimensional square/server.js</string>
+    <string>__NODE_BIN__</string>
+    <string>__PROJECT_DIR__/server.js</string>
   </array>
   <key>WorkingDirectory</key>
-  <string>/Users/xiaoyan/Documents/Three-dimensional square</string>
+  <string>__PROJECT_DIR__</string>
   <key>EnvironmentVariables</key>
   <dict>
     <key>NODE_ENV</key>
-    <string>development</string>
+    <string>production</string>
+    <key>PATH</key>
+    <string>__PROCESS_PATH__</string>
   </dict>
   <key>RunAtLoad</key>
   <true/>
@@ -23,8 +25,8 @@
   <key>ThrottleInterval</key>
   <integer>5</integer>
   <key>StandardOutPath</key>
-  <string>/Users/xiaoyan/Documents/Three-dimensional square/runtime/logs/server.out.log</string>
+  <string>__PROJECT_DIR__/runtime/logs/server.out.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/xiaoyan/Documents/Three-dimensional square/runtime/logs/server.error.log</string>
+  <string>__PROJECT_DIR__/runtime/logs/server.error.log</string>
 </dict>
 </plist>

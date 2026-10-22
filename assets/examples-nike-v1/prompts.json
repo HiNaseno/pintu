@@ -1,0 +1,42 @@
+{
+  "created": "2026-10-01",
+  "purpose": "AI-generated footwear visual design examples.",
+  "assets": [
+    {
+      "key": "sneaker-main",
+      "prompt": "Use case: product-mockup. Create an exceptionally refined square 1:1 footwear studio photograph for a Chinese e-commerce design portfolio. Subject: one pair of Nike Dunk Low black-and-white low-top basketball sneakers, the classic black leather overlays and black Nike Swoosh over clean white leather panels, white perforated toe box, white flat laces, white midsole and black rubber outsole. Realistic small NIKE branding on tongue and heel, recognizable correctly shaped swoosh on each outer side. Accurate same-size left and right shoes, physically believable construction, neat double-row stitching, fine leather grain and crisp rubber edges. Foreground shoe presents its outer side in an elegant three-quarter angle, toe pointing toward lower-left; second shoe just behind it turned subtly to show heel and collar, clearly separated, no intersecting geometry. Entire pair contained within generous 9% margins, fills about 76% of the square. Art direction: high-end minimalist sportswear campaign, pale cool-gray seamless background, a low off-white architectural plinth and one subtle diagonal light band, sculpted soft light and precise natural contact shadows. Photorealistic professional medium-format product photography, absolutely sharp construction and nuanced materials, beautifully controlled blacks and whites, refined tonal depth. No person, no extra shoes, no packaging, no decorative floating logo, no poster typography, no promotional badges, no watermark, no invented certification or performance claims. Nike branding belongs only on the actual shoes.",
+      "file": "sneaker-main.webp",
+      "fallback": "sneaker-main.jpg"
+    },
+    {
+      "key": "sneaker-poster",
+      "prompt": "Use case: ads-marketing. Build a premium portrait 2:3 Chinese footwear e-commerce campaign poster using the attached master product photo as the EXACT identity reference for the black-and-white Nike low-top sneakers. Preserve the recognizable Nike swoosh and actual shoe-panel geometry, black leather overlays, white toe box, flat white laces, white midsole, black rubber outsole. Sophisticated performance-fashion art direction: two matching shoes rest in a beautifully balanced stepped composition on off-white stone architectural blocks in the lower two-thirds, one outer side visible and the second subtly behind; shoes are entirely visible, no floating objects, no intersecting geometry. Background is a quiet pale mineral gray with one softly lit architectural curve, delicate cool gray shadow and restrained charcoal accent. Real leather grain and stitching, immaculate studio lighting and tonal depth, editorial-quality photorealism. Top third: elegantly typeset Chinese headline exactly “步履之间” then “自有风格”, smaller subtitle exactly “耐克低帮球鞋”. Contemporary Chinese sans serif, carefully balanced scale, generous margins and whitespace, no typography on the shoes or overlapping them. Absolutely no additional captions, no claims, no official endorsement wording, no badges, no watermark, no giant decorative swoosh. Nike branding only as already present on the actual shoes. Show a professionally polished finished poster, not a website mockup or collage.",
+      "file": "sneaker-poster.webp",
+      "fallback": "sneaker-poster.jpg"
+    },
+    {
+      "key": "sneaker-detail",
+      "prompt": "Use case: product-mockup. Create a refined square macro detail photograph of the EXACT black-and-white Nike low-top sneaker in the reference. Frame only the outer midfoot quarter, showing the black leather Nike swoosh sewn onto the white leather side panel, its precise double stitching, the edge of the white rubber midsole and a sliver of black outsole. This is a close-up of real shoe details, not an entire shoe, not a standalone logo. Preserve actual panel layering and stitch pattern from the reference, tactile subtle leather grain and detailed rubber stipple. Restrained pale stone-gray backdrop, beautifully sculpted diffused studio light, controlled deep blacks, precise texture, fine photographic depth of field while entire swoosh edge is sharp. Premium sportswear design editorial, photorealistic, extremely polished. No added words, labels, arrows, badges, watermark, fake performance claims or extra logos. No abstract geometry masking the construction.",
+      "file": "sneaker-detail.webp",
+      "fallback": "sneaker-detail.jpg"
+    },
+    {
+      "key": "sneaker-sage",
+      "prompt": "Use case: product-mockup. Derive a square alternate colorway product photograph from the attached Nike low-top sneaker identity reference. Keep the EXACT model construction: panel shapes, toe perforations, Nike swoosh shape, flat white laces, collar, white midsole and shoe proportions. Change ONLY the black overlays, black swooshes, collar lining and outsole to a rich restrained dark pine green; retain clean white leather base panels and white laces/midsole. One matching left/right pair only. Present in the same refined three-quarter catalogue composition with the entire pair inside 9% margins, foreground shoe toe towards lower-left and the second behind. Use a premium pale stone seamless studio setting, subdued warm-gray background and soft realistic contact shadows, slightly different viewing angle is acceptable. Ultra-clean photorealistic studio photograph, tactile fine leather grain, neat stitching, natural materials, expertly controlled highlight rolloff. Preserve small Nike branding on actual tongues and heels as on the reference. No graphic poster text, no extra logos, no packaging, no people, no watermark, no promotional claims.",
+      "file": "sneaker-sage.webp",
+      "fallback": "sneaker-sage.jpg"
+    },
+    {
+      "key": "sneaker-navy",
+      "prompt": "Use case: product-mockup. Create a square deep navy-and-white colorway photograph of the EXACT Nike low-top shoe construction shown in the reference. Change only the reference shoe's black leather overlay panels, black Nike swooshes, collar lining and black rubber outsole to deep midnight navy blue; keep the same white leather panels, same toe perforations, exact stitch geometry, flat white laces, white midsole, recognizable swoosh shape, panel proportions and low-top silhouette. Show a same-size matching left and right pair, fully inside frame with generous 9% padding, refined 3/4 composition on a pale mineral-gray seamless studio surface. Quiet cool undertone, beautiful soft directional light that shows the difference between navy leather and white panels, believable fine grain and rubber texture, subtle precise contact shadows. Editorial luxury-sports footwear photography, entirely photorealistic and highly polished. No text outside the small actual Nike tongue/heel branding, no poster headline, no standalone logos, no props, no people, no fake certification or performance claims, no watermark.",
+      "file": "sneaker-navy.webp",
+      "fallback": "sneaker-navy.jpg"
+    },
+    {
+      "key": "sneaker-colors",
+      "prompt": "Use case: product-mockup. A square refined shoe color comparison still-life, three individual same-size Nike low-top sneakers of the EXACT construction in the attached reference, no pairs. Arrange three fully visible shoes diagonally in a disciplined evenly-spaced editorial flat lay across an off-white studio surface. Each shoe has exactly the same side-panel design, distinctive Nike swoosh, perforated white toe, white laces and white midsole as the reference. First colorway uses BLACK overlays/swoosh/outsole over white leather; second uses dark PINE GREEN overlays/swoosh/outsole over white; third uses deep MIDNIGHT NAVY overlays/swoosh/outsole over white. Keep colors clearly distinct in bright neutral studio light. All three shoes same size and angle, separate without overlap, toe tips towards lower-left, generous safe outer margins. Professionally art-directed product catalogue photography, neat leather grain, immaculate seams, soft natural contact shadows, no shoe boxes, no accessories. No titles, swatches, numbers, arrows, watermark, labels, decorative brand logos, performance claims or added wording. Only real Nike branding integrated on each shoe as in reference.",
+      "file": "sneaker-colors.webp",
+      "fallback": "sneaker-colors.jpg"
+    }
+  ]
+}

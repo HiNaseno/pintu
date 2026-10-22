@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="品图">
+  <defs>
+    <linearGradient id="icon-bg" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061d4f" />
+      <stop offset="0.58" stop-color="#0a3b82" />
+      <stop offset="1" stop-color="#0aa7df" />
+    </linearGradient>
+    <linearGradient id="icon-photo" x1="15" y1="42" x2="48" y2="18" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11b5e9" />
+      <stop offset="1" stop-color="#7de7f2" />
+    </linearGradient>
+    <linearGradient id="icon-spark" x1="45" y1="7" x2="58" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f0ff72" />
+      <stop offset="1" stop-color="#8ee600" />
+    </linearGradient>
+  </defs>
+  <rect x="6" y="8" width="48" height="48" rx="15" fill="url(#icon-bg)" />
+  <rect x="16" y="17" width="27" height="24" rx="7" fill="#fff" opacity="0.92" />
+  <circle cx="23" cy="24" r="3.5" fill="#0a2b68" />
+  <path d="M16 42 26 31l8 7 9-12v15a7 7 0 0 1-7 7H16v-6Z" fill="url(#icon-photo)" />
+  <path d="M48 5.5 51.7 16l10 3.7-10 3.8L48 34l-3.8-10.5-10-3.8 10-3.7L48 5.5Z" fill="url(#icon-spark)" stroke="#fff" stroke-width="2" stroke-linejoin="round" />
+</svg>
