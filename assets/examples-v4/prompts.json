@@ -1,0 +1,72 @@
+{
+  "created": "2026-10-01",
+  "purpose": "Refined product examples with consistent product identities, portrait campaign posters and square supporting images.",
+  "assets": [
+    {
+      "key": "storage",
+      "prompt": "Use case: ads-marketing. Create a refined premium Chinese e-commerce product campaign poster, portrait 2:3. The reference image defines the exact product identity: the same translucent ivory two-drawer desktop organizer, rounded corners and short white horizontal pulls. Preserve its proportions, drawer count, translucent material and details, but rebuild the scene and composition as a polished professional studio campaign. Large product in the lower central area on a warm ivory desk, a quiet muted pale butter-yellow architectural background with soft window light and dimensional shadows, just a slender pale notebook at the edge. Sophisticated editorial art direction, restrained, tactile, photorealistic, crisp clean edges, material detail, realistic subtle grain, commercially finished. Upper third has generous breathing room and carefully typeset dark ink Chinese headline exactly “给桌面” then “留一点空白”, smaller subtitle exactly “桌面抽屉收纳”. One fine decorative rule only, no badges or graphics on the product, no clutter. Headline elegant modern Chinese sans serif, excellent optical spacing, restrained size, never overlapping the organizer. The whole object and its shadow remain fully inside the frame with 8% margins. No other text, no logos, no watermark, no claims, no borders, no collage, no mockup device.",
+      "file": "storage-poster.webp"
+    },
+    {
+      "key": "bottle",
+      "prompt": "Use case: ads-marketing. Create a luxury minimalist Chinese e-commerce advertising poster, portrait 2:3. Use the reference to preserve the exact unbranded charcoal insulated bottle, with broad cylindrical metal body, rounded shoulder, brushed silver neck ring, black screw cap and arched carry handle. Professional real product photography, bottle large and completely visible at a graceful three-quarter view in lower two-thirds, on a low charcoal stone plinth. Backdrop sculpted architectural planes in cool stone-gray and pale steel, directional studio light and immaculate controlled highlights that reveal the powder-coated texture; subtle dramatic contrast, legible silhouette, absolutely not a black silhouette or a generic CGI cylinder. Tasteful premium outdoor-lifestyle brand catalogue aesthetic. In the upper third, perfectly typeset Chinese headline exactly “简约随行” then “质感入手”, small subtitle exactly “日常随行保温杯”. Dark charcoal typography on a light background, elegant contemporary Chinese sans serif, generous whitespace, precise alignment. Product never overlaps text, safe margins 8%. No extra accessories, no logo, no numbers or performance claims, no additional words, no watermark, no badges, no border, no collage.",
+      "file": "bottle-poster.webp"
+    },
+    {
+      "key": "kitchen",
+      "prompt": "Use case: ads-marketing. Create a beautifully art-directed Chinese homewares e-commerce campaign poster, portrait 2:3. Preserve the reference white two-tier metal countertop shelf exactly: rectangular perforated shelf trays, rounded rectangular raised side rails, slim white legs with black foot caps. Place it as a large clean hero, entirely visible in lower two-thirds of a refined contemporary kitchen vignette. Warm pale oak countertop, muted sage-green plaster background, softly raking daylight, carefully styled just three matching small clear spice jars and a small cream ceramic bowl on the tiers, plenty of uncluttered negative space. Photorealistic high-end interior product photography, tack-sharp perforations, realistic thin powder-coated metal and natural shadows, harmonious sage and warm ivory palette. Upper third is a beautiful quiet typographic area with exact headline “让厨房” then “井然有序”, smaller subtitle “双层台面置物架”. Modern Chinese editorial type, deep forest green, restrained and widely spaced, excellent balance with the photograph, no text over the product. No other text, no logos, no claims about load capacity or materials grades, no watermark, no borders, no collage. Product has ample side margins.",
+      "file": "kitchen-poster.webp"
+    },
+    {
+      "key": "humidifier",
+      "prompt": "Use case: ads-marketing. Create a premium wellness home-appliance e-commerce campaign poster with sophisticated Chinese typography, portrait 2:3. Preserve the exact reference small ivory tabletop humidifier: squat rounded cylindrical body tapering slightly at the top, horizontal lid seam, circular button low on the front, centered tiny mist outlet in flat top. Large hero in lower two-thirds on a light stone bedside surface, a delicate realistic thin mist plume rises naturally. Serene powder-blue dawn backdrop, softly blurred translucent curtain, a folded ivory linen corner, one small botanical shadow far away, sparse and refined. Photorealistic top-tier commercial photography, frosted matte material, crisp seam, beautiful diffused window light with gentle blue-white gradient, believable subtle shadow, product sharp and fully visible with broad margins. In the upper third exact Chinese headline “把清润” then “留在身边”, smaller subtitle “桌面加湿器”. Elegant contemporary Chinese type, deep blue-gray ink, poised typography, no overlapping mist or object, generous breathing room. No other text, no badges, no false performance claims, no branding, no watermark, no frame, no collage.",
+      "file": "humidifier-poster.webp"
+    },
+    {
+      "key": "kitchen-detail",
+      "prompt": "Use case: product-mockup. Create a square premium editorial product detail photograph for a homewares ecommerce case study. Supporting identity reference is the exact white metal kitchen shelf shown. Show a tightly composed macro photograph of just one tray's rounded front corner, fine perforated metal surface, rolled edge and the adjacent white upright connection. Only part of the two-tier shelf is in frame; do NOT show the entire shelf. Precisely match the reference's white powder coat, thin perforated sheet construction and rectangular bars. Beautiful pale sage-green out-of-focus background, softly raking warm daylight revealing subtle material texture, gentle shadows. Sophisticated magazine-level product photography, believable engineered geometry, high detail, no text, no symbols, no people, no badges, no brand, no watermark, no fake certification. Calm nuanced highlight rolloff, realistic photograph, not generic glossy CGI.",
+      "file": "kitchen-detail.webp"
+    },
+    {
+      "key": "humidifier-detail",
+      "prompt": "Use case: product-mockup. Create a square refined macro product photograph for a tabletop humidifier e-commerce detail page. Preserve the reference's exact small matte ivory cylindrical humidifier with rounded lower edge, horizontal lid seam, tiny top mist opening and circular flush button low on front. Composition is a sculptural close-up of the upper portion: softly rounded lid, fine horizontal seam, tiny circular outlet releasing a thin delicate mist stream. Crop the lower body naturally below the frame; no full product overview. Pale powder-blue backdrop, beautiful cool diffused window light with a small warm reflected accent, extremely fine believable matte surface texture and crisp seams. Quiet premium industrial design photography, professional tilt-shift macro lens, realistic mist and gentle depth of field, pristine but tactile. No text, no numbers, no logos, no watermark, no claims, no frame, no collage.",
+      "file": "humidifier-detail.webp"
+    },
+    {
+      "key": "storage-main",
+      "file": "storage-main.webp"
+    },
+    {
+      "key": "storage-detail",
+      "file": "storage-detail.webp"
+    },
+    {
+      "key": "storage-set",
+      "file": "storage-set.webp"
+    },
+    {
+      "key": "bottle-main",
+      "file": "bottle-main.webp"
+    },
+    {
+      "key": "bottle-spec",
+      "file": "bottle-spec.webp"
+    },
+    {
+      "key": "bottle-pack",
+      "file": "bottle-pack.webp"
+    },
+    {
+      "key": "kitchen-main",
+      "file": "kitchen-main.webp"
+    },
+    {
+      "key": "kitchen-set",
+      "file": "kitchen-set.webp"
+    },
+    {
+      "key": "humidifier-main",
+      "file": "humidifier-main.webp"
+    }
+  ]
+}
