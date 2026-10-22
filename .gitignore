@@ -19,3 +19,20 @@ runtime/
 *.zip
 HANDOFF*.md
 NEXT_AI_HANDOFF.md
+
+# Generated release downloads; rebuild from source.
+assets/releases/
+
+# Local identity and credential material; never release runtime exports.
+.codex/
+*.sqlite
+*.sqlite3
+*.db
+*-wal
+*-shm
+*.key
+*.pem
+*.tar
+*.tar.gz
+*.tgz
+feedback-export/

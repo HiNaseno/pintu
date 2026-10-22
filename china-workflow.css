@@ -70,6 +70,16 @@ svg {
 
 .brand {
   font-weight: 850;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.brand-logo-img {
+  display: block;
+  width: auto;
+  height: 40px;
+  max-width: 160px;
+  object-fit: contain;
 }
 
 .brand span {
@@ -99,6 +109,35 @@ svg {
 .topbar nav a:hover {
   background: #fff;
   color: var(--ink);
+}
+
+@keyframes authCodeCheckPop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
+  }
+  45% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.12);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+@keyframes authCodeCheckDraw {
+  0% {
+    opacity: 0;
+    transform: translateY(-62%) rotate(42deg) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-62%) rotate(42deg) scale(1);
+  }
+}
+
+@media (max-width: 520px) {
 }
 
 .generator-page {
@@ -212,7 +251,7 @@ h1 {
   display: grid;
   grid-template-columns: 350px minmax(0, 1fr);
   gap: 30px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .generator-layout.studio-mode {
@@ -251,6 +290,7 @@ body.studio-mode .progress {
 .control-column {
   display: grid;
   gap: 16px;
+  align-content: start;
 }
 
 .upload-card,
@@ -683,15 +723,16 @@ textarea:focus {
 }
 
 .result-panel {
-  height: 100%;
-  min-height: 100%;
+  height: auto;
+  min-height: 660px;
   padding: 22px;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: block;
+  align-self: start;
   overflow: hidden;
 }
 
 .result-panel.editor-mode {
+  display: grid;
   grid-template-rows: 1fr;
   padding: 16px;
 }
@@ -3446,3 +3487,112 @@ body.lightbox-open {
     display: none;
   }
 }
+
+/* =====================================================================
+   2026-06-25 品图工作台优化：更紧凑的首屏和更清晰的操作边界
+   ===================================================================== */
+.topbar {
+  min-height: 62px;
+  border-bottom: 1px solid rgba(8, 145, 178, 0.12);
+}
+
+.brand-logo-img {
+  height: 38px;
+  max-width: 148px;
+}
+
+.generator-page {
+  width: min(1240px, calc(100% - 32px));
+  padding-top: 2px;
+}
+
+.generator-hero {
+  padding: 4px 0 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 18px;
+  text-align: left;
+}
+
+.generator-hero .badge {
+  margin: 0 0 10px;
+}
+
+.generator-hero p:not(.badge) {
+  max-width: 760px;
+  margin: 0;
+}
+
+.progress {
+  max-width: none;
+  margin: 0 0 16px;
+}
+
+.generator-layout {
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 22px;
+}
+
+.upload-card,
+.settings-card,
+.result-panel {
+  border-color: rgba(8, 145, 178, 0.18);
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.07);
+}
+
+.dropzone {
+  min-height: 146px;
+  border-color: rgba(8, 145, 178, 0.26);
+}
+
+.result-panel {
+  min-height: 660px;
+}
+
+.empty-canvas {
+  border-color: rgba(8, 145, 178, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 252, 253, 0.92));
+}
+
+.analyze-button {
+  min-height: 54px;
+}
+
+@media (max-width: 980px) {
+  .generator-hero {
+    display: block;
+    text-align: center;
+  }
+
+  .generator-hero .badge,
+  .generator-hero p:not(.badge) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .generator-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .generator-page {
+    width: min(100% - 24px, 1120px);
+  }
+
+  .generator-hero {
+    padding-top: 12px;
+    text-align: left;
+  }
+
+  .generator-hero .badge,
+  .generator-hero p:not(.badge) {
+    margin-left: 0;
+  }
+}
+
+/* Detail suite identity and material coverage, kept inside the right task panel. */
+.detail-material-coverage{margin-top:20px;padding:18px;border:1px solid #d8edf1;border-radius:14px;background:#f8fcfd}
+.detail-material-coverage h3,.detail-design-heading{font-size:16px;margin:0 0 12px}.detail-material-coverage-item{padding:12px 0;border-top:1px solid #e2e8f0}.detail-coverage-enable,.detail-coverage-pages label{display:flex;gap:8px;align-items:center}.detail-coverage-pages{display:flex;gap:10px;flex-wrap:wrap;font-size:12px}.detail-coverage-pages input,.detail-coverage-enable input{width:auto;margin:0}.detail-coverage-warning{color:#b45309;font-size:13px}.detail-design-heading{grid-column:1/-1;margin-top:16px}.detail-strategy-fields>.detail-help{grid-column:1/-1}

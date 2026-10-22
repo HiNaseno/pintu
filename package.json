@@ -1,12 +1,12 @@
 {
   "name": "pintu-ai",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "AI ecommerce visual generation workspace for product images, listing assets and conversational refinement.",
   "license": "MIT",
   "private": false,
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.19.0"
   },
   "scripts": {
     "start": "node server.js",
@@ -14,13 +14,22 @@
     "test": "node --test",
     "service:install": "bash service/install-macos-service.sh",
     "service:uninstall": "bash service/uninstall-macos-service.sh",
-    "service:status": "launchctl print gui/$(id -u)/com.pintu-ai.local"
+    "service:status": "launchctl print gui/$(id -u)/com.pintu-ai.local",
+    "feedback:manage": "node scripts/feedback-ops.mjs",
+    "access-code": "node scripts/access-code.mjs",
+    "execution:manage": "node scripts/execution-ops.mjs",
+    "test:release": "python3 -m unittest discover -s test -p 'release_tool_test.py'"
   },
   "dependencies": {
+    "@earendil-works/pi-agent-core": "1.1.0",
+    "@earendil-works/pi-ai": "1.1.0",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "multer": "^2.0.0",
+    "express": "^5.2.1",
+    "mammoth": "^1.13.0",
+    "multer": "^2.5.0",
     "openai": "^5.8.2",
-    "sharp": "^0.34.2"
+    "pdf-parse": "^2.4.5",
+    "sharp": "^0.35.5",
+    "word-extractor": "^1.0.4"
   }
 }

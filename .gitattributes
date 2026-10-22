@@ -1,0 +1,8 @@
+# Binary fixtures and images must keep their exact bytes (PDF xref spacing matters).
+*.pdf binary
+*.doc binary
+*.docx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary

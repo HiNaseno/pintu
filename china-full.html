@@ -3,16 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>品图 AI - 国内电商商品图生成工作台</title>
-    <link rel="stylesheet" href="./china-full.css?v=20260613-visual-refresh" />
-    <link rel="stylesheet" href="./api-config.css?v=20260615-api-config-manual" />
-  </head>
+    <title>品图 - 国内电商商品图生成工作台</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/brand/pintu-icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/brand/pintu-icon.svg" />
+    <link rel="stylesheet" href="./china-full.css?v=0.3.0" />
+    <link rel="stylesheet" href="./brand.css?v=0.3.0" />
+    <link rel="stylesheet" href="./assets/brand/pintu-logo.css?v=logo-7" />
+    <script src="./assets/brand/pintu-logo.js?v=logo-7" defer></script>
+    <link rel="stylesheet" href="./assets/feedback/feedback.css?v=detail-3">
+    <link rel="stylesheet" href="./local-session.css?v=0.3.0" />
+</head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#" aria-label="品图 AI">
-        <span class="brand-mark">P</span>
-        <span>品图 AI</span>
-      </a>
+      <a class="brand" href="#" aria-label="品图"><svg xmlns="http://www.w3.org/2000/svg" width="178" height="48" viewBox="0 0 178 48" role="img" aria-label="品图" class="brand-logo-img pt-logo">
+  <defs>
+    <linearGradient id="pt-bg" x1="2" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#061d4f" /><stop offset="0.58" stop-color="#0a3b82" /><stop offset="1" stop-color="#0aa7df" /></linearGradient>
+    <linearGradient id="pt-photo" x1="10" y1="34" x2="38" y2="15" gradientUnits="userSpaceOnUse"><stop stop-color="#11b5e9" /><stop offset="1" stop-color="#7de7f2" /></linearGradient>
+    <linearGradient id="pt-spark-fill" x1="36" y1="2" x2="48" y2="18" gradientUnits="userSpaceOnUse"><stop stop-color="#f0ff72" /><stop offset="1" stop-color="#8ee600" /></linearGradient>
+    <linearGradient id="pt-scan-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7de7f2" stop-opacity="0" /><stop offset="0.55" stop-color="#7de7f2" stop-opacity="0.9" /><stop offset="0.62" stop-color="#ffffff" stop-opacity="1" /><stop offset="1" stop-color="#7de7f2" stop-opacity="0" /></linearGradient>
+    <linearGradient id="pt-sheen-fill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0" /><stop offset="0.5" stop-color="#fff" stop-opacity="0.7" /><stop offset="1" stop-color="#fff" stop-opacity="0" /></linearGradient>
+    <clipPath id="pt-clip-card"><rect x="10" y="13" width="22" height="25" rx="6" /></clipPath>
+    <clipPath id="pt-clip-tile"><rect x="2" y="6" width="38" height="38" rx="12" /></clipPath>
+  </defs>
+  <g class="pt-mark">
+    <rect class="pt-tile" x="2" y="6" width="38" height="38" rx="12" fill="url(#pt-bg)" />
+    <g clip-path="url(#pt-clip-tile)"><g transform="skewX(-18)"><rect class="pt-sheen" x="8" y="2" width="12" height="46" fill="url(#pt-sheen-fill)" /></g></g>
+    <g class="pt-photo">
+      <rect class="pt-card" x="10" y="13" width="22" height="25" rx="6" fill="#fff" opacity="0.92" />
+      <circle class="pt-sun" cx="16" cy="19" r="3" fill="#0a2b68" />
+      <g clip-path="url(#pt-clip-card)"><path class="pt-mtn" d="M10 34 18 25l6 5 8-10v12a6 6 0 0 1-6 6H10v-4Z" fill="url(#pt-photo)" /></g>
+      <g clip-path="url(#pt-clip-card)"><rect class="pt-scan" x="9" y="10" width="24" height="7" fill="url(#pt-scan-fill)" /></g>
+    </g>
+    <g class="pt-spark-wrap">
+      <circle class="pt-flash" cx="40" cy="13.75" r="7" fill="none" stroke="#c6f94a" stroke-width="1.6" />
+      <path class="pt-spark" d="M40 1.5 43.2 10.5l8.8 3.2-8.8 3.3L40 26l-3.3-9-8.7-3.3 8.7-3.2L40 1.5Z" fill="url(#pt-spark-fill)" stroke="#fff" stroke-width="1.7" stroke-linejoin="round" />
+    </g>
+    <path class="pt-mini" d="M54.5 2.2 55.6 5.4l3.1 1.1-3.1 1.1-1.1 3.2-1.1-3.2-3.1-1.1 3.1-1.1 1.1-3.2Z" fill="#f0ff72" stroke="#fff" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <text class="pt-word" x="62" y="34" fill="#061d4f" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="850" letter-spacing="0">品图</text>
+</svg></a>
       <nav class="site-nav" aria-label="页面导航">
         <a href="#studio">功能</a>
         <a href="#workflow">工作流</a>
@@ -20,39 +49,39 @@
         <a href="#faq">FAQ</a>
       </nav>
       <div class="site-actions">
-        <button class="api-config-button" type="button">API 配置</button>
-        <a class="nav-button" href="./china-workflow.html">开始试用</a>
+        <button class="generation-status" type="button" data-generation-status>生成服务</button>
+        <a class="nav-button" href="./china-workflow.html">进入工作台</a>
       </div>
     </header>
 
     <main>
       <section class="hero-panel">
         <div class="hero-copy">
-          <p class="eyebrow">AI 电商生图 · 多平台适配</p>
-          <h1>上传一张图<br />生成整套上新素材</h1>
-          <p>主图、详情页、SKU 图、店铺视觉与平台尺寸一次生成，适配淘宝、天猫、1688、拼多多等常用场景。</p>
+          <p class="eyebrow">真实商品素材 · 多平台适配</p>
+          <h1>保留真实商品<br />生成整套上新素材</h1>
+          <p>从主图、详情页到 SKU 图和店铺视觉，围绕原始商品主体组织光影、卖点和平台尺寸，适配淘宝、天猫、1688、拼多多等常用场景。</p>
           <div class="hero-actions">
-            <a class="primary-button" href="./china-workflow.html">开始免费试用</a>
+            <a class="primary-button" href="./china-workflow.html">进入工作台</a>
             <a class="secondary-button" href="./china-examples.html">查看生成案例</a>
           </div>
-          <p class="hero-assurance">无需设计基础，上传商品图即可开始。</p>
+          <p class="hero-assurance">面向商品上新的电商视觉工作台，保留原图与每一次生成版本。</p>
           <div class="hero-stats" aria-label="产品能力概览">
-            <span><strong>5 类素材</strong>主图 / 详情页 / SKU / Logo / 平台图</span>
-            <span><strong>多平台适配</strong>淘宝 / 天猫 / 1688 / 拼多多</span>
-            <span><strong>统一导出</strong>尺寸、风格、命名一次整理</span>
+            <span><strong>主体保护</strong>轮廓 / 材质 / 颜色 / 标识优先保持</span>
+            <span><strong>电商场景</strong>主图 / 详情页 / SKU / 店铺视觉</span>
+            <span><strong>版本管理</strong>保留原图、生成版本与下载结果</span>
           </div>
         </div>
 
         <div class="hero-visual" aria-label="AI生成工作台预览">
           <div class="hero-workbench flow-demo">
             <div class="workbench-top">
-              <span><i aria-hidden="true"></i>AI 生成工作台</span>
+              <span><i aria-hidden="true"></i>品图工作台</span>
               <strong>商品图套装</strong>
             </div>
             <div class="workbench-body">
               <div class="upload-card">
                 <div class="upload-photo" aria-hidden="true">
-                  <img src="./assets/photos/bottle-main.jpg" alt="" />
+                  <img src="./assets/photos/bottle-v2-main.jpg" alt="" />
                   <span class="scan-beam"></span>
                   <span class="scan-grid"></span>
                 </div>
@@ -60,10 +89,10 @@
                 <small>实拍图 / SKU / 包装</small>
               </div>
 
-              <div class="analysis-step" aria-label="AI 分析商品">
+              <div class="analysis-step" aria-label="智能分析商品">
                 <span class="analysis-line" aria-hidden="true"></span>
                 <span class="analysis-icon" aria-hidden="true">✦</span>
-                <strong>AI 分析中</strong>
+                <strong>智能分析中</strong>
                 <small>主体 · 卖点 · 风格</small>
               </div>
 
@@ -74,15 +103,15 @@
                 </div>
                 <div class="result-preview-grid">
                   <figure class="result-preview main-preview" style="--pop-delay: 0ms">
-                    <img src="./assets/photos/bottle-main.jpg" alt="电商主图生成结果" />
+                    <img src="./assets/photos/bottle-v3-main.jpg" alt="电商主图生成结果" />
                     <figcaption>主图</figcaption>
                   </figure>
                   <figure class="result-preview detail-preview" style="--pop-delay: 360ms">
-                    <img src="./assets/photos/bottle-pack.jpg" alt="电商详情页生成结果" />
+                    <img src="./assets/photos/bottle-v2-pack.jpg" alt="电商详情页生成结果" />
                     <figcaption>详情页</figcaption>
                   </figure>
                   <figure class="result-preview sku-preview" style="--pop-delay: 720ms">
-                    <img src="./assets/photos/bottle-spec.jpg" alt="电商SKU图生成结果" />
+                    <img src="./assets/photos/bottle-v2-spec.jpg" alt="电商SKU图生成结果" />
                     <figcaption>SKU 图</figcaption>
                   </figure>
                 </div>
@@ -135,13 +164,13 @@
 
       <section class="studio-section" id="studio">
         <div class="section-heading compact">
-          <p class="section-label">AI 能力演示台</p>
+          <p class="section-label">电商素材工作台</p>
           <h2>一套素材覆盖上新全流程</h2>
           <p>六项能力按上新流程自动演示，也可以随时选择你最关心的环节。</p>
         </div>
 
         <div class="capability-console">
-          <div class="capability-nav" role="tablist" aria-label="AI 能力阶段">
+          <div class="capability-nav" role="tablist" aria-label="智能能力阶段">
             <div class="capability-group active" data-capability-stage="create">
               <div class="capability-group-heading">
                 <span>01</span>
@@ -208,22 +237,22 @@
                 </div>
               </div>
               <div class="product-ui suite-ui" aria-label="商品图套装演示">
-                <div class="ui-toolbar"><span><i></i>AI 生成工作台</span><small>商品图套装</small></div>
+                <div class="ui-toolbar"><span><i></i>品图工作台</span><small>商品图套装</small></div>
                 <div class="suite-flow">
                   <div class="suite-input">
                     <small>上传商品图</small>
                     <div class="suite-input-media">
-                      <img src="./assets/photos/storage-main.jpg" alt="上传的商品图" />
+                      <img src="./assets/photos/storage-v2-main.jpg" alt="上传的商品图" />
                       <span class="scan-beam"></span>
                     </div>
                     <span>商品主体已识别</span>
                   </div>
-                  <div class="suite-arrow"><b>AI</b><span>分析生成</span></div>
+                  <div class="suite-arrow"><b>品图</b><span>分析生成</span></div>
                   <div class="suite-outputs">
-                    <figure class="output-main" style="--pop-delay: 0ms"><img src="./assets/photos/storage-main.jpg" alt="主图结果" /><figcaption>主图</figcaption></figure>
-                    <figure style="--pop-delay: 200ms"><img src="./assets/photos/storage-detail.jpg" alt="卖点图结果" /><figcaption>卖点图</figcaption></figure>
-                    <figure style="--pop-delay: 400ms"><img src="./assets/photos/storage-scene.jpg" alt="详情页结果" /><figcaption>详情页</figcaption></figure>
-                    <figure style="--pop-delay: 600ms"><img src="./assets/photos/bottle-spec.jpg" alt="SKU图结果" /><figcaption>SKU 图</figcaption></figure>
+                    <figure class="output-main" style="--pop-delay: 0ms"><img src="./assets/photos/storage-v3-main.jpg" alt="主图结果" /><figcaption>主图</figcaption></figure>
+                    <figure style="--pop-delay: 200ms"><img src="./assets/photos/storage-v2-detail.jpg" alt="卖点图结果" /><figcaption>卖点图</figcaption></figure>
+                    <figure style="--pop-delay: 400ms"><img src="./assets/photos/storage-v2-scene.jpg" alt="详情页结果" /><figcaption>详情页</figcaption></figure>
+                    <figure style="--pop-delay: 600ms"><img src="./assets/photos/storage-v2-set.jpg" alt="SKU图结果" /><figcaption>SKU 图</figcaption></figure>
                   </div>
                 </div>
               </div>
@@ -265,16 +294,16 @@
               <div class="product-ui compare-ui" aria-label="风格复刻前后对比">
                 <div class="ui-toolbar"><span><i></i>风格提取</span><small>主体保持一致</small></div>
                 <div class="ba-slider" data-ba-slider style="--reveal: 52%">
-                  <img class="ba-img ba-after" src="./assets/photos/style-ref.jpg" alt="AI 风格复刻后的商品图" />
+                  <img class="ba-img ba-after" src="./assets/photos/style-v2-result.jpg" alt="AI 风格复刻后的商品图" />
                   <div class="ba-before">
-                    <img class="ba-img" src="./assets/photos/style-ref.jpg" alt="原始拍摄的商品图" />
+                    <img class="ba-img" src="./assets/photos/style-v2-ref.jpg" alt="原始拍摄的商品图" />
                   </div>
                   <span class="ba-tag ba-tag-before">原图</span>
                   <span class="ba-tag ba-tag-after">风格复刻</span>
                   <div class="ba-handle" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" /></svg>
                   </div>
-                  <input class="ba-range" type="range" min="2" max="98" value="52" aria-label="拖动对比原图与 AI 风格复刻效果" />
+                  <input class="ba-range" type="range" min="2" max="98" value="52" aria-label="拖动对比原图与风格复刻效果" />
                 </div>
                 <div class="extract-tags"><span>提取光影</span><span>提取配色</span><span>重建版式</span></div>
               </div>
@@ -292,12 +321,12 @@
               <div class="product-ui batch-ui" aria-label="批量商品精修列表">
                 <div class="ui-toolbar"><span><i></i>批量精修</span><small>6 / 6 已完成</small></div>
                 <div class="batch-grid">
-                  <figure style="--pop-delay: 0ms"><img src="./assets/photos/storage-main.jpg" alt="去背景结果" /><figcaption>去背景</figcaption></figure>
-                  <figure style="--pop-delay: 90ms"><img src="./assets/photos/bottle-main.jpg" alt="校色结果" /><figcaption>校色</figcaption></figure>
-                  <figure style="--pop-delay: 180ms"><img src="./assets/photos/humidifier-main.jpg" alt="补光结果" /><figcaption>补光</figcaption></figure>
-                  <figure style="--pop-delay: 270ms"><img src="./assets/photos/kitchen-main.jpg" alt="统一阴影结果" /><figcaption>统一阴影</figcaption></figure>
-                  <figure style="--pop-delay: 360ms"><img src="./assets/photos/storage-detail.jpg" alt="细节锐化结果" /><figcaption>细节锐化</figcaption></figure>
-                  <figure style="--pop-delay: 450ms"><img src="./assets/photos/kitchen-set.jpg" alt="批量导出结果" /><figcaption>批量导出</figcaption></figure>
+                  <figure style="--pop-delay: 0ms"><img src="./assets/photos/storage-v2-main.jpg" alt="去背景结果" /><figcaption>去背景</figcaption></figure>
+                  <figure style="--pop-delay: 90ms"><img src="./assets/photos/bottle-v2-main.jpg" alt="校色结果" /><figcaption>校色</figcaption></figure>
+                  <figure style="--pop-delay: 180ms"><img src="./assets/photos/humidifier-v3-main.jpg" alt="补光结果" /><figcaption>补光</figcaption></figure>
+                  <figure style="--pop-delay: 270ms"><img src="./assets/photos/kitchen-v3-main.jpg" alt="统一阴影结果" /><figcaption>统一阴影</figcaption></figure>
+                  <figure style="--pop-delay: 360ms"><img src="./assets/photos/storage-v2-detail.jpg" alt="细节锐化结果" /><figcaption>细节锐化</figcaption></figure>
+                  <figure style="--pop-delay: 450ms"><img src="./assets/photos/kitchen-v2-set.jpg" alt="批量导出结果" /><figcaption>批量导出</figcaption></figure>
                 </div>
               </div>
             </article>
@@ -338,10 +367,10 @@
                 <a class="preview-link" href="./china-workflow.html">进入对话精修</a>
               </div>
               <div class="product-ui refine-ui" aria-label="对话精修功能演示">
-                <div class="ui-toolbar"><span><i></i>AI 对话精修</span><small>商品主体已锁定</small></div>
+                <div class="ui-toolbar"><span><i></i>对话精修</span><small>商品主体已锁定</small></div>
                 <div class="refine-workspace-demo">
                   <div class="refine-image-demo">
-                    <img src="./assets/photos/storage-main.jpg" alt="圈选商品图进行对话修改" />
+                    <img src="./assets/photos/storage-v2-main.jpg" alt="圈选商品图进行对话修改" />
                     <span class="selection-box">修改这里</span>
                   </div>
                   <div class="refine-chat-demo">
@@ -354,10 +383,10 @@
             </article>
           </div>
 
-          <div class="capability-flow" aria-label="AI 视觉工作流">
+          <div class="capability-flow" aria-label="电商视觉工作流">
             <span data-flow-stage="create" class="active">上传素材</span>
             <i>→</i>
-            <span data-flow-stage="create">AI 分析</span>
+            <span data-flow-stage="create">智能分析</span>
             <i>→</i>
             <span data-flow-stage="polish">生成成套素材</span>
             <i>→</i>
@@ -466,7 +495,7 @@
         <div class="case-grid">
           <a class="case-card large" href="./china-examples.html">
             <div class="case-media">
-              <img src="./assets/photos/storage-main.jpg" alt="百货商品图案例" loading="lazy" />
+              <img src="./assets/photos/storage-v3-main.jpg" alt="百货商品图案例" loading="lazy" />
             </div>
             <div class="case-info">
               <span>淘宝 / 天猫</span>
@@ -475,7 +504,7 @@
           </a>
           <a class="case-card" href="./china-examples.html">
             <div class="case-media">
-              <img src="./assets/photos/bottle-main.jpg" alt="1688商品图案例" loading="lazy" />
+              <img src="./assets/photos/bottle-v3-main.jpg" alt="1688商品图案例" loading="lazy" />
             </div>
             <div class="case-info">
               <span>1688</span>
@@ -506,16 +535,16 @@
             <p>自有商品、自有素材生成的图片原则上可用于店铺经营；涉及商标、品牌授权、名人肖像、医疗功效等内容时，需要人工确认和平台规则审核。</p>
           </details>
           <details>
-            <summary>AI 会不会把商品本身改掉？</summary>
-            <p>产品方向是优先锁定主体，再重建背景、光影和版式。正式接入 AI 前，还需要加入前后对比、人工确认和失败重试机制。</p>
+            <summary>会不会把商品本身改掉？</summary>
+            <p>品图会优先锁定主体，再重建背景、光影和版式。生成、精修和批量修改都会保留原图与历史版本，方便人工复核。</p>
           </details>
           <details>
             <summary>现在可以真实生成图片吗？</summary>
-            <p>当前还是静态前端原型，已经具备首页、工作台和案例页结构；下一阶段会接入上传、任务队列、AI 生图和导出。</p>
+            <p>可以。请通过本地 Node 服务访问工作台，上传商品图后先确认生成方案，再按张生成和下载素材。</p>
           </details>
           <details>
             <summary>和通用海外工具的区别是什么？</summary>
-            <p>品图 AI 的定位更偏国内电商平台：淘宝、天猫、1688、拼多多、京东、抖音、小红书和微信小店。</p>
+            <p>品图的定位更偏国内电商平台：淘宝、天猫、1688、拼多多、京东、抖音、小红书和微信小店。</p>
           </details>
         </div>
       </section>
@@ -523,12 +552,14 @@
       <section class="final-cta">
         <h2>让每次上新都有现成素材</h2>
         <p>从商品图到店铺 Logo，统一生成，统一导出。</p>
-        <a class="primary-button cta-button" href="./china-workflow.html">开始免费试用</a>
+        <a class="primary-button cta-button" href="./china-workflow.html">进入工作台</a>
         <small>无需设计基础，上传素材即可开始。Logo 正式商用前，建议进行商标与版权检索。</small>
       </section>
     </main>
 
-    <script src="./api-config.js?v=20260615-api-config-manual"></script>
-    <script src="./china-full.js?v=20260613-visual-refresh"></script>
-  </body>
+    <script src="./china-full.js?v=0.3.0"></script>
+    <script src="./local-session.js?v=0.3.0"></script>
+    <script src="./codex-status.js?v=0.3.0"></script>
+    <script src="./assets/feedback/feedback.js?v=detail-3"></script>
+</body>
 </html>

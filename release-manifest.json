@@ -1,0 +1,1042 @@
+{
+  "version": "0.3.0",
+  "commit": "8bd19ab0d473302dfc9ef5485636d02e5c3f516d",
+  "commitTime": "2026-10-22T13:11:05+00:00",
+  "snapshot": "fixed Git commit blobs; working tree clean",
+  "secretScan": "credential patterns, private keys and login documents: no matches; one exact public test sentinel allowed only at its fixture path",
+  "excluded": [],
+  "files": [
+    {
+      "path": ".env.example",
+      "mode": "0o644",
+      "bytes": 1578,
+      "sha256": "54aa18ab110d9d848ad2294572aaf6da6dfb47c0b6d0bd502f0e2a3339e69e1d"
+    },
+    {
+      "path": ".gitattributes",
+      "mode": "0o644",
+      "bytes": 179,
+      "sha256": "5ca62606b27fbeeac9c37ceed52f1bd8c7d9028fdee847841a9b2dc6223b12f9"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "0o644",
+      "bytes": 650,
+      "sha256": "50b120b0d3a1eb9b3bac8075c1dad7401722d3778400193f9da3f9b48549616c"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "0o644",
+      "bytes": 425,
+      "sha256": "7a4c3b7c540e002466b59e36fc5fb64079acdd1df9283da6296891c02690cfcc"
+    },
+    {
+      "path": ".npmignore",
+      "mode": "0o644",
+      "bytes": 210,
+      "sha256": "6ed4bd5ff9bc315097d8f41130bb7430c7a0ee48d32d0c8cf93d358e0061a0d5"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "0o644",
+      "bytes": 1277,
+      "sha256": "c1e76cc86fe43015bf18cb3227a934612030766145bd373060caa87b4b4f39e1"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "0o644",
+      "bytes": 1371,
+      "sha256": "94616baf2cd60b881dc9c08baf8b0d5b5450f4da5333bb0fb775431f20490a8b"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "0o644",
+      "bytes": 1064,
+      "sha256": "b75eec3859d0e519434b85eac1af730e9a22c4fb4cace0ed8cb68c9aa4112e75"
+    },
+    {
+      "path": "README.md",
+      "mode": "0o644",
+      "bytes": 5171,
+      "sha256": "e0c2078719cb127e1376faa0d693a82d5b39b0467f8f463fb405a33a4f86e9a9"
+    },
+    {
+      "path": "SECURITY.md",
+      "mode": "0o644",
+      "bytes": 2443,
+      "sha256": "dcf9363de1bb54a5077dba8866ec976396b34c89acd2a8697cdbb802135aef42"
+    },
+    {
+      "path": "api-config.css",
+      "mode": "0o644",
+      "bytes": 5897,
+      "sha256": "efbc8013f6a64a573995467f2d7609e39004e9b90d3cf445efe8f5fd5b09e5fb"
+    },
+    {
+      "path": "api-config.js",
+      "mode": "0o644",
+      "bytes": 13701,
+      "sha256": "656d1ac824a00906da0967465ca15ac0c85db2f2f658b967ac75fc4b8264a5c0"
+    },
+    {
+      "path": "api-docs.js",
+      "mode": "0o644",
+      "bytes": 44045,
+      "sha256": "849921be3323dd2cb02ade034799a188487fe59a2a474ec91c7a58ae3e594f68"
+    },
+    {
+      "path": "assets/brand/pintu-icon.svg",
+      "mode": "0o644",
+      "bytes": 1257,
+      "sha256": "faa3a0a0cef05bdbfb7bf09ee1b955c2fa71dcd618749eb9c2e890f7c019826e"
+    },
+    {
+      "path": "assets/brand/pintu-logo.css",
+      "mode": "0o644",
+      "bytes": 4720,
+      "sha256": "f158b5b060d980f90c854c2ef4f070ffa8f5d56a4cce00fcff0d73dcfdba18d3"
+    },
+    {
+      "path": "assets/brand/pintu-logo.js",
+      "mode": "0o644",
+      "bytes": 796,
+      "sha256": "14e823cb8d9701a4001497087e639902bd6345d30e8551cdc3fc1bc7fd114a61"
+    },
+    {
+      "path": "assets/brand/pintu-logo.svg",
+      "mode": "0o644",
+      "bytes": 7747,
+      "sha256": "2a59c217f345cdae434709a2c27d74b8f2b9a0dd13e29de7577cf93ae873b6c5"
+    },
+    {
+      "path": "assets/case-bottle-main.svg",
+      "mode": "0o644",
+      "bytes": 805,
+      "sha256": "b2334e010fb15c4bc946e118f069c470601c28f3e13371b55c497d66a3171dba"
+    },
+    {
+      "path": "assets/case-bottle-pack.svg",
+      "mode": "0o644",
+      "bytes": 652,
+      "sha256": "67825286192ddb471a03dcdfd396d4bbece4551baa46ba3c7d7a27ec04a3dc58"
+    },
+    {
+      "path": "assets/case-bottle-spec.svg",
+      "mode": "0o644",
+      "bytes": 736,
+      "sha256": "fbd699a303702ba273701cb3fc78f469bde34c085a06f02d437f27e11e23df5f"
+    },
+    {
+      "path": "assets/case-humidifier-detail.svg",
+      "mode": "0o644",
+      "bytes": 799,
+      "sha256": "259c4aa544b7ceaff8b321a1e1779e6a1aa7f293b7571096114ad9f85fe7dc1b"
+    },
+    {
+      "path": "assets/case-humidifier-main.svg",
+      "mode": "0o644",
+      "bytes": 723,
+      "sha256": "42e749a292c15ce9e09fbed61a6120c8c24bc6aaf2f6534b7172abdceff3f489"
+    },
+    {
+      "path": "assets/case-kitchen-detail.svg",
+      "mode": "0o644",
+      "bytes": 699,
+      "sha256": "3e746316c3f9c1fa6dd40761cc0d362c2e49be568199f8f4de09843f448a7a8f"
+    },
+    {
+      "path": "assets/case-kitchen-main.svg",
+      "mode": "0o644",
+      "bytes": 838,
+      "sha256": "45e6a0d7c273bfeb313dbefee83ff0625e8d1f5317b71557a298b2def483b773"
+    },
+    {
+      "path": "assets/case-kitchen-set.svg",
+      "mode": "0o644",
+      "bytes": 663,
+      "sha256": "650e616a7bebefab988e7cb855de266ff9242c317107c117ca0c3ed5d2daaa08"
+    },
+    {
+      "path": "assets/case-storage-detail.svg",
+      "mode": "0o644",
+      "bytes": 803,
+      "sha256": "8ac18cfe0cd1f3a61a06c1673222bcac62d5355bea970476e8f4cefdc61d4cd6"
+    },
+    {
+      "path": "assets/case-storage-main.svg",
+      "mode": "0o644",
+      "bytes": 951,
+      "sha256": "f5187f4c28f5af88f3c5f5408a758e0ad48f2a61aefbf584198cbf4480aca187"
+    },
+    {
+      "path": "assets/case-storage-spec.svg",
+      "mode": "0o644",
+      "bytes": 735,
+      "sha256": "6bf4bff9426da1f2026c0ee82a775232c6dd0dc0aefa482389f518f6e92ae068"
+    },
+    {
+      "path": "assets/examples-nike-v1/prompts.json",
+      "mode": "0o644",
+      "bytes": 8429,
+      "sha256": "d6e8e13b9c1c3352da86a1e1eda16ccbcda241e25f3c57af4c3d36ae488a0946"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-colors.jpg",
+      "mode": "0o644",
+      "bytes": 106651,
+      "sha256": "05d422f5ba5865ac7dbdfeaa0d90f9a4f55b2ced0160641992024fbb20805ba5"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-colors.webp",
+      "mode": "0o644",
+      "bytes": 102046,
+      "sha256": "8d5b06c2f990e858933206790727133454b4ee25ef57db9bc7129ac6d4818c1e"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-detail.jpg",
+      "mode": "0o644",
+      "bytes": 170001,
+      "sha256": "e4b0d703511b0ba609340051fa178ad3b3504e701912e33f21e34a8d5e48cdcd"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-detail.webp",
+      "mode": "0o644",
+      "bytes": 192588,
+      "sha256": "3a6015f339c7c95706744be888b4a6b15f4873faee16ec99836ff904c55ded64"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-main.jpg",
+      "mode": "0o644",
+      "bytes": 94674,
+      "sha256": "37f07d6663c8a2392120762f634bbb810be8b6933170f83467674d3b7f68fdfd"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-main.webp",
+      "mode": "0o644",
+      "bytes": 84744,
+      "sha256": "08ec685a5f17287c5040aa61db26fe44dadf37590344cec7a2fd4b297710611f"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-navy.jpg",
+      "mode": "0o644",
+      "bytes": 101205,
+      "sha256": "d931d8c6104cb48aeb8073c30f56ebba5ff3f75522226cd8c930eeb942e972e9"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-navy.webp",
+      "mode": "0o644",
+      "bytes": 92304,
+      "sha256": "789c840e6c11157c5a004407c0010e6d19026810341971145aad463637617d67"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-poster.jpg",
+      "mode": "0o644",
+      "bytes": 185588,
+      "sha256": "de75addd83387dbaa86effd0399578a3f0083889aa4b0130e18ad1979333f86f"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-poster.webp",
+      "mode": "0o644",
+      "bytes": 182092,
+      "sha256": "806cb82508b347ff9c6724bde168d46cbb3edf8d614ffeb5cf82eac2e762238b"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-sage.jpg",
+      "mode": "0o644",
+      "bytes": 106307,
+      "sha256": "b04755e9b3092a6e595b88ff98048eacbb315199ba2402cb933b6a9aa20e11ac"
+    },
+    {
+      "path": "assets/examples-nike-v1/sneaker-sage.webp",
+      "mode": "0o644",
+      "bytes": 97278,
+      "sha256": "da87cb39c33bf0d3128a272484a9fdde7986596ace4a5c607307420b501df9fc"
+    },
+    {
+      "path": "assets/examples-v4/bottle-main.webp",
+      "mode": "0o644",
+      "bytes": 52072,
+      "sha256": "909fc662369c5207f3261582462b97bd5f60771df76cd16fd2ee3c9a7006bbae"
+    },
+    {
+      "path": "assets/examples-v4/bottle-pack.webp",
+      "mode": "0o644",
+      "bytes": 36830,
+      "sha256": "8e2b62216890764f92a8bf9efc9faebb94ad52542bcb25a2badced2b888c080b"
+    },
+    {
+      "path": "assets/examples-v4/bottle-poster.webp",
+      "mode": "0o644",
+      "bytes": 135930,
+      "sha256": "9036ab7735bf20f76eb61aad9203f98bd74e64f4280ec79a8dac402fe4ca3356"
+    },
+    {
+      "path": "assets/examples-v4/bottle-spec.webp",
+      "mode": "0o644",
+      "bytes": 23244,
+      "sha256": "877b3e8994d3bbc3c336bc277c61619dca81ce014a789da908eb84b54a68e239"
+    },
+    {
+      "path": "assets/examples-v4/humidifier-detail.webp",
+      "mode": "0o644",
+      "bytes": 24054,
+      "sha256": "7c0473fc841630dc2a327c0f1a9e4a35301a3783a4a5452d6aaf2cceb31c185a"
+    },
+    {
+      "path": "assets/examples-v4/humidifier-main.webp",
+      "mode": "0o644",
+      "bytes": 24028,
+      "sha256": "00972c57d38f272b00b3f37a3215349cdcc57b183e97054798c08db550782307"
+    },
+    {
+      "path": "assets/examples-v4/humidifier-poster.webp",
+      "mode": "0o644",
+      "bytes": 75312,
+      "sha256": "e0bd8ca9e1c75311a7622d019e511f3c1007c37f45610b5810eee5f5c4e7fb0f"
+    },
+    {
+      "path": "assets/examples-v4/kitchen-detail.webp",
+      "mode": "0o644",
+      "bytes": 45084,
+      "sha256": "9bca8a72b30e3355c0e570c202120a245001884b9b27c63a0c76473044159603"
+    },
+    {
+      "path": "assets/examples-v4/kitchen-main.webp",
+      "mode": "0o644",
+      "bytes": 61978,
+      "sha256": "ead21d566b081a89dc3fb1154e50f60d6620ed4ac9888d6991ee80731ad004ec"
+    },
+    {
+      "path": "assets/examples-v4/kitchen-poster.webp",
+      "mode": "0o644",
+      "bytes": 153938,
+      "sha256": "501a120c60a87d20bd782cfa67908957d74dde4409d83e706fd26eff35b0f9c5"
+    },
+    {
+      "path": "assets/examples-v4/kitchen-set.webp",
+      "mode": "0o644",
+      "bytes": 38126,
+      "sha256": "ee4071e7a98059a921c1e117e0011655a9bc1aeef88d0960fbdc937c2b6499ac"
+    },
+    {
+      "path": "assets/examples-v4/prompts.json",
+      "mode": "0o644",
+      "bytes": 8437,
+      "sha256": "70b5f5b13611d434cfaca8501d03115420bd8d7d7ca0904e8d26e82a7497d627"
+    },
+    {
+      "path": "assets/examples-v4/storage-detail.webp",
+      "mode": "0o644",
+      "bytes": 17492,
+      "sha256": "183f0c960709e72f51c1e1624c4150a04131387ba16b235c48289061108b5cd5"
+    },
+    {
+      "path": "assets/examples-v4/storage-main.webp",
+      "mode": "0o644",
+      "bytes": 23358,
+      "sha256": "bc558ad2b08f5347f69425b43e6fa336799a13f240abced964d8900bb0537559"
+    },
+    {
+      "path": "assets/examples-v4/storage-poster.webp",
+      "mode": "0o644",
+      "bytes": 54468,
+      "sha256": "c208c55b54c7ed905e4676b8e095a5b2564bafb510624a5feae0eaf01d9e3b90"
+    },
+    {
+      "path": "assets/examples-v4/storage-set.webp",
+      "mode": "0o644",
+      "bytes": 14746,
+      "sha256": "181249494ca6d186ceaccf286ec7c5fa85508593ff1e388dfe3baa97c051237f"
+    },
+    {
+      "path": "assets/feedback/detail-crop.js",
+      "mode": "0o644",
+      "bytes": 4892,
+      "sha256": "bed0154ab7aed3def386e66e7121f7352ccb8edee62cc5cc300df515646e8514"
+    },
+    {
+      "path": "assets/feedback/feedback.css",
+      "mode": "0o644",
+      "bytes": 2746,
+      "sha256": "ccf673bcfc35ff64146636ac42ea8927a9f0506dbb1a77c015cb6d28635a341b"
+    },
+    {
+      "path": "assets/feedback/feedback.js",
+      "mode": "0o644",
+      "bytes": 6029,
+      "sha256": "9563611df3188ac7ec50e51f47d9536cac19d7ea11d0ef0fc6172c8be65905e7"
+    },
+    {
+      "path": "assets/photos/bottle-main.jpg",
+      "mode": "0o644",
+      "bytes": 115132,
+      "sha256": "4881a59d6a5aa2cb715a28feea84f65dc2908f2aeac743b129cd31db5cd4dd84"
+    },
+    {
+      "path": "assets/photos/bottle-pack.jpg",
+      "mode": "0o644",
+      "bytes": 62825,
+      "sha256": "3c2cd9fc34ca3d9d7baaad0696b251529839e8a5bfc1beed471e5e24b3b0bc63"
+    },
+    {
+      "path": "assets/photos/bottle-spec.jpg",
+      "mode": "0o644",
+      "bytes": 19434,
+      "sha256": "d44578883e6f7fa0e5f6853aa8c1b3cdfbe0615a369d47aa77ef6b0dd1b23a81"
+    },
+    {
+      "path": "assets/photos/bottle-v2-main.jpg",
+      "mode": "0o644",
+      "bytes": 26657,
+      "sha256": "a774cc69488b970716f99efe92ab59566c049dead1bfd203a94a30a9ffa80b31"
+    },
+    {
+      "path": "assets/photos/bottle-v2-pack.jpg",
+      "mode": "0o644",
+      "bytes": 58765,
+      "sha256": "dc75234edc9515137d618848b18d9f5ea5a3da4ef4d009f5adb65218e9bac592"
+    },
+    {
+      "path": "assets/photos/bottle-v2-spec.jpg",
+      "mode": "0o644",
+      "bytes": 41406,
+      "sha256": "68d16b9cc04aa55bc97a6a5fec8bfe79c3f13df7be9805403fbc4e0dc021cb66"
+    },
+    {
+      "path": "assets/photos/bottle-v3-main.jpg",
+      "mode": "0o644",
+      "bytes": 81378,
+      "sha256": "15ce8cb5cf6f6fa540eed403b1acf90b50a9a063e97ea5b3806847f9d35c0ee4"
+    },
+    {
+      "path": "assets/photos/humidifier-detail.jpg",
+      "mode": "0o644",
+      "bytes": 38967,
+      "sha256": "99885da46ae6405e42677ae4b90ea452293dfe8c4acec7c0534f4eb513cc86a7"
+    },
+    {
+      "path": "assets/photos/humidifier-main.jpg",
+      "mode": "0o644",
+      "bytes": 46807,
+      "sha256": "e108feaaeb23d7893363163c98216a30e0a52f8366c80a8dd3250779a049d3b6"
+    },
+    {
+      "path": "assets/photos/humidifier-v3-main.jpg",
+      "mode": "0o644",
+      "bytes": 44165,
+      "sha256": "82e308cd2ab6f415bbb578407e05aff38d2ede5ebd558e8027ed9effef3c3c15"
+    },
+    {
+      "path": "assets/photos/kitchen-detail.jpg",
+      "mode": "0o644",
+      "bytes": 116830,
+      "sha256": "3ffc4da1b3bfd4fd01e4c88de4bc0a77c2d9075aeb7f056857cb76f9eb89acaf"
+    },
+    {
+      "path": "assets/photos/kitchen-main.jpg",
+      "mode": "0o644",
+      "bytes": 66986,
+      "sha256": "df3fd3986baf8fd281f1cbc89a42459d69b4b585ab389489348c90e0ffdcb3aa"
+    },
+    {
+      "path": "assets/photos/kitchen-set.jpg",
+      "mode": "0o644",
+      "bytes": 48354,
+      "sha256": "7fd73e817ed727e06cbdefd2a4c7c6dc9896d2682d5a76afe353b91f70dd8b1a"
+    },
+    {
+      "path": "assets/photos/kitchen-v2-set.jpg",
+      "mode": "0o644",
+      "bytes": 50761,
+      "sha256": "502935d84a90cee38ea50d4f5eb03779773aef747f0d586c0a7a604f60b6b822"
+    },
+    {
+      "path": "assets/photos/kitchen-v3-main.jpg",
+      "mode": "0o644",
+      "bytes": 87959,
+      "sha256": "8f8ad174e7566c228463519d1de679d0a70ac3ea58def00c390a926a3cfb1eb1"
+    },
+    {
+      "path": "assets/photos/storage-detail.jpg",
+      "mode": "0o644",
+      "bytes": 91121,
+      "sha256": "c502e66fdc0ecb61883bd25412c2dcea131e8cfe23342cf737ce7c5e9fb89fea"
+    },
+    {
+      "path": "assets/photos/storage-main.jpg",
+      "mode": "0o644",
+      "bytes": 158766,
+      "sha256": "9048feec1338e4ccfa39542f8ffd8967800bc9634c290fb422249b5a90d06b5c"
+    },
+    {
+      "path": "assets/photos/storage-scene.jpg",
+      "mode": "0o644",
+      "bytes": 54165,
+      "sha256": "5aeaaf3c868ca51268c1758b01febe9a12a3d3b3a557c5f7e035cc30c5ee2c65"
+    },
+    {
+      "path": "assets/photos/storage-v2-detail.jpg",
+      "mode": "0o644",
+      "bytes": 32004,
+      "sha256": "1ef017c764b0705a89a25763be49b0a67b2d2d81137c8edd3ed9cfaa9fddf53a"
+    },
+    {
+      "path": "assets/photos/storage-v2-main.jpg",
+      "mode": "0o644",
+      "bytes": 30086,
+      "sha256": "d8aab6d61837553b459dd5a264b7a5027a63dcf9991d04c77e1c6d6cc00cf9f6"
+    },
+    {
+      "path": "assets/photos/storage-v2-scene.jpg",
+      "mode": "0o644",
+      "bytes": 81270,
+      "sha256": "e6475ced25ff1afa64d4f194c66d7ea30021b31a6266165c726be1ffc6a29c66"
+    },
+    {
+      "path": "assets/photos/storage-v2-set.jpg",
+      "mode": "0o644",
+      "bytes": 45904,
+      "sha256": "919521e30e36868bd4233287bf30e3e2aba7004fd15350a2d928ff431c6c6f2b"
+    },
+    {
+      "path": "assets/photos/storage-v3-main.jpg",
+      "mode": "0o644",
+      "bytes": 43488,
+      "sha256": "cea9ea987fba709e7984750a0bb8764f5995bdcf57b2910f12f0736e001aafd8"
+    },
+    {
+      "path": "assets/photos/style-ref.jpg",
+      "mode": "0o644",
+      "bytes": 115132,
+      "sha256": "4881a59d6a5aa2cb715a28feea84f65dc2908f2aeac743b129cd31db5cd4dd84"
+    },
+    {
+      "path": "assets/photos/style-result.jpg",
+      "mode": "0o644",
+      "bytes": 48489,
+      "sha256": "03f48d0ef3a1b2651b21377e8eb83dde5d93168d9e6d1040579aad97a9f9b90a"
+    },
+    {
+      "path": "assets/photos/style-v2-ref.jpg",
+      "mode": "0o644",
+      "bytes": 65305,
+      "sha256": "281618387601de4f056cf291ea85c58420226a12514c2941004470f3f4b39ee7"
+    },
+    {
+      "path": "assets/photos/style-v2-result.jpg",
+      "mode": "0o644",
+      "bytes": 27050,
+      "sha256": "e9616896053770b32edeffba5206a89c371241f224b16304bf7f7d256ffc7e23"
+    },
+    {
+      "path": "assets/product-suite.svg",
+      "mode": "0o644",
+      "bytes": 1021,
+      "sha256": "36b11ebf05a0a24cb46458df436e3f6a6e11d7717d5da7f5d3f5370e654fb03d"
+    },
+    {
+      "path": "brand.css",
+      "mode": "0o644",
+      "bytes": 13038,
+      "sha256": "e52d0490f4ae6647a43497ed2e4c0f38f7c6137fdd15a69c56832ce95bc0a884"
+    },
+    {
+      "path": "brief-store.js",
+      "mode": "0o644",
+      "bytes": 11912,
+      "sha256": "52b5b7897b0192dfc4f7990b8a858a690bf2ef81228afa5eba34ebd5f9498fc9"
+    },
+    {
+      "path": "china-examples.css",
+      "mode": "0o644",
+      "bytes": 13481,
+      "sha256": "697e9e18c30670a2a2653b6d3d9d5f132623679febe3695a6eea6543a627b356"
+    },
+    {
+      "path": "china-examples.html",
+      "mode": "0o644",
+      "bytes": 24940,
+      "sha256": "2bf35989144110d0a7542967c23678e005a6ad456fb104eaddc602505f7ef0f5"
+    },
+    {
+      "path": "china-examples.js",
+      "mode": "0o644",
+      "bytes": 3915,
+      "sha256": "df5a3f0ad5f865a0b077a55c11670010fea0a181332b6785ff4c7bf30b3962d9"
+    },
+    {
+      "path": "china-full.css",
+      "mode": "0o644",
+      "bytes": 72453,
+      "sha256": "dfa25c0d9115c55636cf29bfdd07961464ccb6889c202122757b6cf937a881c9"
+    },
+    {
+      "path": "china-full.html",
+      "mode": "0o644",
+      "bytes": 30483,
+      "sha256": "4299a3d1a99d985ed35543c66e22860e8102639339e62e81808db1e9080071d1"
+    },
+    {
+      "path": "china-full.js",
+      "mode": "0o644",
+      "bytes": 9796,
+      "sha256": "a479f8bbf9d232b510631662a00252596ba973e026ebdf76bfb7e40c1f61912c"
+    },
+    {
+      "path": "china-workflow.css",
+      "mode": "0o644",
+      "bytes": 63375,
+      "sha256": "9d246c434b40235d37122969c0ba5876e6a5cb72b99e65c06321b18034c0124b"
+    },
+    {
+      "path": "china-workflow.html",
+      "mode": "0o644",
+      "bytes": 29369,
+      "sha256": "4f01cf9d885dd92c25c6b466c61220005c3e8f2fb65861877a6551fd8671b917"
+    },
+    {
+      "path": "china-workflow.js",
+      "mode": "0o644",
+      "bytes": 152268,
+      "sha256": "26950f8d5fee7399e65cccae62f874dcd46d63d9e5c76a7776a46030dbccac68"
+    },
+    {
+      "path": "codex-provider.js",
+      "mode": "0o644",
+      "bytes": 21152,
+      "sha256": "1a42bbb7c5ded9b884dc04dafd4b1c61a3523f7c6b78958dc255a261ade1b380"
+    },
+    {
+      "path": "codex-status.js",
+      "mode": "0o644",
+      "bytes": 2940,
+      "sha256": "8d34152d703d0922520d4621076a0c53d9eebcb9b9f0b9cc601f30d46aba614b"
+    },
+    {
+      "path": "detail-design.js",
+      "mode": "0o644",
+      "bytes": 4016,
+      "sha256": "5fd871079bb4234847aa82fd80c906c1d70cce5c7ce3e379698d7ecf18454db7"
+    },
+    {
+      "path": "detail-workflow.js",
+      "mode": "0o644",
+      "bytes": 26846,
+      "sha256": "6b5e32f87a251b45b95237ea409d8969425d79cfaa30081b67a1afcec4531ffe"
+    },
+    {
+      "path": "docs/API.md",
+      "mode": "0o644",
+      "bytes": 19321,
+      "sha256": "7c8d1f98811655a8b057a63fd57441fe4343494ea843ddb98b2c1151b6db7a55"
+    },
+    {
+      "path": "docs/FEEDBACK.md",
+      "mode": "0o644",
+      "bytes": 2048,
+      "sha256": "97cd8de850eefb41ec66e4ab87d175baf7594b3fb16dc4a57f66a04cf50e3e32"
+    },
+    {
+      "path": "docs/INSTALL.md",
+      "mode": "0o644",
+      "bytes": 4073,
+      "sha256": "3073c9f19b6d0ffa08b3b32a9e62b9fc321b7deab0011d696c3411ae63965fc7"
+    },
+    {
+      "path": "docs/NGINX.md",
+      "mode": "0o644",
+      "bytes": 1475,
+      "sha256": "ea73964cb3ff05ed54dce6621584b951dbdc5ab22ab9bda36ac2bf0270cbe808"
+    },
+    {
+      "path": "docs/OPEN_SOURCE_CHECKLIST.md",
+      "mode": "0o644",
+      "bytes": 1494,
+      "sha256": "fa8f5f2e21944439c40988360b565b18188555d555f7e004e49feaa3720e0b7b"
+    },
+    {
+      "path": "docs/PI-BACKEND.md",
+      "mode": "0o644",
+      "bytes": 1678,
+      "sha256": "51d60945d8ac29cc4048112cf996bb02ce57ae0bc8818ef5fd61244cba86834f"
+    },
+    {
+      "path": "docs/RELEASE-REPORT.md",
+      "mode": "0o644",
+      "bytes": 4868,
+      "sha256": "f3f54fcf4e47f32f9c84498af1b4d9f1121d3b93f48c2c5786eb87f9d6dbe642"
+    },
+    {
+      "path": "docs/RELEASE-v0.3.0.md",
+      "mode": "0o644",
+      "bytes": 1219,
+      "sha256": "0c5fa717a33313c82828427ca3e7dfa03b30f2a084a13bb79411ee21ced4c32b"
+    },
+    {
+      "path": "document-reader.js",
+      "mode": "0o644",
+      "bytes": 4007,
+      "sha256": "c574edca7c24eccffdcc218d378c9ef77d639eedb9eb80f2ee009dd7cbc18206"
+    },
+    {
+      "path": "document-worker.js",
+      "mode": "0o644",
+      "bytes": 3871,
+      "sha256": "65e52f6d27f9f15e8cee2dcb68820992b0019ac1beac0680ba21f6e04789edd1"
+    },
+    {
+      "path": "execution/access.js",
+      "mode": "0o644",
+      "bytes": 1437,
+      "sha256": "64c1e88d757652fc238607db26071d02ae3ce4fdb4bdc5a4eb83eb952122ea2e"
+    },
+    {
+      "path": "execution/engine-activity.js",
+      "mode": "0o644",
+      "bytes": 2809,
+      "sha256": "ac52d8c348e2209420302baaa0babbfc65566bcb79306e5fdd1740279137954d"
+    },
+    {
+      "path": "execution/errors.js",
+      "mode": "0o644",
+      "bytes": 1705,
+      "sha256": "44760e1eedc276d97350218a7731e67c92c4a537ccb2cb2d225c13e89e812b9d"
+    },
+    {
+      "path": "execution/gateway.js",
+      "mode": "0o644",
+      "bytes": 6577,
+      "sha256": "fd5ab1eac78df4fbb7b651c81073563c825c4d075e84c2c3ee92000adba0fe19"
+    },
+    {
+      "path": "execution/http.js",
+      "mode": "0o644",
+      "bytes": 6151,
+      "sha256": "1da6aa2f0b69894d1da4c3b6adfcad5bcf6581fd4c0dddc2722b9f7a0e2c1742"
+    },
+    {
+      "path": "execution/runtime.js",
+      "mode": "0o644",
+      "bytes": 12039,
+      "sha256": "c14a4d13e215ab96b6fa36d8117c2854bcedd6812a88d01cff6e634817c882f8"
+    },
+    {
+      "path": "execution/store.js",
+      "mode": "0o644",
+      "bytes": 14711,
+      "sha256": "5a5785207430c641919735beb9a22bdaf9ccf5825af8ca43703b3304d61a61b2"
+    },
+    {
+      "path": "feedback-http.js",
+      "mode": "0o644",
+      "bytes": 2069,
+      "sha256": "62db4229adcdfc2bdd6c186d9fc194c83c54751ff5475e6234506b29329e04e3"
+    },
+    {
+      "path": "feedback-store.js",
+      "mode": "0o644",
+      "bytes": 6526,
+      "sha256": "788168c84a2ad52aa1b7775555eaccd2a26313fe5c5a44c2241f89e2ddffebe5"
+    },
+    {
+      "path": "image-references.js",
+      "mode": "0o644",
+      "bytes": 2713,
+      "sha256": "7916be63fdeed1a0bbd22cd992ddee1efb2fd0652d13a10f3c07c60aec02a3e0"
+    },
+    {
+      "path": "index.html",
+      "mode": "0o644",
+      "bytes": 16411,
+      "sha256": "3f90d8c7c0bdbef88e85ce132e22aad8cfc9332235fda63bfdf33c487ab335b9"
+    },
+    {
+      "path": "local-session.css",
+      "mode": "0o644",
+      "bytes": 1548,
+      "sha256": "56a945c68a3dc5bab162671efc5f442239cc7e511cca047e0a982dfe2e7542ed"
+    },
+    {
+      "path": "local-session.js",
+      "mode": "0o644",
+      "bytes": 4863,
+      "sha256": "cba9823cd8ab9e22b51425b8e8d9b30a1f10ba3ffdfef4bb3979c2abcc63482a"
+    },
+    {
+      "path": "package-lock.json",
+      "mode": "0o644",
+      "bytes": 112586,
+      "sha256": "c5535558cfb780a986ec29da30a04a77e99f0ccd5b1ca6f88a94e2d6d4bbd7d9"
+    },
+    {
+      "path": "package.json",
+      "mode": "0o644",
+      "bytes": 1163,
+      "sha256": "99b8179edfb267bef1f07e6615952f638db7a6d1fbcb24c8769ad26ef9910a7d"
+    },
+    {
+      "path": "pi-provider.js",
+      "mode": "0o644",
+      "bytes": 6012,
+      "sha256": "929bf376aa217b90da9c790000bae38bb6dd68d58cf8e0a9caf2039ef0a1730f"
+    },
+    {
+      "path": "picset-style.css",
+      "mode": "0o644",
+      "bytes": 11960,
+      "sha256": "506708d51cb84efd246c7648e465fcd375b613af089b830a76374ebbf4b46750"
+    },
+    {
+      "path": "picset-style.html",
+      "mode": "0o644",
+      "bytes": 7622,
+      "sha256": "fffb3699e8db69f2f59cf3e478c96dbdcf58d5ac7691a52e56356480b589327e"
+    },
+    {
+      "path": "platform-flow-mobile.svg",
+      "mode": "0o644",
+      "bytes": 5880,
+      "sha256": "0c8311600b36250c5399f812150e18fc76bfa0547da1bf288d06655b1abbb2e0"
+    },
+    {
+      "path": "platform-flow.svg",
+      "mode": "0o644",
+      "bytes": 6843,
+      "sha256": "9cd753fdbac0d92569d93378290a29ebc2ea6f20cda1052bc5fd595058085682"
+    },
+    {
+      "path": "product-profile.js",
+      "mode": "0o644",
+      "bytes": 5818,
+      "sha256": "08733577d1bb31edd4e29c0029067525f16d96795b4e9a62f94a4a98f1318f3d"
+    },
+    {
+      "path": "prompt-rewrite.js",
+      "mode": "0o644",
+      "bytes": 18724,
+      "sha256": "5e1575c80f1ec34112996cbd69b3e53c143d1786b690a3bcc182c9c84a8e3309"
+    },
+    {
+      "path": "script.js",
+      "mode": "0o644",
+      "bytes": 2005,
+      "sha256": "2c97ff646769efed90df323a30abfbdcdf14802f9ad78ec164bcb0a22e2b6278"
+    },
+    {
+      "path": "scripts/access-code.mjs",
+      "mode": "0o644",
+      "bytes": 1316,
+      "sha256": "758f895c3096a4846a86371f6f35c70d4d91a62ba83cb7a4dd2982fa190877f3"
+    },
+    {
+      "path": "scripts/execution-ops.mjs",
+      "mode": "0o644",
+      "bytes": 1232,
+      "sha256": "3df5fd9290ab616a215ed47596de043c7f1c2fa7e3bd53bdecae61863474a221"
+    },
+    {
+      "path": "scripts/feedback-ops.mjs",
+      "mode": "0o644",
+      "bytes": 1840,
+      "sha256": "d837d8f69165405a495d55f0f3169b566d886dcfd7b467426e958d9651b11e79"
+    },
+    {
+      "path": "scripts/prepare-release.py",
+      "mode": "0o644",
+      "bytes": 9774,
+      "sha256": "97789320482b2e451e216cf4f27c21ffd2a78b4f87b39387f43b5340314f2016"
+    },
+    {
+      "path": "server.js",
+      "mode": "0o644",
+      "bytes": 144210,
+      "sha256": "234cb06a7e994894f916760f158922119cd7166be5baf16bd0769e421bac01a6"
+    },
+    {
+      "path": "service/com.pintu-ai.local.plist",
+      "mode": "0o644",
+      "bytes": 916,
+      "sha256": "70dd53e3995dc93430d68acc77c585b15faaa7d5d2bfb951adff20966233beef"
+    },
+    {
+      "path": "service/install-macos-service.sh",
+      "mode": "0o755",
+      "bytes": 1430,
+      "sha256": "9cb1fad0e8f6cd990ae4cb8f092d4632418d771c6790e843c1d25f1417027f61"
+    },
+    {
+      "path": "service/nginx-pintu.conf",
+      "mode": "0o644",
+      "bytes": 1532,
+      "sha256": "54911c845b03bd3192f03c85379fda24fb50dd397982a9f5ad1284b520b03d16"
+    },
+    {
+      "path": "service/pintu.service",
+      "mode": "0o644",
+      "bytes": 405,
+      "sha256": "2395eddda4148e9f1db7854dc6109ed06c32e6a646d7b0dc18cf428452f71812"
+    },
+    {
+      "path": "service/uninstall-macos-service.sh",
+      "mode": "0o755",
+      "bytes": 271,
+      "sha256": "241af56beb583a9444cb00e15c3543971ce13d13a3b9f1cd815d02c5a99b8358"
+    },
+    {
+      "path": "styles.css",
+      "mode": "0o644",
+      "bytes": 16679,
+      "sha256": "a327ecf66dd6ae6b560c70b4261b6d5ce2d00b05384c7927eb09ca4b33dd0fca"
+    },
+    {
+      "path": "test/api-flow.test.js",
+      "mode": "0o644",
+      "bytes": 82858,
+      "sha256": "a038cab944f711c67522f00c99193fa690c24a0f06264b76d810721b236c68b3"
+    },
+    {
+      "path": "test/brief-rewrite-ui.test.js",
+      "mode": "0o644",
+      "bytes": 11521,
+      "sha256": "75d0445ca38ad6e836f661950d8c9ab755dadd7c0bb4ce39bec82d2992ce9c5e"
+    },
+    {
+      "path": "test/brief-store.test.js",
+      "mode": "0o644",
+      "bytes": 15679,
+      "sha256": "bc86bfb7b3c6d0c8cf0d2958e07a92285041e277d4dcd0f1dec7805bd143769c"
+    },
+    {
+      "path": "test/codex-provider.test.js",
+      "mode": "0o644",
+      "bytes": 19601,
+      "sha256": "5da582d87b9b4bb432cf3bac2b8363241d268557839550e434b84c49eb59ee6e"
+    },
+    {
+      "path": "test/detail-design.test.js",
+      "mode": "0o644",
+      "bytes": 2689,
+      "sha256": "9e8e579e6ef8288fd4c48406c21a32f2a37a2e9229d79489799646a50031a3c9"
+    },
+    {
+      "path": "test/detail-workflow-ui.test.js",
+      "mode": "0o644",
+      "bytes": 10610,
+      "sha256": "ff63da3c4bda97dde81490913427622ab904455dc9f90f176ac8cdc1fb08e911"
+    },
+    {
+      "path": "test/detail-workflow.test.js",
+      "mode": "0o644",
+      "bytes": 20721,
+      "sha256": "47a97daeec43a529f4efe3bf3afb3d95deada5351f2f2614d6397a34879bdbd5"
+    },
+    {
+      "path": "test/document-reader.test.js",
+      "mode": "0o644",
+      "bytes": 5317,
+      "sha256": "80fbb8f67cc1c81bbc7217106cd624a52e64409135b76253646d48157b64675d"
+    },
+    {
+      "path": "test/feedback-http.test.js",
+      "mode": "0o644",
+      "bytes": 4319,
+      "sha256": "98e4237800185f22f3eaceb3c236e9a70b83f6841ce58111eb2a3390a4b5150f"
+    },
+    {
+      "path": "test/feedback.test.js",
+      "mode": "0o644",
+      "bytes": 2663,
+      "sha256": "20a42bea9bb1296a499451b024fae614566f818ef1a3ff6febdefaded87ab1a7"
+    },
+    {
+      "path": "test/fixtures/product-image.docx",
+      "mode": "0o644",
+      "bytes": 116497,
+      "sha256": "d03f65756230d7d201ba14f9d6c6e8a5254457a0c79fb67cf36eb003b1eaa011"
+    },
+    {
+      "path": "test/fixtures/product.docx",
+      "mode": "0o644",
+      "bytes": 848,
+      "sha256": "19ac94de6b582d5c061d045993b310d75ad60eee7547db5df71f4d7d146acff9"
+    },
+    {
+      "path": "test/fixtures/product.pdf",
+      "mode": "0o644",
+      "bytes": 614,
+      "sha256": "e9bd70a098d410474db04bf9a21977a1e11c0064c16486300990df468dbd218a"
+    },
+    {
+      "path": "test/fixtures/product.txt",
+      "mode": "0o644",
+      "bytes": 53,
+      "sha256": "1c36f22f149ee3258c8da5aa26879d504442f1b61b8e9040eb51b6189ea22499"
+    },
+    {
+      "path": "test/image-references.test.js",
+      "mode": "0o644",
+      "bytes": 3677,
+      "sha256": "3efb0484f9699fe2350899db06d773d8ad72b7f15730b3fdefadbdc1fac15edb"
+    },
+    {
+      "path": "test/local-execution.test.js",
+      "mode": "0o644",
+      "bytes": 26512,
+      "sha256": "b22b0bb671751523499196d4f833c571ba8c29ae49d37519fb88d53e6ea08ee6"
+    },
+    {
+      "path": "test/local-session-ui.test.js",
+      "mode": "0o644",
+      "bytes": 5408,
+      "sha256": "2fbceb4969a4da5a95a937153378b193519df45ec6d6d45acaa859fe880dcac3"
+    },
+    {
+      "path": "test/pi-http.test.js",
+      "mode": "0o644",
+      "bytes": 5411,
+      "sha256": "afa4f06b251c45d566fff78089fde4015d1f55d2b2177519d94018c3ddc96925"
+    },
+    {
+      "path": "test/pi-provider.test.js",
+      "mode": "0o644",
+      "bytes": 4887,
+      "sha256": "90edf92a368f009636994283cbc12c1819ea9cf5f15ef3720943530cbaaf16e8"
+    },
+    {
+      "path": "test/product-profile.test.js",
+      "mode": "0o644",
+      "bytes": 3881,
+      "sha256": "cc5787afe21fe4ab3e5eec157458f66e6e5b6ec43b35f30e14e50a4b3842da53"
+    },
+    {
+      "path": "test/prompt-rewrite.test.js",
+      "mode": "0o644",
+      "bytes": 11592,
+      "sha256": "28f92de8ac261371143ad223d51f4f02aefab3b0c39a6c5d28ea6d0af7b2d4f2"
+    },
+    {
+      "path": "test/release_tool_test.py",
+      "mode": "0o644",
+      "bytes": 8179,
+      "sha256": "bb37adc5277b01bed46493deb14fe0ff69fb96349c28d3de4fc828b535d9e028"
+    },
+    {
+      "path": "test/visual-plan.test.js",
+      "mode": "0o644",
+      "bytes": 2622,
+      "sha256": "09ac12219605e6c8cc5e740b94b0fbf0c1a6c703faba64bf611bf9d3647988dc"
+    },
+    {
+      "path": "test/workflow-task.test.js",
+      "mode": "0o644",
+      "bytes": 23637,
+      "sha256": "d6046027a292cf2dac70b1366bd0b5458a35998eee8e06d8034152bc5d71d45e"
+    },
+    {
+      "path": "visual-plan.js",
+      "mode": "0o644",
+      "bytes": 3472,
+      "sha256": "fcb1f0eeab1ed9159e35c82aa0daee999a939c2f4e6702bdcc94d593e31dde49"
+    }
+  ]
+}

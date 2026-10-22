@@ -1,35 +1,23 @@
-# Security Policy
+# Security policy
 
-## Secrets
+## Deployment and sessions
 
-Do not commit real API keys, private gateway URLs, uploaded product photos, generated images, or local runtime data.
+The server listens on loopback by default. LAN binding requires a backend access-code hash and an exact `PINTU_ALLOWED_ORIGINS` allowlist. Generate a hash with `npm run access-code`; never store the original code in source, URLs or logs. Use HTTPS and `PINTU_COOKIE_SECURE=true` when the app is accessed through a TLS reverse proxy.
 
-The project intentionally ignores:
+Each browser owns its jobs, uploads and feedback through a persistent HttpOnly, SameSite=Strict cookie. Writes require a matching Origin and `X-Pintu-CSRF`. This shared access code is a small-team access gate, not a multi-user account or enterprise identity system. Removing cookies loses access to that browser's existing resources.
 
-- `.env`
-- `.env.*`
-- `AI API.rtf`
-- `runtime/`
-- `node_modules/`
+Keep all private media behind Node ownership checks. Do not expose `runtime/` through a static server, Nginx `alias`, public backup or file share. Run the service under a dedicated unprivileged user and restrict runtime and configuration file permissions.
 
-Use `.env.example` for placeholders only.
+## Credentials and data
 
-## Runtime API Configuration
+Model API keys, CLI login files, encryption keys and session databases stay on the server. The web configuration API is disabled. `.env.example` contains placeholders only; `.env`, runtime data, local CLI directories, databases, archives and dependencies must not be committed. The source-archive builder scans fixed commit blobs without reading deployment secrets, but a pattern scan does not replace a human review of staged changes and new commit history.
 
-The in-app API configuration panel stores local settings in:
+Uploads, prompts, extracted document text and masks may be sent to the chosen model provider. Choose a trusted service and process only material you are authorized to use. Feedback screenshots may contain private content; administrators must protect exports and backups.
 
-```text
-runtime/api-config.json
-```
+## Execution recovery
 
-This file is local-only and must not be committed. The browser never receives the real API key from `GET /api/config`.
+Image actions use a durable local request ledger. A network timeout is not proof of failure. Preserve uncertain executions and reconcile existing result evidence; do not delete the ledger, replay the same action with a new identifier, or fabricate a zero-result completion. Back up the entire runtime directory and its encryption key before maintenance.
 
-For public deployment, prefer server-side environment variables or a managed secret store instead of the local runtime config file.
+## Reporting
 
-## Data Sent to AI Providers
-
-Uploaded product images, masks, prompts, and generated instructions may be sent to the configured AI provider. Users should choose a trusted provider and avoid uploading sensitive or regulated material unless they have permission to process it.
-
-## Reporting Issues
-
-If you find a security issue, please report it privately to the project maintainer. Do not include real API keys, customer images, or private endpoint details in public issues.
+Report security issues privately to the repository maintainer using GitHub's private vulnerability reporting when available. Do not include real credentials, uploaded customer material, private task identifiers or full runtime logs in public issues. If a credential has been exposed, revoke or rotate it at its provider.

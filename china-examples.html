@@ -3,19 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>商品图案例 - 品图 AI</title>
-    <link rel="stylesheet" href="./china-examples.css?v=20260613-visual-refresh" />
-    <script src="./china-examples.js?v=20260613-visual-refresh" defer></script>
-  </head>
+    <title>商品图案例 - 品图</title>
+    <link rel="stylesheet" href="./china-examples.css?v=examples-5" />
+    <script src="./china-examples.js?v=examples-5" defer></script>
+    <link rel="stylesheet" href="./brand.css?v=0.3.0" />
+    <link rel="icon" type="image/svg+xml" href="./assets/brand/pintu-icon.svg" />
+    <link rel="stylesheet" href="./assets/brand/pintu-logo.css?v=logo-7" />
+    <script src="./assets/brand/pintu-logo.js?v=logo-7" defer></script>
+    <link rel="stylesheet" href="./assets/feedback/feedback.css?v=detail-3">
+    <link rel="stylesheet" href="./local-session.css?v=0.3.0" />
+</head>
   <body>
     <header class="topbar">
-      <a class="brand" href="./china-full.html">
-        <span>P</span>
-        品图 AI
-      </a>
+      <a class="brand" href="./china-full.html" aria-label="品图"><svg xmlns="http://www.w3.org/2000/svg" width="178" height="48" viewBox="0 0 178 48" role="img" aria-label="品图" class="brand-logo-img pt-logo">
+  <defs>
+    <linearGradient id="pt-bg" x1="2" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#061d4f" /><stop offset="0.58" stop-color="#0a3b82" /><stop offset="1" stop-color="#0aa7df" /></linearGradient>
+    <linearGradient id="pt-photo" x1="10" y1="34" x2="38" y2="15" gradientUnits="userSpaceOnUse"><stop stop-color="#11b5e9" /><stop offset="1" stop-color="#7de7f2" /></linearGradient>
+    <linearGradient id="pt-spark-fill" x1="36" y1="2" x2="48" y2="18" gradientUnits="userSpaceOnUse"><stop stop-color="#f0ff72" /><stop offset="1" stop-color="#8ee600" /></linearGradient>
+    <linearGradient id="pt-scan-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7de7f2" stop-opacity="0" /><stop offset="0.55" stop-color="#7de7f2" stop-opacity="0.9" /><stop offset="0.62" stop-color="#ffffff" stop-opacity="1" /><stop offset="1" stop-color="#7de7f2" stop-opacity="0" /></linearGradient>
+    <linearGradient id="pt-sheen-fill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0" /><stop offset="0.5" stop-color="#fff" stop-opacity="0.7" /><stop offset="1" stop-color="#fff" stop-opacity="0" /></linearGradient>
+    <clipPath id="pt-clip-card"><rect x="10" y="13" width="22" height="25" rx="6" /></clipPath>
+    <clipPath id="pt-clip-tile"><rect x="2" y="6" width="38" height="38" rx="12" /></clipPath>
+  </defs>
+  <g class="pt-mark">
+    <rect class="pt-tile" x="2" y="6" width="38" height="38" rx="12" fill="url(#pt-bg)" />
+    <g clip-path="url(#pt-clip-tile)"><g transform="skewX(-18)"><rect class="pt-sheen" x="8" y="2" width="12" height="46" fill="url(#pt-sheen-fill)" /></g></g>
+    <g class="pt-photo">
+      <rect class="pt-card" x="10" y="13" width="22" height="25" rx="6" fill="#fff" opacity="0.92" />
+      <circle class="pt-sun" cx="16" cy="19" r="3" fill="#0a2b68" />
+      <g clip-path="url(#pt-clip-card)"><path class="pt-mtn" d="M10 34 18 25l6 5 8-10v12a6 6 0 0 1-6 6H10v-4Z" fill="url(#pt-photo)" /></g>
+      <g clip-path="url(#pt-clip-card)"><rect class="pt-scan" x="9" y="10" width="24" height="7" fill="url(#pt-scan-fill)" /></g>
+    </g>
+    <g class="pt-spark-wrap">
+      <circle class="pt-flash" cx="40" cy="13.75" r="7" fill="none" stroke="#c6f94a" stroke-width="1.6" />
+      <path class="pt-spark" d="M40 1.5 43.2 10.5l8.8 3.2-8.8 3.3L40 26l-3.3-9-8.7-3.3 8.7-3.2L40 1.5Z" fill="url(#pt-spark-fill)" stroke="#fff" stroke-width="1.7" stroke-linejoin="round" />
+    </g>
+    <path class="pt-mini" d="M54.5 2.2 55.6 5.4l3.1 1.1-3.1 1.1-1.1 3.2-1.1-3.2-3.1-1.1 3.1-1.1 1.1-3.2Z" fill="#f0ff72" stroke="#fff" stroke-width="0.9" stroke-linejoin="round" />
+  </g>
+  <text class="pt-word" x="62" y="34" fill="#061d4f" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" font-weight="850" letter-spacing="0">品图</text>
+</svg></a>
       <nav aria-label="页面操作">
         <a href="./china-full.html">返回首页</a>
-        <a class="start-link" href="./china-workflow.html">免费生成一套</a>
+        <a class="start-link" href="./china-workflow.html">进入工作台</a>
       </nav>
     </header>
 
@@ -37,7 +66,7 @@
           <path class="sketch-cloud cloud-a" d="M72 124 C104 86,151 84,180 114 C205 82,268 90,284 132 C330 138,349 190,315 220 C288 252,229 244,210 218 C178 244,122 242,100 206 C62 206,41 158,72 124 Z" />
           <path class="sketch-cloud cloud-b" d="M1000 82 C1024 50,1076 52,1098 82 C1128 58,1177 82,1177 122 C1214 132,1217 184,1182 201 C1152 219,1108 209,1090 184 C1066 211,1012 205,998 170 C956 164,954 112,1000 82 Z" />
 
-          <text class="sketch-kicker" x="70" y="72">品图 AI</text>
+          <text class="sketch-kicker" x="70" y="72">品图</text>
           <text class="sketch-title" x="70" y="124">平台生成流程</text>
           <text class="sketch-subtitle" x="72" y="160">从一张商品图，到各平台可上架的完整视觉素材</text>
 
@@ -120,7 +149,7 @@
         </svg>
       </section>
 
-      <section class="case-scene">
+      <section class="case-scene" aria-labelledby="case-storage">
         <aside class="case-copy">
           <div class="platform-lockup" aria-label="淘宝和天猫平台">
             <span class="platform-pill">淘宝 / 天猫</span>
@@ -129,166 +158,205 @@
               <span class="platform-icon tmall">猫</span>
             </div>
           </div>
-          <h2>桌面收纳盒</h2>
-          <p>适合搜索点击、详情页首屏和颜色SKU展示，画面干净、有质感、可信赖。</p>
+          <h2 id="case-storage">桌面收纳盒</h2>
+          <p>从桌面场景到抽屉细节，再到叠放组合，呈现清爽有序的收纳方式。</p>
+          <p class="browse-hint">详情上下浏览 · 主图左右浏览</p>
         </aside>
         <div class="product-page">
-          <div class="detail-stream" aria-label="淘宝天猫详情页上下浏览">
-            <figure class="detail-panel tall" data-note="详情页首屏：建立质感和购买欲">
-              <img loading="lazy" src="./assets/photos/storage-main.jpg" alt="桌面收纳盒详情页首屏" />
+          <div class="detail-stream" role="region" tabindex="0" aria-label="桌面收纳盒详情页，上下滚动浏览">
+            <figure class="detail-panel detail-poster" data-note="详情页首屏：桌面收纳与生活场景">
+              <img loading="lazy" decoding="async" width="1024" height="1536" src="./assets/examples-v4/storage-poster.webp" alt="桌面收纳盒详情页海报" />
               <figcaption>详情页首屏</figcaption>
             </figure>
-            <figure class="detail-panel" data-note="卖点分屏：分区、透明、可叠放">
-              <img loading="lazy" src="./assets/photos/storage-detail.jpg" alt="桌面收纳盒卖点详情页" />
-              <figcaption>卖点分屏</figcaption>
+            <figure class="detail-panel" data-note="抽屉细节：开合方式与盒体轮廓">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/storage-detail.webp" alt="雾白双层收纳盒抽屉打开的细节图" />
+              <figcaption>抽屉细节</figcaption>
             </figure>
-            <figure class="detail-panel" data-note="参数规格：尺寸、材质、包装">
-              <img loading="lazy" src="./assets/photos/storage-scene.jpg" alt="桌面收纳盒参数详情页" />
-              <figcaption>参数规格</figcaption>
+            <figure class="detail-panel" data-note="组合展示：单组收纳与上下叠放">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/storage-set.webp" alt="雾白收纳盒单组与叠放组合展示" />
+              <figcaption>叠放组合</figcaption>
             </figure>
           </div>
           <div class="gallery-side">
-            <section class="main-gallery" aria-label="淘宝天猫主图横滑">
+            <section class="main-gallery" aria-label="桌面收纳盒主图">
               <div class="gallery-title"><strong>主图</strong></div>
-              <div class="main-strip">
-                <figure data-note="点击主图：主体清楚，背景干净">
-                  <img loading="lazy" src="./assets/photos/storage-main.jpg" alt="桌面收纳盒点击主图" />
-                  <figcaption>点击主图</figcaption>
-                </figure>
-                <figure data-note="场景主图：办公桌和居家场景">
-                  <img loading="lazy" src="./assets/photos/storage-detail.jpg" alt="桌面收纳盒场景主图" />
-                  <figcaption>场景主图</figcaption>
-                </figure>
-                <figure data-note="细节主图：抽屉、分区、边角">
-                  <img loading="lazy" src="./assets/photos/storage-scene.jpg" alt="桌面收纳盒细节主图" />
-                  <figcaption>细节主图</figcaption>
-                </figure>
+              <div class="main-strip" role="region" tabindex="0" aria-label="桌面收纳盒主图，左右滚动浏览">
+            <figure data-note="桌面主图：完整呈现商品外观">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/storage-main.webp" alt="雾白双层收纳盒桌面场景主图" />
+              <figcaption>桌面主图</figcaption>
+            </figure>
+            <figure data-note="细节主图：查看抽屉与把手">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/storage-detail.webp" alt="雾白双层收纳盒打开抽屉的主图" />
+              <figcaption>细节主图</figcaption>
+            </figure>
               </div>
             </section>
-            <section class="sku-gallery" aria-label="淘宝天猫SKU横滑">
+            <section class="sku-gallery" aria-label="桌面收纳盒SKU">
               <div class="gallery-title"><strong>SKU</strong></div>
-              <div class="sku-strip">
-                <figure data-note="透明款"><img loading="lazy" src="./assets/photos/storage-scene.jpg" alt="透明款SKU" /><figcaption>透明款</figcaption></figure>
-                <figure data-note="白色款"><img loading="lazy" src="./assets/photos/storage-main.jpg" alt="白色款SKU" /><figcaption>白色款</figcaption></figure>
-                <figure data-note="组合款"><img loading="lazy" src="./assets/photos/storage-detail.jpg" alt="组合款SKU" /><figcaption>组合款</figcaption></figure>
+              <div class="sku-strip" role="region" tabindex="0" aria-label="桌面收纳盒SKU，左右滚动浏览">
+            <figure data-note="雾白双层">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/storage-main.webp" alt="雾白双层收纳盒" />
+              <figcaption>雾白双层</figcaption>
+            </figure>
+            <figure data-note="叠放组合">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/storage-set.webp" alt="雾白收纳盒叠放组合" />
+              <figcaption>叠放组合</figcaption>
+            </figure>
               </div>
             </section>
           </div>
         </div>
       </section>
 
-      <section class="case-scene">
+      <section class="case-scene" aria-labelledby="case-sneaker">
         <aside class="case-copy">
           <span>1688</span>
-          <h2>不锈钢保温杯</h2>
-          <p>突出规格、起订量、包装、批发组合和稳定供货能力，方便采购方快速判断。</p>
+          <h2 id="case-sneaker">耐克球鞋</h2>
+          <p>围绕鞋型轮廓、侧面细节与三种配色，展示适合商品详情页、主图和 SKU 的完整视觉。</p>
+          <p class="browse-hint">详情上下浏览 · 主图左右浏览</p>
         </aside>
         <div class="product-page">
-          <div class="detail-stream" aria-label="1688详情页上下浏览">
-            <figure class="detail-panel tall" data-note="产品总览：规格型号一屏看清">
-              <img loading="lazy" src="./assets/photos/bottle-main.jpg" alt="保温杯产品总览详情页" />
-              <figcaption>产品总览</figcaption>
+          <div class="detail-stream" role="region" tabindex="0" aria-label="耐克球鞋详情页，上下滚动浏览">
+            <figure class="detail-panel detail-poster" data-note="产品首屏：黑白低帮球鞋的轮廓与搭配">
+              <img loading="lazy" decoding="async" width="1024" height="1536" src="./assets/examples-nike-v1/sneaker-poster.webp" alt="黑白配色耐克低帮球鞋详情页海报" />
+              <figcaption>产品首屏</figcaption>
             </figure>
-            <figure class="detail-panel" data-note="批发规格：容量、颜色、装箱数">
-              <img loading="lazy" src="./assets/photos/bottle-spec.jpg" alt="保温杯批发规格详情页" />
-              <figcaption>批发规格</figcaption>
+            <figure class="detail-panel" data-note="局部特写：鞋侧标识与缝线">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-nike-v1/sneaker-detail.webp" alt="耐克球鞋侧面标识与缝线局部特写" />
+              <figcaption>鞋侧细节</figcaption>
             </figure>
-            <figure class="detail-panel" data-note="包装发货：适合工厂和档口采购">
-              <img loading="lazy" src="./assets/photos/bottle-pack.jpg" alt="保温杯包装发货详情页" />
-              <figcaption>包装发货</figcaption>
+            <figure class="detail-panel" data-note="配色展示：黑白、墨绿与深蓝">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-nike-v1/sneaker-colors.webp" alt="黑白、墨绿与深蓝三种配色耐克球鞋并列展示" />
+              <figcaption>配色展示</figcaption>
             </figure>
           </div>
           <div class="gallery-side">
-            <section class="main-gallery">
+            <section class="main-gallery" aria-label="耐克球鞋主图">
               <div class="gallery-title"><strong>主图</strong></div>
-              <div class="main-strip">
-                <figure data-note="产品主图：突出实物和规格"><img loading="lazy" src="./assets/photos/bottle-main.jpg" alt="保温杯主图" /><figcaption>产品主图</figcaption></figure>
-                <figure data-note="规格主图：容量和材质"><img loading="lazy" src="./assets/photos/bottle-spec.jpg" alt="保温杯规格主图" /><figcaption>规格主图</figcaption></figure>
+              <div class="main-strip" role="region" tabindex="0" aria-label="耐克球鞋主图，左右滚动浏览">
+            <figure data-note="产品主图：一双黑白低帮球鞋的完整外观">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-nike-v1/sneaker-main.webp" alt="一双黑白配色耐克低帮球鞋主图" />
+              <figcaption>产品主图</figcaption>
+            </figure>
+            <figure data-note="配色主图：三种配色的并列对比">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-nike-v1/sneaker-colors.webp" alt="耐克低帮球鞋黑白、墨绿与深蓝配色主图" />
+              <figcaption>配色主图</figcaption>
+            </figure>
               </div>
             </section>
-            <section class="sku-gallery">
+            <section class="sku-gallery" aria-label="耐克球鞋SKU">
               <div class="gallery-title"><strong>SKU</strong></div>
-              <div class="sku-strip">
-                <figure data-note="500ml"><img loading="lazy" src="./assets/photos/bottle-main.jpg" alt="500ml SKU" /><figcaption>500ml</figcaption></figure>
-                <figure data-note="750ml"><img loading="lazy" src="./assets/photos/bottle-spec.jpg" alt="750ml SKU" /><figcaption>750ml</figcaption></figure>
-                <figure data-note="礼盒装"><img loading="lazy" src="./assets/photos/bottle-pack.jpg" alt="礼盒装SKU" /><figcaption>礼盒装</figcaption></figure>
+              <div class="sku-strip" role="region" tabindex="0" aria-label="耐克球鞋SKU，左右滚动浏览">
+            <figure data-note="黑白配色">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-nike-v1/sneaker-main.webp" alt="黑白配色耐克低帮球鞋SKU" />
+              <figcaption>黑白</figcaption>
+            </figure>
+            <figure data-note="墨绿白配色">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-nike-v1/sneaker-sage.webp" alt="墨绿白配色耐克低帮球鞋SKU" />
+              <figcaption>墨绿</figcaption>
+            </figure>
+            <figure data-note="深蓝白配色">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-nike-v1/sneaker-navy.webp" alt="深蓝白配色耐克低帮球鞋SKU" />
+              <figcaption>深蓝</figcaption>
+            </figure>
               </div>
             </section>
           </div>
         </div>
       </section>
 
-      <section class="case-scene">
+      <section class="case-scene" aria-labelledby="case-kitchen">
         <aside class="case-copy">
           <span>拼多多</span>
-          <h2>厨房置物架</h2>
-          <p>一眼看懂用途、规格和套装组合，降低买家理解成本。</p>
+          <h2 id="case-kitchen">厨房置物架</h2>
+          <p>用台面场景、托盘细节和款式组合，清楚展示厨房收纳的不同选择。</p>
+          <p class="browse-hint">详情上下浏览 · 主图左右浏览</p>
         </aside>
         <div class="product-page">
-          <div class="detail-stream" aria-label="拼多多详情页上下浏览">
-            <figure class="detail-panel tall" data-note="场景首屏：厨房台面收纳">
-              <img loading="lazy" src="./assets/photos/kitchen-main.jpg" alt="厨房置物架场景详情页" />
+          <div class="detail-stream" role="region" tabindex="0" aria-label="厨房置物架详情页，上下滚动浏览">
+            <figure class="detail-panel detail-poster" data-note="场景首屏：厨房台面收纳">
+              <img loading="lazy" decoding="async" width="1024" height="1536" src="./assets/examples-v4/kitchen-poster.webp" alt="白色厨房置物架详情页海报" />
               <figcaption>场景首屏</figcaption>
             </figure>
-            <figure class="detail-panel" data-note="卖点图：节省空间、承重、易清洁">
-              <img loading="lazy" src="./assets/photos/kitchen-detail.jpg" alt="厨房置物架卖点详情页" />
-              <figcaption>卖点图</figcaption>
+            <figure class="detail-panel" data-note="局部特写：托盘圆角与孔洞">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-v4/kitchen-detail.webp" alt="白色置物架托盘圆角与孔洞局部特写" />
+              <figcaption>托盘细节</figcaption>
             </figure>
-            <figure class="detail-panel" data-note="套装组合：单层、双层、加宽款">
-              <img loading="lazy" src="./assets/photos/kitchen-set.jpg" alt="厨房置物架套装详情页" />
-              <figcaption>套装组合</figcaption>
+            <figure class="detail-panel" data-note="组合展示：单层、双层与不同宽度的置物架">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/kitchen-set.webp" alt="白色厨房置物架不同款式组合" />
+              <figcaption>款式组合</figcaption>
             </figure>
           </div>
           <div class="gallery-side">
-            <section class="main-gallery">
+            <section class="main-gallery" aria-label="厨房置物架主图">
               <div class="gallery-title"><strong>主图</strong></div>
-              <div class="main-strip">
-                <figure data-note="用途主图：厨房收纳"><img loading="lazy" src="./assets/photos/kitchen-main.jpg" alt="厨房置物架主图" /><figcaption>用途主图</figcaption></figure>
-                <figure data-note="卖点主图：空间利用"><img loading="lazy" src="./assets/photos/kitchen-detail.jpg" alt="厨房置物架卖点主图" /><figcaption>卖点主图</figcaption></figure>
+              <div class="main-strip" role="region" tabindex="0" aria-label="厨房置物架主图，左右滚动浏览">
+            <figure data-note="台面主图：双层置物架的完整外观">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/kitchen-main.webp" alt="白色双层厨房置物架台面主图" />
+              <figcaption>台面主图</figcaption>
+            </figure>
+            <figure data-note="细节主图：托盘结构">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-v4/kitchen-detail.webp" alt="白色厨房置物架托盘局部主图" />
+              <figcaption>细节主图</figcaption>
+            </figure>
               </div>
             </section>
-            <section class="sku-gallery">
+            <section class="sku-gallery" aria-label="厨房置物架SKU">
               <div class="gallery-title"><strong>SKU</strong></div>
-              <div class="sku-strip">
-                <figure data-note="单层款"><img loading="lazy" src="./assets/photos/kitchen-set.jpg" alt="单层款SKU" /><figcaption>单层款</figcaption></figure>
-                <figure data-note="双层款"><img loading="lazy" src="./assets/photos/kitchen-detail.jpg" alt="双层款SKU" /><figcaption>双层款</figcaption></figure>
-                <figure data-note="加宽款"><img loading="lazy" src="./assets/photos/kitchen-main.jpg" alt="加宽款SKU" /><figcaption>加宽款</figcaption></figure>
+              <div class="sku-strip" role="region" tabindex="0" aria-label="厨房置物架SKU，左右滚动浏览">
+            <figure data-note="双层款">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/kitchen-main.webp" alt="白色双层厨房置物架" />
+              <figcaption>双层款</figcaption>
+            </figure>
+            <figure data-note="款式组合">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/kitchen-set.webp" alt="白色厨房置物架款式组合" />
+              <figcaption>款式组合</figcaption>
+            </figure>
               </div>
             </section>
           </div>
         </div>
       </section>
 
-      <section class="case-scene">
+      <section class="case-scene" aria-labelledby="case-humidifier">
         <aside class="case-copy">
           <span>抖音 / 小红书</span>
-          <h2>桌面加湿器</h2>
-          <p>适合内容封面、笔记配图和商品橱窗，画面强调场景感、光影和生活气。</p>
+          <h2 id="case-humidifier">桌面加湿器</h2>
+          <p>用柔和光影、床头场景和机身细节，展示适合笔记与商品橱窗的生活方式画面。</p>
+          <p class="browse-hint">详情上下浏览 · 主图左右浏览</p>
         </aside>
         <div class="product-page">
-          <div class="detail-stream" aria-label="内容电商详情页上下浏览">
-            <figure class="detail-panel tall" data-note="种草首屏：桌面生活方式">
-              <img loading="lazy" src="./assets/photos/humidifier-main.jpg" alt="桌面加湿器种草详情页" />
-              <figcaption>种草首屏</figcaption>
+          <div class="detail-stream" role="region" tabindex="0" aria-label="桌面加湿器详情页，上下滚动浏览">
+            <figure class="detail-panel detail-poster" data-note="生活场景首屏：加湿器与床头环境">
+              <img loading="lazy" decoding="async" width="1024" height="1536" src="./assets/examples-v4/humidifier-poster.webp" alt="白色桌面加湿器详情页海报" />
+              <figcaption>生活场景首屏</figcaption>
             </figure>
-            <figure class="detail-panel" data-note="使用场景：办公室、卧室、学习桌">
-              <img loading="lazy" src="./assets/photos/humidifier-detail.jpg" alt="桌面加湿器场景详情页" />
-              <figcaption>使用场景</figcaption>
+            <figure class="detail-panel" data-note="局部特写：圆形按钮与顶部出雾口">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-v4/humidifier-detail.webp" alt="白色加湿器圆形按钮与顶部出雾口特写" />
+              <figcaption>机身细节</figcaption>
             </figure>
           </div>
           <div class="gallery-side">
-            <section class="main-gallery">
-              <div class="gallery-title"><strong>封面</strong></div>
-              <div class="main-strip">
-                <figure data-note="内容封面：适合笔记和商品橱窗"><img loading="lazy" src="./assets/photos/humidifier-main.jpg" alt="桌面加湿器封面图" /><figcaption>内容封面</figcaption></figure>
-                <figure data-note="场景图：光影和桌面环境"><img loading="lazy" src="./assets/photos/humidifier-detail.jpg" alt="桌面加湿器场景图" /><figcaption>场景图</figcaption></figure>
+            <section class="main-gallery" aria-label="桌面加湿器主图">
+              <div class="gallery-title"><strong>主图</strong></div>
+              <div class="main-strip" role="region" tabindex="0" aria-label="桌面加湿器主图，左右滚动浏览">
+            <figure data-note="场景主图：柔和光影与床头环境">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/humidifier-main.webp" alt="白色圆柱加湿器床头场景图" />
+              <figcaption>场景主图</figcaption>
+            </figure>
+            <figure data-note="细节主图：按钮与顶盖">
+              <img loading="lazy" decoding="async" width="1024" height="1024" src="./assets/examples-v4/humidifier-detail.webp" alt="白色加湿器按钮和顶盖局部图" />
+              <figcaption>细节主图</figcaption>
+            </figure>
               </div>
             </section>
-            <section class="sku-gallery">
+            <section class="sku-gallery" aria-label="桌面加湿器SKU">
               <div class="gallery-title"><strong>SKU</strong></div>
-              <div class="sku-strip">
-                <figure data-note="白色款"><img loading="lazy" src="./assets/photos/humidifier-main.jpg" alt="白色加湿器SKU" /><figcaption>白色款</figcaption></figure>
-                <figure data-note="木纹款"><img loading="lazy" src="./assets/photos/humidifier-detail.jpg" alt="木纹加湿器SKU" /><figcaption>木纹款</figcaption></figure>
+              <div class="sku-strip" role="region" tabindex="0" aria-label="桌面加湿器SKU，左右滚动浏览">
+            <figure data-note="白色款">
+              <img loading="lazy" decoding="async" width="1000" height="1000" src="./assets/examples-v4/humidifier-main.webp" alt="白色圆柱桌面加湿器" />
+              <figcaption>白色款</figcaption>
+            </figure>
               </div>
             </section>
           </div>
@@ -297,8 +365,10 @@
 
       <section class="final-cta">
         <h2>选择适合你的平台风格，生成自己的商品图</h2>
-        <a href="./china-workflow.html">免费生成一套</a>
+        <a href="./china-workflow.html">进入工作台</a>
       </section>
     </main>
-  </body>
+    <script src="./local-session.js?v=0.3.0"></script>
+    <script src="./assets/feedback/feedback.js?v=detail-3"></script>
+</body>
 </html>
