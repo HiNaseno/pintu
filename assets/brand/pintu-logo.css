@@ -1,0 +1,49 @@
+/* Shared animation for the inline 品图 logo. */
+.pt-logo.pt-opening { animation: pt-logo-arrive 1s ease-out both; }
+.pt-logo .pt-tile, .pt-logo .pt-card, .pt-logo .pt-mtn, .pt-logo .pt-sun,
+.pt-logo .pt-spark, .pt-logo .pt-flash, .pt-logo .pt-mini, .pt-logo .pt-word,
+.pt-logo .pt-scan, .pt-logo .pt-sheen, .pt-logo .pt-photo, .pt-logo .pt-spark-wrap {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.pt-logo .pt-mtn { transform-origin: 50% 100%; }
+.pt-logo .pt-scan, .pt-logo .pt-sheen, .pt-logo .pt-flash, .pt-logo .pt-mini { opacity: 0; }
+.pt-logo.pt-opening .pt-tile { animation: pt-tile .56s cubic-bezier(.2,.9,.3,1.25) both; }
+.pt-logo.pt-opening .pt-card { animation: pt-card .44s .18s cubic-bezier(.2,.8,.3,1) both; }
+.pt-logo.pt-opening .pt-scan { animation: pt-scan .62s .30s cubic-bezier(.45,0,.4,1) both; }
+.pt-logo.pt-opening .pt-mtn { animation: pt-mtn .46s .44s cubic-bezier(.2,.9,.3,1.3) both; }
+.pt-logo.pt-opening .pt-sun { animation: pt-pop .34s .72s cubic-bezier(.2,.9,.3,1.6) both; }
+.pt-logo .pt-spark { animation: pt-twinkle 6s 2.4s ease-in-out infinite; }
+.pt-logo.pt-opening .pt-spark { animation: pt-spark-in .56s .78s cubic-bezier(.2,.9,.25,1.2) both, pt-twinkle 6s 2.4s ease-in-out infinite; }
+.pt-logo.pt-opening .pt-flash { animation: pt-flash .55s 1s ease-out both, pt-flash-idle 6s 2.4s ease-out infinite; }
+.pt-logo.pt-opening .pt-mini { animation: pt-mini .5s 1.18s ease-in-out both, pt-mini-idle 6s 2.4s ease-in-out infinite; }
+.pt-logo .pt-sheen { animation: pt-sheen 6s 2.4s ease-in-out infinite; }
+.pt-logo.pt-opening .pt-word { animation: pt-word .5s .26s cubic-bezier(.2,.8,.3,1) both; }
+.brand .pt-spark-wrap, .brand .pt-photo { transition: transform .5s cubic-bezier(.2,.9,.3,1.4); }
+.brand:hover .pt-spark-wrap, .brand:focus-visible .pt-spark-wrap { transform: rotate(90deg) scale(1.12); }
+.brand:hover .pt-photo, .brand:focus-visible .pt-photo { transform: translateY(-1px) scale(1.05); }
+.brand:active .pt-spark-wrap { transform: rotate(180deg) scale(.9); transition-duration: .2s; }
+.brand.is-generating .pt-scan { animation: pt-scan-loop 1.3s linear infinite; }
+.brand.is-generating .pt-spark-wrap { animation: pt-spin 2.4s linear infinite; }
+@keyframes pt-tile { 0% { opacity: 0; transform: scale(.55) rotate(-8deg); } 35% { opacity: 1; } 70% { transform: scale(1.06) rotate(1deg); } 100% { opacity: 1; transform: none; } }
+@keyframes pt-card { from { opacity: 0; transform: translateY(3px) scale(.92); } to { opacity: .92; transform: none; } }
+@keyframes pt-scan { 0% { opacity: 0; transform: translateY(-9px); } 20%, 80% { opacity: 1; } 100% { opacity: 0; transform: translateY(23px); } }
+@keyframes pt-mtn { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes pt-pop { from { transform: scale(0); } to { transform: none; } }
+@keyframes pt-spark-in { 0% { opacity: 0; transform: scale(0) rotate(-140deg); } 40% { opacity: 1; } 72% { transform: scale(1.2) rotate(14deg); } 100% { opacity: 1; transform: none; } }
+@keyframes pt-twinkle { 0%, 13%, 100% { transform: none; } 5% { transform: scale(1.18) rotate(22deg); } 9% { transform: scale(.94) rotate(-4deg); } }
+@keyframes pt-flash { 0% { opacity: 0; transform: scale(.35); } 6% { opacity: .95; } 100% { opacity: 0; transform: scale(2.3); } }
+@keyframes pt-flash-idle { 0%, 2% { opacity: 0; transform: scale(.4); } 3% { opacity: .75; } 14%, 100% { opacity: 0; transform: scale(2.1); } }
+@keyframes pt-mini { 0% { opacity: 0; transform: scale(0) rotate(-90deg); } 50% { opacity: 1; transform: scale(1) rotate(0); } 100% { opacity: 0; transform: scale(0) rotate(45deg); } }
+@keyframes pt-mini-idle { 0%, 6% { opacity: 0; transform: scale(0) rotate(-90deg); } 11% { opacity: 1; transform: scale(1) rotate(0); } 17%, 100% { opacity: 0; transform: scale(0) rotate(45deg); } }
+@keyframes pt-sheen { 0%, 15% { opacity: 0; transform: translateX(-34px); } 17%, 29% { opacity: .55; } 31%, 100% { opacity: 0; transform: translateX(46px); } }
+@keyframes pt-word { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+@keyframes pt-scan-loop { 0% { opacity: 0; transform: translateY(-9px); } 15%, 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(23px); } }
+@keyframes pt-spin { to { transform: rotate(360deg); } }
+@keyframes pt-logo-arrive { from { opacity: 0; transform: translateY(4px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes pt-logo-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .pt-logo.pt-opening { animation: pt-logo-fade 1s ease-out both; }
+  .pt-logo * { animation: none !important; }
+  .brand .pt-spark-wrap, .brand .pt-photo { transition: none; transform: none !important; }
+}
